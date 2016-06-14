@@ -10,10 +10,11 @@ import UIKit
 import SwiftyJSON
 
 class CellModel: NSObject {
-    let type:NSNumber!
-    let data:AnyObject!
+    let type:NSNumber
+    let data:AnyObject
     
-    init(type:NSNumber,json:JSON) {
+    init(type:NSNumber,data:AnyObject) {
         self.type = type
+        self.data=data
     }
 }

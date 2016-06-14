@@ -50,12 +50,9 @@ class NewsTableViewController: UIViewController{
                     print("error")
                     CommonFunction.exit(self)
                 }
-                
-                //print(self.newsDatas[0].newsid)
             }
         }else{
             DataTool.loadNews((self.ch?.moduleid)!,newsid:self.newsDatas[0].newsid,type:1) { (newsArray) -> Void in
-                //print(self.newsDatas[0].newsid)
                 self.tableView.mj_header.endRefreshing()
                 if newsArray.state{
                     self.newsDatas = newsArray.0 + self.newsDatas
@@ -65,8 +62,6 @@ class NewsTableViewController: UIViewController{
                     print("error")
                     CommonFunction.exit(self)
                 }
-                
-                //print(self.newsDatas[0].newsid)
             }
         }
         
@@ -75,7 +70,6 @@ class NewsTableViewController: UIViewController{
      上拉刷新，加载更多数据
      */
     func requestMoreInfo() {
-        //print("\((self.ch?.moduleid)!)+\(self.newsDatas[self.newsDatas.count-1].newsid)")
         DataTool.loadNews((self.ch?.moduleid)!,newsid:self.newsDatas[self.newsDatas.count-1].newsid,type: 2) { (newsArray) -> Void in
             self.tableView.mj_footer.endRefreshing()
             if newsArray.state{
@@ -120,7 +114,6 @@ extension NewsTableViewController:UITableViewDelegate,UITableViewDataSource{
         let image = cell.viewWithTag(104) as! UIImageView
         title.text = news.ntitle
         from.text = "来自："+news.nfrom
-        //print(news.nimage)
         image.kf_setImageWithURL(NSURL(string: news.nimage)!,placeholderImage: UIImage(named: defautImage))
         time.text=news.ntime
         return cell
@@ -128,7 +121,6 @@ extension NewsTableViewController:UITableViewDelegate,UITableViewDataSource{
     
     // MARK: -UITableViewDelegate
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath){
-        //print(newsDatas[indexPath.row])
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
         let sb = UIStoryboard(name: "Main", bundle: nil)
         let vc = sb.instantiateViewControllerWithIdentifier("NewsDetail") as! NewsDetailViewController

@@ -572,6 +572,7 @@
                         <outlet property="tableView" destination="KQI-pW-xDk" id="2O0-Qi-hoy"/>
                         <outlet property="titleItem" destination="BUq-0c-D5o" id="LIF-Dd-Qq0"/>
                         <outlet property="userImage" destination="khd-MG-Bk6" id="2S0-1R-wom"/>
+                        <outlet property="waitingLable" destination="4A6-kY-dkS" id="OR6-sb-A4F"/>
                         <outlet property="weekLabel" destination="st4-Vh-ghI" id="pep-EP-gdl"/>
                     </connections>
                 </viewController>

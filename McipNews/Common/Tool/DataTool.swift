@@ -69,6 +69,7 @@ struct DataTool {
             }
         }
     }
+    
     static func loadNewsChannels(type:NSNumber) -> (JSON,Bool){
         //创建NSURL对象
         let url:NSURL! = NSURL(string: POST)
@@ -103,6 +104,43 @@ struct DataTool {
         catch let error as NSError {
             print("失败：\(error)")//如果失败，error 会返回错误信息
             return (nil,false)
+        }
+    }
+    
+    static func loadHomePage(completionHandler:([CellModel],waitingNumber:NSNumber)->Void){
+        let headers = ["consumer_key": ALAMOFIRE_KEY,"userid":userid,"token":token]
+        let parameters = ["path":"rpc/main_page","data":"{\"_userid\":\"\(userid)\"}"]
+        
+        let json = fetchJsonFromNet(post, parameters, headers)
+        json.jsonToModel(nil) { result in
+            var cellModel:[CellModel] = []
+            if result["code"].string=="200" {
+                let data=JSON(data: result["data"].stringValue.dataUsingEncoding(NSUTF8StringEncoding)!)
+                //var array:[Channel]
+                
+                for i in 0..<data["timetable"].count{
+                    if data["timetable"][i]["classinfo"].stringValue != "" {
+                        cellModel.append(CellModel(type: 1,data: Course(json:data["timetable"][i],time:i)))
+                    }
+                }
+                cellModel.append(CellModel(type: 2,data: NSNull.self))
+                for i in 0..<data["news"].count{
+                    //print(data["news"][i]["ntime"].stringValue)
+                    let comps = CommonFunction.formatTime(data["news"][i]["ntime"].stringValue)
+                    //let now = CommonFunction.getNowTime()
+                    //print("\(comps)----\(now)")
+                    let time = "\(comps.month)-\(comps.day) \(comps.hour):\(comps.minute)"
+                    //print(data["news"][i])
+                    var picture = ""
+                    if  data["news"][i]["npicture"] != nil {
+                        picture = data["news"][i]["npicture"].stringValue
+                    }
+                    let news = News(newsid: data["news"][i]["newsid"].intValue, ntitle: data["news"][i]["ntitle"].stringValue, nfrom: data["modulename"].stringValue, ntime: time, nimage: picture)
+                    //print("\(new.newsid)+\(new.nimage)+\(new.ntime)+\(new.ntitle)+\(new.nfrom)")
+                    cellModel.append(CellModel(type: 3,data: news))
+                }
+                completionHandler(cellModel,waitingNumber: data["schedule"].intValue)
+            }
         }
     }
 }                                                 

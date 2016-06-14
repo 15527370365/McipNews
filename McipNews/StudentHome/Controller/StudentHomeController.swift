@@ -24,7 +24,7 @@ class StudentHomeController: PageController {
             print("没有关注模块")
             CommonFunction.exit(self)
         }
-        print(result)
+        //print(result)
         let datas = result.0
         //print(datas)
         for i in 0..<datas["follow"].count{
@@ -39,7 +39,7 @@ class StudentHomeController: PageController {
     }
 
     override func viewDidLoad() {
-        print("123")
+        //print("123")
         super.viewDidLoad()
         if vcTitles.count == 0 {
             print("none")

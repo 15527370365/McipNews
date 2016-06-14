@@ -14,9 +14,12 @@ class HomeViewController:UIViewController {
     @IBOutlet var userImage: UIImageView!
     @IBOutlet var weekLabel: UILabel!
     @IBOutlet var tableView: UITableView!
+    @IBOutlet var waitingLable: UILabel!
 
     
     var week:String = "第5周"
+    var cells:[CellModel]=[]
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         let barHeight = self.navigationController!.navigationBar.frame.size.height
@@ -31,31 +34,19 @@ class HomeViewController:UIViewController {
         userImage.layer.cornerRadius = userImage.bounds.size.width * 0.5
         userImage.layer.borderWidth = 2
         userImage.layer.borderColor = UIColor.whiteColor().CGColor
-        // Do any additional setup after loading the view.
+        DataTool.loadHomePage(){ (result) -> Void in
+            self.waitingLable.text = "您有\(result.waitingNumber)条待办事项"
+            self.cells = result.0
+            //self.page=newPage
+            self.tableView.reloadData()
+        }
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
-//    func setNavigationItems(){
-//        let barHeight = self.navigationController!.navigationBar.frame.size.height
-//        let middleItem = UIView(frame: CGRect(x: 0, y: 0, width: 75, height: barHeight))
-//        let weekTitle = UILabel(frame: CGRect(x: 0, y: 0, width: 45, height: barHeight))
-//        weekTitle.text = week
-//        weekTitle.font = UIFont(name: "System", size: 32.0)
-//        middleItem.addSubview(weekTitle)
-//        let weekBtn = UIButton.init(type:UIButtonType.Custom)
-//        weekBtn.frame = CGRect(x: 45, y: 0, width: 30, height: barHeight)
-//        weekBtn.setImage(UIImage(named: "home_week_down"), forState: UIControlState.Normal)
-//        weekBtn.layer.masksToBounds = true
-//        weekBtn.layer.cornerRadius = weekBtn.bounds.size.width * 0.5
-//        weekBtn.addTarget(self, action: #selector(NewsViewController.btnUser), forControlEvents: UIControlEvents.TouchUpInside)
-//        middleItem.addSubview(weekBtn)
-//        
-//        self.navigationItem.titleView = middleItem
-//    }
+
     
     // MARK: - Button Events
     func btnUser() {
@@ -86,13 +77,14 @@ class HomeViewController:UIViewController {
 // MARK: - tableView extension
 extension HomeViewController:UITableViewDataSource,UITableViewDelegate{
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int{
-        return 3
+        return cells.count
     }
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell{
-        if indexPath.row == 0 {
+        let cellModel = cells[indexPath.row] as CellModel
+        if cellModel.type == 1 {
             let cell=self.tableView.dequeueReusableCellWithIdentifier("courseCell")! as UITableViewCell
             return cell
-        }else if indexPath.row == 1{
+        }else if cellModel.type == 2{
             let cell=self.tableView.dequeueReusableCellWithIdentifier("noneCell")! as UITableViewCell
             cell.selectionStyle = .None
             return cell
