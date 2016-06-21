@@ -30,6 +30,8 @@ struct DataTool {
     
     //GET
     static let get        = server+"/rest/get"
+    
+    static let common     = server + "/common"
 
     static func loadNews(moduleid:NSNumber,newsid:NSNumber,type:NSNumber,completionHandler: ([News],state:Bool) -> Void){
         let headers = ["consumer_key": ALAMOFIRE_KEY,"userid":userid,"token":token]
@@ -115,14 +117,15 @@ struct DataTool {
         json.jsonToModel(nil) { result in
             var cellModel:[CellModel] = []
             if result["code"].string=="200" {
-                let data=JSON(data: result["data"].stringValue.dataUsingEncoding(NSUTF8StringEncoding)!)
+                let data=JSON(data: result["data"].stringValue.dataUsingEncoding(NSUTF8StringEncoding)!)[0]
                 //var array:[Channel]
-                
                 for i in 0..<data["timetable"].count{
-                    if data["timetable"][i]["classinfo"].stringValue != "" {
+                    //print(data["timetable"][i]["classinfo"].count)
+                    if data["timetable"][i]["classinfo"].count != 0 {
                         cellModel.append(CellModel(type: 1,data: Course(json:data["timetable"][i],time:i)))
                     }
                 }
+                
                 cellModel.append(CellModel(type: 2,data: NSNull.self))
                 for i in 0..<data["news"].count{
                     //print(data["news"][i]["ntime"].stringValue)
@@ -140,6 +143,18 @@ struct DataTool {
                     cellModel.append(CellModel(type: 3,data: news))
                 }
                 completionHandler(cellModel,waitingNumber: data["schedule"].intValue)
+            }
+        }
+    }
+    static func loadWeather(completionHandler:(weatherImageName:String,weatherLable:String)->Void){
+        let headers = ["consumer_key": ALAMOFIRE_KEY,"userid":userid,"token":token]
+        let parameters = ["path":"武汉"]
+        
+        let json = fetchJsonFromNet(common, parameters, headers)
+        json.jsonToModel(nil) { result in
+            if result["errNum"].intValue == 0 {
+                let data=result["retData"]
+                completionHandler(weatherImageName: "weather11",weatherLable: "\(data["l_tmp"])℃~\(data["h_tmp"])℃")
             }
         }
     }

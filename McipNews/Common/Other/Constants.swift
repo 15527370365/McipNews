@@ -34,6 +34,8 @@ var userid:String=""
 var token:String=""
 var image:String=""
 
+var firstWeekTime="2015-03-14 13:14:00"
+
 class Constants: NSObject {
 
     //声明常量

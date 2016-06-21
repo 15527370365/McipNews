@@ -127,6 +127,7 @@ extension NewsTableViewController:UITableViewDelegate,UITableViewDataSource{
         vc.detailTitle.title = ch.mname
         vc.newsid = newsDatas[indexPath.row].newsid
         self.navigationController?.pushViewController(vc, animated: true)
+        self.hidesBottomBarWhenPushed = false
     }
 }
 

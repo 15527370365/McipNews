@@ -33,8 +33,8 @@ class ButtonTool: NSObject {
     }
     
     class func setNavigationMiddleItem(selector:Selector,view:AnyObject,barHeight:CGFloat,week:String) -> UIView{
-        let middleItem = UIView(frame: CGRect(x: 0, y: 0, width: 45, height: barHeight))
-        let weekTitle = UILabel(frame: CGRect(x: 0, y: 0, width: 45, height: barHeight))
+        let middleItem = UIView(frame: CGRect(x: 0, y: 0, width: 60, height: barHeight))
+        let weekTitle = UILabel(frame: CGRect(x: 0, y: 0, width: 60, height: barHeight))
         weekTitle.text = week
         weekTitle.font = UIFont(name: "System", size: 32.0)
         middleItem.addSubview(weekTitle)

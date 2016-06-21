@@ -53,7 +53,7 @@ class CommonFunction: NSObject {
         formatter.dateStyle = .MediumStyle
         formatter.timeStyle = .ShortStyle
         formatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
-        formatter.timeZone = NSTimeZone.init(name: "Asia/Shanghai")
+        formatter.timeZone = NSTimeZone(name: "Asia/Shanghai")
         return formatter.stringFromDate(NSDate())
     }
     
@@ -86,4 +86,18 @@ class CommonFunction: NSObject {
         view.presentViewController(storyboard.instantiateViewControllerWithIdentifier("Login"), animated: true, completion: nil)
     }
     
+    
+    class func getWeek() -> NSNumber{
+        let formatter=NSDateFormatter()
+        formatter.dateStyle = .MediumStyle
+        formatter.timeStyle = .ShortStyle
+        formatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
+        formatter.timeZone = NSTimeZone(name: "Asia/Shanghai")
+        let defaultTime=formatter.dateFromString(firstWeekTime)
+        let nowTime=formatter.dateFromString(getNowTimeString())
+        print(defaultTime?.timeIntervalSince1970)
+        print(nowTime?.timeIntervalSince1970)
+        return (nowTime!.timeIntervalSince1970 - defaultTime!.timeIntervalSince1970)/(1000 * 3600 * 24 * 7) + 1
+
+    }
 }

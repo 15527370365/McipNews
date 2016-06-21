@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Kingfisher
 
 class HomeViewController:UIViewController {
 
@@ -15,13 +16,16 @@ class HomeViewController:UIViewController {
     @IBOutlet var weekLabel: UILabel!
     @IBOutlet var tableView: UITableView!
     @IBOutlet var waitingLable: UILabel!
-
+    @IBOutlet var monthLabel: UILabel!
+    @IBOutlet var weatherImage: UIImageView!
+    @IBOutlet var weatherLabel: UILabel!
     
-    var week:String = "第5周"
+    var week:String = "第\(CommonFunction.getWeek())周"
     var cells:[CellModel]=[]
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        print(CommonFunction.getWeek())
         let barHeight = self.navigationController!.navigationBar.frame.size.height
         self.tableView.dataSource = self
         self.tableView.delegate = self
@@ -34,12 +38,36 @@ class HomeViewController:UIViewController {
         userImage.layer.cornerRadius = userImage.bounds.size.width * 0.5
         userImage.layer.borderWidth = 2
         userImage.layer.borderColor = UIColor.whiteColor().CGColor
+        let hud = MBProgressHUD.showHUDAddedTo(self.view, animated: true)
+        hud.label.text = "Loading"
         DataTool.loadHomePage(){ (result) -> Void in
+            MBProgressHUD.hideHUDForView(self.view, animated: true)
             self.waitingLable.text = "您有\(result.waitingNumber)条待办事项"
             self.cells = result.0
-            //self.page=newPage
             self.tableView.reloadData()
         }
+        let nowTime = CommonFunction.getNowTime()
+        monthLabel.text = "\(nowTime.month)/\(nowTime.day)"
+        switch nowTime.weekday {
+        case 1:
+            weekLabel.text = "Sun"
+        case 2:
+            weekLabel.text = "Mon"
+        case 3:
+            weekLabel.text = "Tues"
+        case 4:
+            weekLabel.text = "Wed"
+        case 5:
+            weekLabel.text = "Thur"
+        case 6:
+            weekLabel.text = "Fri"
+        default:
+            weekLabel.text = "Sat"
+        }
+        DataTool.loadWeather(){ result -> Void in
+            self.weatherImage.image = UIImage(named: result.weatherImageName)
+            self.weatherLabel.text = result.weatherLable
+         }
     }
 
     override func didReceiveMemoryWarning() {
@@ -60,7 +88,9 @@ class HomeViewController:UIViewController {
     @IBAction func itemsClick(sender: UIControl) {
         let sb = UIStoryboard(name: "Main", bundle: nil)
         let vc = sb.instantiateViewControllerWithIdentifier("WaitingItems") as! ItemsViewController
+        self.hidesBottomBarWhenPushed=true
         self.navigationController?.pushViewController(vc, animated: true)
+        self.hidesBottomBarWhenPushed=false
     }
 
     /*
@@ -83,6 +113,19 @@ extension HomeViewController:UITableViewDataSource,UITableViewDelegate{
         let cellModel = cells[indexPath.row] as CellModel
         if cellModel.type == 1 {
             let cell=self.tableView.dequeueReusableCellWithIdentifier("courseCell")! as UITableViewCell
+            let name = cell.viewWithTag(102) as! UILabel
+            let place = cell.viewWithTag(103) as! UILabel
+            let num = cell.viewWithTag(104) as! UILabel
+            let image = cell.viewWithTag(101) as! UIImageView
+            let course = cellModel.data as! Course
+            name.text = "\(course.crname)（\(course.crcredit)学分，\(course.crhours)学时）"
+            place.text = "\(course.place) · \(course.uname)"
+            if course.tasknum == 0 {
+                num.hidden=true
+            }else{
+                num.text = "\(course.tasknum)"
+            }
+            image.image=UIImage(named: course.picName)
             return cell
         }else if cellModel.type == 2{
             let cell=self.tableView.dequeueReusableCellWithIdentifier("noneCell")! as UITableViewCell
@@ -90,17 +133,48 @@ extension HomeViewController:UITableViewDataSource,UITableViewDelegate{
             return cell
         }else{
             let cell=self.tableView.dequeueReusableCellWithIdentifier("newsCell")! as UITableViewCell
+            let title = cell.viewWithTag(201) as! UILabel
+            let from = cell.viewWithTag(202) as! UILabel
+            let time = cell.viewWithTag(203) as! UILabel
+            let image = cell.viewWithTag(204) as! UIImageView
+            let news = cellModel.data as! News
+            title.text = news.ntitle
+            from.text = "来自："+news.nfrom
+            image.kf_setImageWithURL(NSURL(string: news.nimage)!,placeholderImage: UIImage(named: defautImage))
+            time.text=news.ntime
             return cell
         }
     }
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat{
-        if indexPath.row == 0 {
+        let cellModel = cells[indexPath.row] as CellModel
+        if cellModel.type == 1 {
             return 70
-        }else if indexPath.row == 1{
+        }else if cellModel.type == 2{
             return 127
         }else{
             return 80
         }
+    }
+    
+    // MARK: -UITableViewDelegate
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath){
+        tableView.deselectRowAtIndexPath(indexPath, animated: true)
+        let sb = UIStoryboard(name: "Main", bundle: nil)
+        let cellModel = cells[indexPath.row] as CellModel
+        if cellModel.type==1 {
+            let vc = sb.instantiateViewControllerWithIdentifier("CallConditions") as! CallViewController
+            self.hidesBottomBarWhenPushed = true
+            self.navigationController?.pushViewController(vc, animated: true)
+            self.hidesBottomBarWhenPushed = false
+        }else if cellModel.type==3{
+            let vc = sb.instantiateViewControllerWithIdentifier("NewsDetail") as! NewsDetailViewController
+            vc.detailTitle.title = "新闻"
+            vc.newsid = (cellModel.data as! News).newsid
+            self.hidesBottomBarWhenPushed = true
+            self.navigationController?.pushViewController(vc, animated: true)
+            self.hidesBottomBarWhenPushed = false
+        }
+        
     }
 }
 

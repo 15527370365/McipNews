@@ -1,18 +1,18 @@
 //
-//  ItemsViewController.swift
+//  CallViewController.swift
 //  McipNews
 //
-//  Created by MAC on 16/5/23.
+//  Created by MAC on 16/6/16.
 //  Copyright © 2016年 MAC. All rights reserved.
 //
 
 import UIKit
 
-class ItemsViewController: UIViewController {
+class CallViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        let swipeLeftGesture = UISwipeGestureRecognizer(target: self, action: #selector(backBtnClick))
+        let swipeLeftGesture = UISwipeGestureRecognizer(target: self, action: #selector(backBtn))
         self.view.addGestureRecognizer(swipeLeftGesture)
         // Do any additional setup after loading the view.
     }
@@ -21,7 +21,8 @@ class ItemsViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    @IBAction func backBtnClick(sender: UIBarButtonItem) {
+    
+    @IBAction func backBtn(sender: UIBarButtonItem) {
         self.navigationController?.popViewControllerAnimated(true)
     }
 

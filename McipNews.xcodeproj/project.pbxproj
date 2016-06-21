@@ -37,6 +37,7 @@
 		04B05B761CCD1A49000EB09E /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B05B701CCD1A49000EB09E /* LoginController.swift */; };
 		04B05B771CCD1A49000EB09E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04B05B711CCD1A49000EB09E /* Main.storyboard */; };
 		04B05B781CCD1A49000EB09E /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 04B05B731CCD1A49000EB09E /* MBProgressHUD.m */; };
+		04CCD8B51D12E8850080F399 /* CallViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04CCD8B41D12E8850080F399 /* CallViewController.swift */; };
 		04ED8B681CF0340D00293D0F /* MJRefreshAutoFooter.m in Sources */ = {isa = PBXBuildFile; fileRef = 04ED8B3C1CF0340D00293D0F /* MJRefreshAutoFooter.m */; };
 		04ED8B691CF0340D00293D0F /* MJRefreshBackFooter.m in Sources */ = {isa = PBXBuildFile; fileRef = 04ED8B3E1CF0340D00293D0F /* MJRefreshBackFooter.m */; };
 		04ED8B6A1CF0340D00293D0F /* MJRefreshComponent.m in Sources */ = {isa = PBXBuildFile; fileRef = 04ED8B401CF0340D00293D0F /* MJRefreshComponent.m */; };
@@ -119,6 +120,7 @@
 		04B05B711CCD1A49000EB09E /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		04B05B721CCD1A49000EB09E /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBProgressHUD.h; sourceTree = "<group>"; };
 		04B05B731CCD1A49000EB09E /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
+		04CCD8B41D12E8850080F399 /* CallViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CallViewController.swift; sourceTree = "<group>"; };
 		04ED8B3B1CF0340D00293D0F /* MJRefreshAutoFooter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJRefreshAutoFooter.h; sourceTree = "<group>"; };
 		04ED8B3C1CF0340D00293D0F /* MJRefreshAutoFooter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJRefreshAutoFooter.m; sourceTree = "<group>"; };
 		04ED8B3D1CF0340D00293D0F /* MJRefreshBackFooter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJRefreshBackFooter.h; sourceTree = "<group>"; };
@@ -358,6 +360,7 @@
 			children = (
 				048D327B1CF2098000D5656B /* HomeViewController.swift */,
 				04F2BE111CF35610002E6628 /* ItemsViewController.swift */,
+				04CCD8B41D12E8850080F399 /* CallViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -731,6 +734,7 @@
 				0454F1321CF5A3600089FE4B /* CellModel.swift in Sources */,
 				048D327C1CF2098000D5656B /* HomeViewController.swift in Sources */,
 				04315A411CE79C590031F325 /* Channel.swift in Sources */,
+				04CCD8B51D12E8850080F399 /* CallViewController.swift in Sources */,
 				04ED8B701CF0340D00293D0F /* MJRefreshBackGifFooter.m in Sources */,
 				04315A3D1CE763A70031F325 /* StudentHomeController.swift in Sources */,
 				04B05B751CCD1A49000EB09E /* Constants.swift in Sources */,

@@ -25,8 +25,9 @@ class NewsDetailViewController: UIViewController {
         request.addValue(userid, forHTTPHeaderField: "userid")
         request.addValue(token, forHTTPHeaderField: "token")
         webView.loadRequest(request)
-        let swipeLeftGesture = UISwipeGestureRecognizer(target: self, action: #selector(backClick))
+        let swipeLeftGesture = UISwipeGestureRecognizer(target: self, action: #selector(backClicks))
         self.view.addGestureRecognizer(swipeLeftGesture)
+        self.tabBarController?.tabBar.hidden = true
     }
 
     override func didReceiveMemoryWarning() {
@@ -34,10 +35,12 @@ class NewsDetailViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    func backClick() {
-        self.navigationController?.popViewControllerAnimated(true)
-    }
+//    func backClick() {
+//        self.tabBarController?.tabBar.hidden = false
+//        self.navigationController?.popViewControllerAnimated(true)
+//    }
     @IBAction func backClicks(sender: UIBarButtonItem) {
+        self.tabBarController?.tabBar.hidden = false
         self.navigationController?.popViewControllerAnimated(true)
     }
 
