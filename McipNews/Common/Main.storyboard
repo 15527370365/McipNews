@@ -5,6 +5,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
         <capability name="Alignment constraints to the first baseline" minToolsVersion="6.0"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="Navigation items with more than one left or right bar item" minToolsVersion="7.0"/>
     </dependencies>
     <scenes>
@@ -193,6 +194,161 @@
             </objects>
             <point key="canvasLocation" x="1036.5" y="1381.5"/>
         </scene>
+        <!--Student Home Child View Controller-->
+        <scene sceneID="yaY-EY-h7q">
+            <objects>
+                <viewController storyboardIdentifier="StudentHomeChild" id="IPn-V7-X9P" customClass="StudentHomeChildViewController" customModule="McipNews" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="t44-qq-olQ"/>
+                        <viewControllerLayoutGuide type="bottom" id="Ymc-5n-VRo"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="91u-3T-BBj">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view tag="100" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="g3o-tj-kyS" customClass="UIControl">
+                                <rect key="frame" x="16" y="24" width="67" height="61"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="stdhome_work" translatesAutoresizingMaskIntoConstraints="NO" id="NEL-oZ-xwS">
+                                        <rect key="frame" x="13" y="0.0" width="40" height="40"/>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="学生工作" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Neo-No-Vhm">
+                                        <rect key="frame" x="8" y="40" width="51" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                        <color key="textColor" red="0.45490196078431372" green="0.45490196078431372" blue="0.45490196078431372" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="61" id="gMq-c8-cAW"/>
+                                </constraints>
+                                <connections>
+                                    <action selector="changePage:" destination="IPn-V7-X9P" eventType="touchUpInside" id="jZS-HB-vAv"/>
+                                </connections>
+                            </view>
+                            <view tag="102" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="d2m-kA-NDg" customClass="UIControl">
+                                <rect key="frame" x="150" y="24" width="67" height="61"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="stdhome_employ" translatesAutoresizingMaskIntoConstraints="NO" id="GMr-LX-fnb">
+                                        <rect key="frame" x="13" y="0.0" width="40" height="40"/>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="创业就业" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oBC-TL-Svo">
+                                        <rect key="frame" x="8" y="40" width="51" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                        <color key="textColor" red="0.4549019608" green="0.4549019608" blue="0.4549019608" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <action selector="changePage:" destination="IPn-V7-X9P" eventType="touchUpInside" id="cyb-Qq-Spd"/>
+                                </connections>
+                            </view>
+                            <view tag="103" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2Rc-I1-vGM" customClass="UIControl">
+                                <rect key="frame" x="217" y="24" width="67" height="61"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="stdhome_lecture" translatesAutoresizingMaskIntoConstraints="NO" id="IWW-5I-Mre">
+                                        <rect key="frame" x="13" y="0.0" width="40" height="40"/>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="讲座引导" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RrR-SJ-Jp4">
+                                        <rect key="frame" x="8" y="40" width="51" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                        <color key="textColor" red="0.4549019608" green="0.4549019608" blue="0.4549019608" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <action selector="changePage:" destination="IPn-V7-X9P" eventType="touchUpInside" id="ark-Do-b92"/>
+                                </connections>
+                            </view>
+                            <view tag="104" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="t1Q-pJ-6sj" customClass="UIControl">
+                                <rect key="frame" x="284" y="24" width="67" height="61"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="stdhome_rule" translatesAutoresizingMaskIntoConstraints="NO" id="onP-gI-T88">
+                                        <rect key="frame" x="13" y="0.0" width="40" height="40"/>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="规章制度" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uzl-4Q-Ysc">
+                                        <rect key="frame" x="8" y="40" width="51" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                        <color key="textColor" red="0.4549019608" green="0.4549019608" blue="0.4549019608" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <action selector="changePage:" destination="IPn-V7-X9P" eventType="touchUpInside" id="P9R-8s-B8O"/>
+                                </connections>
+                            </view>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="USV-c2-wdO">
+                                <rect key="frame" x="0.0" y="93" width="379" height="574"/>
+                                <connections>
+                                    <segue destination="gPP-a6-sIe" kind="embed" id="Nsg-iz-jGZ"/>
+                                </connections>
+                            </containerView>
+                            <view tag="101" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HfC-eA-8c6" customClass="UIControl">
+                                <rect key="frame" x="83" y="24" width="67" height="61"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="stdhome_edu" translatesAutoresizingMaskIntoConstraints="NO" id="kZJ-Ai-ijp">
+                                        <rect key="frame" x="13" y="0.0" width="40" height="40"/>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="思政教育" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T6K-AD-Iz2">
+                                        <rect key="frame" x="8" y="40" width="51" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                        <color key="textColor" red="0.4549019608" green="0.4549019608" blue="0.4549019608" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <action selector="changePage:" destination="IPn-V7-X9P" eventType="touchUpInside" id="mVg-as-29e"/>
+                                </connections>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="2Rc-I1-vGM" firstAttribute="top" secondItem="d2m-kA-NDg" secondAttribute="top" id="1Hj-qd-TaE"/>
+                            <constraint firstItem="g3o-tj-kyS" firstAttribute="leading" secondItem="91u-3T-BBj" secondAttribute="leadingMargin" id="B9C-b2-A0I"/>
+                            <constraint firstItem="g3o-tj-kyS" firstAttribute="width" secondItem="91u-3T-BBj" secondAttribute="width" multiplier="1/5" constant="-8" id="BMd-b7-Trw"/>
+                            <constraint firstItem="HfC-eA-8c6" firstAttribute="top" secondItem="g3o-tj-kyS" secondAttribute="top" id="KPJ-ab-3Ex"/>
+                            <constraint firstItem="USV-c2-wdO" firstAttribute="leading" secondItem="91u-3T-BBj" secondAttribute="leadingMargin" constant="-16" id="NGh-24-cdr"/>
+                            <constraint firstItem="USV-c2-wdO" firstAttribute="top" secondItem="t1Q-pJ-6sj" secondAttribute="bottom" constant="8" id="NHz-Mq-jTa"/>
+                            <constraint firstItem="HfC-eA-8c6" firstAttribute="width" secondItem="g3o-tj-kyS" secondAttribute="width" id="Oin-GO-Xi7"/>
+                            <constraint firstItem="d2m-kA-NDg" firstAttribute="leading" secondItem="HfC-eA-8c6" secondAttribute="trailing" id="PMQ-3I-R3n"/>
+                            <constraint firstItem="HfC-eA-8c6" firstAttribute="leading" secondItem="g3o-tj-kyS" secondAttribute="trailing" id="Phx-Dg-NJh"/>
+                            <constraint firstItem="d2m-kA-NDg" firstAttribute="height" secondItem="HfC-eA-8c6" secondAttribute="height" id="UIS-GU-LcB"/>
+                            <constraint firstItem="d2m-kA-NDg" firstAttribute="top" secondItem="HfC-eA-8c6" secondAttribute="top" id="ZJe-tK-dmx"/>
+                            <constraint firstItem="g3o-tj-kyS" firstAttribute="top" secondItem="t44-qq-olQ" secondAttribute="bottom" constant="4" id="ap5-Wh-WGw"/>
+                            <constraint firstItem="d2m-kA-NDg" firstAttribute="width" secondItem="HfC-eA-8c6" secondAttribute="width" id="cBg-pu-G6H"/>
+                            <constraint firstItem="2Rc-I1-vGM" firstAttribute="width" secondItem="d2m-kA-NDg" secondAttribute="width" id="dTr-Wg-t7d"/>
+                            <constraint firstItem="t1Q-pJ-6sj" firstAttribute="width" secondItem="2Rc-I1-vGM" secondAttribute="width" id="dm8-Jj-55i"/>
+                            <constraint firstItem="HfC-eA-8c6" firstAttribute="height" secondItem="g3o-tj-kyS" secondAttribute="height" id="eDM-vC-47r"/>
+                            <constraint firstItem="t1Q-pJ-6sj" firstAttribute="top" secondItem="2Rc-I1-vGM" secondAttribute="top" id="eam-kJ-vqw"/>
+                            <constraint firstItem="t1Q-pJ-6sj" firstAttribute="leading" secondItem="2Rc-I1-vGM" secondAttribute="trailing" id="eki-Ne-iAd"/>
+                            <constraint firstItem="2Rc-I1-vGM" firstAttribute="leading" secondItem="d2m-kA-NDg" secondAttribute="trailing" id="hNr-5l-z9n"/>
+                            <constraint firstItem="t1Q-pJ-6sj" firstAttribute="height" secondItem="2Rc-I1-vGM" secondAttribute="height" id="mim-CP-xrs"/>
+                            <constraint firstItem="Ymc-5n-VRo" firstAttribute="top" secondItem="USV-c2-wdO" secondAttribute="bottom" id="qvG-un-b5j"/>
+                            <constraint firstItem="USV-c2-wdO" firstAttribute="trailing" secondItem="91u-3T-BBj" secondAttribute="trailingMargin" constant="20" id="wJu-DN-S3v"/>
+                            <constraint firstItem="2Rc-I1-vGM" firstAttribute="height" secondItem="d2m-kA-NDg" secondAttribute="height" id="wcj-BG-lUL"/>
+                        </constraints>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dZ8-gk-L23" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1568.5" y="1381.5"/>
+        </scene>
+        <!--Page View Controller-->
+        <scene sceneID="NAi-5F-YKN">
+            <objects>
+                <pageViewController autoresizesArchivedViewToFullSize="NO" transitionStyle="pageCurl" navigationOrientation="horizontal" spineLocation="min" id="gPP-a6-sIe" sceneMemberID="viewController">
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                </pageViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4ok-UC-yxb" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2025.5" y="1381.5"/>
+        </scene>
         <!--新闻-->
         <scene sceneID="tZn-CB-cqk">
             <objects>
@@ -237,8 +393,8 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </tabBar>
                     <connections>
-                        <segue destination="cgl-kf-XmV" kind="relationship" relationship="viewControllers" id="X6C-bh-65H"/>
                         <segue destination="7Zc-PQ-oyI" kind="relationship" relationship="viewControllers" id="Aqr-Kx-Zhf"/>
+                        <segue destination="cgl-kf-XmV" kind="relationship" relationship="viewControllers" id="X6C-bh-65H"/>
                         <segue destination="wXP-iF-mHg" kind="relationship" relationship="viewControllers" id="prK-Dp-7IY"/>
                     </connections>
                 </tabBarController>
@@ -607,7 +763,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Zeq-be-dHU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2085.5" y="2174.5"/>
+            <point key="canvasLocation" x="2085.5" y="2182.5"/>
         </scene>
         <!--News Table View Controller-->
         <scene sceneID="gfn-Xv-Key">
@@ -707,9 +863,9 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1ba-M1-zEb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1504.5" y="550.5"/>
+            <point key="canvasLocation" x="1568.5" y="550.5"/>
         </scene>
-        <!--Title-->
+        <!--新闻详情-->
         <scene sceneID="DLC-RE-8gQ">
             <objects>
                 <viewController storyboardIdentifier="NewsDetail" id="4dD-3h-B15" customClass="NewsDetailViewController" customModule="McipNews" customModuleProvider="target" sceneMemberID="viewController">
@@ -728,7 +884,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Title" id="bdA-tL-nfF">
+                    <navigationItem key="navigationItem" title="新闻详情" id="bdA-tL-nfF">
                         <barButtonItem key="leftBarButtonItem" image="back" id="Lf7-7P-J14">
                             <connections>
                                 <action selector="backClicks:" destination="4dD-3h-B15" id="prY-xB-UOJ"/>
@@ -744,7 +900,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Jet-RJ-dAM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2085.5" y="1381.5"/>
+            <point key="canvasLocation" x="2597.5" y="550.5"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="0Rj-qr-017">
@@ -763,7 +919,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kDE-2b-y9r" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1504.5" y="1381.5"/>
+            <point key="canvasLocation" x="2085.5" y="550.5"/>
         </scene>
         <!--主页-->
         <scene sceneID="R8n-0G-PD8">
@@ -802,7 +958,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="J7w-Re-4dI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1511.5" y="2174.5"/>
+            <point key="canvasLocation" x="1568.5" y="2182.5"/>
         </scene>
         <!--点名情况-->
         <scene sceneID="j1f-2o-xzk">
@@ -847,7 +1003,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="y5j-vn-DYC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1511.5" y="2964.5"/>
+            <point key="canvasLocation" x="1568.5" y="2964.5"/>
         </scene>
     </scenes>
     <resources>
@@ -867,6 +1023,11 @@
         <image name="news" width="24" height="24"/>
         <image name="news_active" width="24" height="24"/>
         <image name="pwd" width="17" height="19"/>
+        <image name="stdhome_edu" width="46" height="40"/>
+        <image name="stdhome_employ" width="46" height="40"/>
+        <image name="stdhome_lecture" width="46" height="40"/>
+        <image name="stdhome_rule" width="46" height="40"/>
+        <image name="stdhome_work" width="46" height="40"/>
         <image name="user" width="17" height="19"/>
         <image name="v" width="67" height="93"/>
         <image name="weather4" width="32" height="32"/>

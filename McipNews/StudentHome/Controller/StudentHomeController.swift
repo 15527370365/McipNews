@@ -11,8 +11,10 @@ import WMPageController_Swift
 
 class StudentHomeController: PageController {
     
+    var shArray = Dictionary<String,Channel>()
     var vcTitles:[Channel] = []
     var moreTitles:[Channel] = []
+    var childTitles:[Channel] = []
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
@@ -27,11 +29,32 @@ class StudentHomeController: PageController {
         //print(result)
         let datas = result.0
         //print(datas)
+        vcTitles.append(Channel(dict:["mname":"学子家园","moduleid":1,"mintroduce":"","mfixed":1]))
         for i in 0..<datas["follow"].count{
-            vcTitles.append(Channel.init(json: datas["follow"][i]))
+            let tempChannel = Channel(json: datas["follow"][i])
+            switch tempChannel.mname {
+            case "思政教育":
+                shArray["思政教育"] = tempChannel
+            case "创业就业":
+                shArray["创业就业"] = tempChannel
+            case "学生工作":
+                shArray["学生工作"] = tempChannel
+            case "讲座引导":
+                shArray["讲座引导"] = tempChannel
+            case "规章制度":
+                shArray["规章制度"] = tempChannel
+            default:
+                vcTitles.append(tempChannel)
+            }
+            
         }
+//        childTitles.append(shArray["学生工作"]!)
+//        childTitles.append(shArray["思政教育"]!)
+//        childTitles.append(shArray["创业就业"]!)
+//        childTitles.append(shArray["讲座引导"]!)
+//        childTitles.append(shArray["规章制度"]!)
         for i in 0..<datas["unfollow"].count{
-            moreTitles.append(Channel.init(json: datas["unfollow"][i]))
+            moreTitles.append(Channel(json: datas["unfollow"][i]))
         }
         self.menuBGColor = UIColor(red: 34.0/255.0, green: 168.0/255.0, blue: 221.0/255.0, alpha: 1.0)
         self.titleColorNormal = UIColor.whiteColor()
@@ -81,9 +104,15 @@ class StudentHomeController: PageController {
     
     func pageController(pageController: PageController, viewControllerAtIndex index: Int) -> UIViewController {
         let sb = UIStoryboard(name: "Main", bundle: nil)
-        let vc = sb.instantiateViewControllerWithIdentifier("TableViewController") as! NewsTableViewController
-        vc.ch = vcTitles[index]
-        return vc
+        if vcTitles[index].mname == "学子家园" {
+            let vc = sb.instantiateViewControllerWithIdentifier("StudentHomeChild") as! StudentHomeChildViewController
+            vc.titles = shArray
+            return vc
+        }else{
+            let vc = sb.instantiateViewControllerWithIdentifier("TableViewController") as! NewsTableViewController
+            vc.ch = vcTitles[index]
+            return vc
+        }
     }
     
     func pageController(pageController: PageController, lazyLoadViewController viewController: UIViewController, withInfo info: NSDictionary) {
