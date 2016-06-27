@@ -9,7 +9,13 @@
 import UIKit
 
 class CallViewController: UIViewController {
-
+    
+    let defaultColors = [UIColor(red:0.53, green:0.84, blue:0.25, alpha:1),UIColor(red:0.14, green:0.65, blue:0.78, alpha:1),UIColor(red:0.76, green:0.23, blue:0.25, alpha:1)]
+    @IBOutlet var arriveNumberLabel: UILabel!
+    @IBOutlet var totalNumberLabel: UILabel!
+    @IBOutlet var absentNumberLabel: UILabel!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         let swipeLeftGesture = UISwipeGestureRecognizer(target: self, action: #selector(backBtn))

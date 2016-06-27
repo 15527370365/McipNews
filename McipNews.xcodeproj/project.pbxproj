@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0406285F1D217FB500665F49 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0406285E1D217FB500665F49 /* Item.swift */; };
 		04140BC81CEA00F0006A028D /* NewsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04140BC71CEA00F0006A028D /* NewsViewController.swift */; };
 		042030061CCD24E600FF3361 /* libBPush.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 042030051CCD24E600FF3361 /* libBPush.a */; };
 		042030081CCD254000FF3361 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 042030071CCD254000FF3361 /* SystemConfiguration.framework */; };
@@ -82,6 +83,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0406285E1D217FB500665F49 /* Item.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
 		04140BC71CEA00F0006A028D /* NewsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsViewController.swift; sourceTree = "<group>"; };
 		042030041CCD24E600FF3361 /* BPush.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BPush.h; sourceTree = "<group>"; };
 		042030051CCD24E600FF3361 /* libBPush.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libBPush.a; sourceTree = "<group>"; };
@@ -337,6 +339,7 @@
 			children = (
 				0454F1311CF5A3600089FE4B /* CellModel.swift */,
 				0454F13B1CF5AE6A0089FE4B /* Course.swift */,
+				0406285E1D217FB500665F49 /* Item.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -759,6 +762,7 @@
 				04ED8B771CF0340D00293D0F /* MJRefreshConst.m in Sources */,
 				043C8CF81CCE923E00E53F7C /* Users+CoreDataProperties.swift in Sources */,
 				043C2A541CDDDE5D005A94C6 /* NewsTableViewController.swift in Sources */,
+				0406285F1D217FB500665F49 /* Item.swift in Sources */,
 				04B05B3D1CCD1956000EB09E /* AppDelegate.swift in Sources */,
 				0428A6EC1CF16B0E004EB337 /* NewsDetailViewController.swift in Sources */,
 				0454F13C1CF5AE6A0089FE4B /* Course.swift in Sources */,

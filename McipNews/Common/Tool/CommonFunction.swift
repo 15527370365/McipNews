@@ -27,7 +27,7 @@ class CommonFunction: NSObject {
     
     class func getNowTime() -> NSDateComponents{
         let calender=NSCalendar(calendarIdentifier: NSCalendarIdentifierGregorian)
-        let comps=calender!.components([.Year,.Month,.Day,.Hour,.Minute,.Second], fromDate: NSDate())
+        let comps=calender!.components([.Year,.Month,.Day,.Hour,.Minute,.Second,.Weekday], fromDate: NSDate())
         return comps;
     }
     
