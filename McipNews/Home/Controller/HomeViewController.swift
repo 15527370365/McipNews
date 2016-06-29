@@ -25,7 +25,7 @@ class HomeViewController:UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        print(CommonFunction.getWeek())
+        //print(CommonFunction.getWeek())
         let barHeight = self.navigationController!.navigationBar.frame.size.height
         self.tableView.dataSource = self
         self.tableView.delegate = self

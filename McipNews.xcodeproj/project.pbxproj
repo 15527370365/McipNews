@@ -29,6 +29,7 @@
 		0454F1321CF5A3600089FE4B /* CellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0454F1311CF5A3600089FE4B /* CellModel.swift */; };
 		0454F13A1CF5A99B0089FE4B /* McipNews.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 0454F1381CF5A99B0089FE4B /* McipNews.xcdatamodeld */; };
 		0454F13C1CF5AE6A0089FE4B /* Course.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0454F13B1CF5AE6A0089FE4B /* Course.swift */; };
+		046BE3C31D24228C003C602C /* BoxViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046BE3C21D24228C003C602C /* BoxViewController.swift */; };
 		048D327C1CF2098000D5656B /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048D327B1CF2098000D5656B /* HomeViewController.swift */; };
 		04B05B3D1CCD1956000EB09E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B05B3C1CCD1956000EB09E /* AppDelegate.swift */; };
 		04B05B551CCD1956000EB09E /* McipNewsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B05B541CCD1956000EB09E /* McipNewsTests.swift */; };
@@ -38,8 +39,10 @@
 		04B05B761CCD1A49000EB09E /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B05B701CCD1A49000EB09E /* LoginController.swift */; };
 		04B05B771CCD1A49000EB09E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04B05B711CCD1A49000EB09E /* Main.storyboard */; };
 		04B05B781CCD1A49000EB09E /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 04B05B731CCD1A49000EB09E /* MBProgressHUD.m */; };
+		04BF88C51D243EED00062A8C /* NoticeDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04BF88C41D243EED00062A8C /* NoticeDetailViewController.swift */; };
 		04CCD8B51D12E8850080F399 /* CallViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04CCD8B41D12E8850080F399 /* CallViewController.swift */; };
 		04CCD8B91D192D4E0080F399 /* StudentHomeChildViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04CCD8B81D192D4E0080F399 /* StudentHomeChildViewController.swift */; };
+		04DCEDD01D236D220063749C /* NoticeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04DCEDCF1D236D220063749C /* NoticeViewController.swift */; };
 		04ED8B681CF0340D00293D0F /* MJRefreshAutoFooter.m in Sources */ = {isa = PBXBuildFile; fileRef = 04ED8B3C1CF0340D00293D0F /* MJRefreshAutoFooter.m */; };
 		04ED8B691CF0340D00293D0F /* MJRefreshBackFooter.m in Sources */ = {isa = PBXBuildFile; fileRef = 04ED8B3E1CF0340D00293D0F /* MJRefreshBackFooter.m */; };
 		04ED8B6A1CF0340D00293D0F /* MJRefreshComponent.m in Sources */ = {isa = PBXBuildFile; fileRef = 04ED8B401CF0340D00293D0F /* MJRefreshComponent.m */; };
@@ -106,6 +109,7 @@
 		0454F1311CF5A3600089FE4B /* CellModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CellModel.swift; sourceTree = "<group>"; };
 		0454F1391CF5A99B0089FE4B /* McipNews.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = McipNews.xcdatamodel; sourceTree = "<group>"; };
 		0454F13B1CF5AE6A0089FE4B /* Course.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Course.swift; sourceTree = "<group>"; };
+		046BE3C21D24228C003C602C /* BoxViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BoxViewController.swift; sourceTree = "<group>"; };
 		048D327B1CF2098000D5656B /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		04B05B391CCD1956000EB09E /* McipNews.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = McipNews.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		04B05B3C1CCD1956000EB09E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -123,8 +127,10 @@
 		04B05B711CCD1A49000EB09E /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		04B05B721CCD1A49000EB09E /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBProgressHUD.h; sourceTree = "<group>"; };
 		04B05B731CCD1A49000EB09E /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
+		04BF88C41D243EED00062A8C /* NoticeDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoticeDetailViewController.swift; sourceTree = "<group>"; };
 		04CCD8B41D12E8850080F399 /* CallViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CallViewController.swift; sourceTree = "<group>"; };
 		04CCD8B81D192D4E0080F399 /* StudentHomeChildViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StudentHomeChildViewController.swift; sourceTree = "<group>"; };
+		04DCEDCF1D236D220063749C /* NoticeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoticeViewController.swift; sourceTree = "<group>"; };
 		04ED8B3B1CF0340D00293D0F /* MJRefreshAutoFooter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJRefreshAutoFooter.h; sourceTree = "<group>"; };
 		04ED8B3C1CF0340D00293D0F /* MJRefreshAutoFooter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJRefreshAutoFooter.m; sourceTree = "<group>"; };
 		04ED8B3D1CF0340D00293D0F /* MJRefreshBackFooter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJRefreshBackFooter.h; sourceTree = "<group>"; };
@@ -396,6 +402,7 @@
 		04B05B3B1CCD1956000EB09E /* McipNews */ = {
 			isa = PBXGroup;
 			children = (
+				04DCEDD11D236D2A0063749C /* Notice */,
 				048D32791CF2095A00D5656B /* Home */,
 				043B98651CECC23800532EC8 /* StudentHome */,
 				043B98631CECC1D100532EC8 /* News */,
@@ -425,6 +432,24 @@
 				04B05B611CCD1956000EB09E /* Info.plist */,
 			);
 			path = McipNewsUITests;
+			sourceTree = "<group>";
+		};
+		04DCEDD11D236D2A0063749C /* Notice */ = {
+			isa = PBXGroup;
+			children = (
+				04DCEDD21D236D580063749C /* Controller */,
+			);
+			path = Notice;
+			sourceTree = "<group>";
+		};
+		04DCEDD21D236D580063749C /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				04DCEDCF1D236D220063749C /* NoticeViewController.swift */,
+				046BE3C21D24228C003C602C /* BoxViewController.swift */,
+				04BF88C41D243EED00062A8C /* NoticeDetailViewController.swift */,
+			);
+			path = Controller;
 			sourceTree = "<group>";
 		};
 		04ED8B451CF0340D00293D0F /* Base */ = {
@@ -762,12 +787,15 @@
 				04ED8B771CF0340D00293D0F /* MJRefreshConst.m in Sources */,
 				043C8CF81CCE923E00E53F7C /* Users+CoreDataProperties.swift in Sources */,
 				043C2A541CDDDE5D005A94C6 /* NewsTableViewController.swift in Sources */,
+				046BE3C31D24228C003C602C /* BoxViewController.swift in Sources */,
 				0406285F1D217FB500665F49 /* Item.swift in Sources */,
 				04B05B3D1CCD1956000EB09E /* AppDelegate.swift in Sources */,
 				0428A6EC1CF16B0E004EB337 /* NewsDetailViewController.swift in Sources */,
 				0454F13C1CF5AE6A0089FE4B /* Course.swift in Sources */,
 				04ED8B791CF0340D00293D0F /* UIScrollView+MJRefresh.m in Sources */,
 				043B98611CECBB7400532EC8 /* Result.swift in Sources */,
+				04BF88C51D243EED00062A8C /* NoticeDetailViewController.swift in Sources */,
+				04DCEDD01D236D220063749C /* NoticeViewController.swift in Sources */,
 				04ED8B6F1CF0340D00293D0F /* MJRefreshAutoStateFooter.m in Sources */,
 				043C2A561CDDEE0C005A94C6 /* News.swift in Sources */,
 				04ED8B751CF0340D00293D0F /* MJRefreshStateHeader.m in Sources */,
