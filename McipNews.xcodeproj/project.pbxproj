@@ -14,6 +14,7 @@
 		0420300A1CCD256500FF3361 /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 042030091CCD256500FF3361 /* CoreTelephony.framework */; };
 		0420300C1CCD257300FF3361 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0420300B1CCD257300FF3361 /* Foundation.framework */; };
 		0420300E1CCD258E00FF3361 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 0420300D1CCD258E00FF3361 /* libz.dylib */; };
+		0424A0A31D2567DE00A443B8 /* AddNoticeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0424A0A21D2567DE00A443B8 /* AddNoticeViewController.swift */; };
 		0428A6EC1CF16B0E004EB337 /* NewsDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0428A6EB1CF16B0E004EB337 /* NewsDetailViewController.swift */; };
 		0428A6F31CF1DFD9004EB337 /* Navigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0428A6F21CF1DFD9004EB337 /* Navigation.swift */; };
 		04315A3D1CE763A70031F325 /* StudentHomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04315A3C1CE763A70031F325 /* StudentHomeController.swift */; };
@@ -30,6 +31,9 @@
 		0454F13A1CF5A99B0089FE4B /* McipNews.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 0454F1381CF5A99B0089FE4B /* McipNews.xcdatamodeld */; };
 		0454F13C1CF5AE6A0089FE4B /* Course.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0454F13B1CF5AE6A0089FE4B /* Course.swift */; };
 		046BE3C31D24228C003C602C /* BoxViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046BE3C21D24228C003C602C /* BoxViewController.swift */; };
+		0482818A1D25897D0033DC4E /* SelectReceiverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048281891D25897D0033DC4E /* SelectReceiverViewController.swift */; };
+		0482818C1D258D790033DC4E /* SelectNewReceiverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0482818B1D258D790033DC4E /* SelectNewReceiverViewController.swift */; };
+		0482818E1D2595EA0033DC4E /* SelectSendTimeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0482818D1D2595EA0033DC4E /* SelectSendTimeViewController.swift */; };
 		048D327C1CF2098000D5656B /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048D327B1CF2098000D5656B /* HomeViewController.swift */; };
 		04B05B3D1CCD1956000EB09E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B05B3C1CCD1956000EB09E /* AppDelegate.swift */; };
 		04B05B551CCD1956000EB09E /* McipNewsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B05B541CCD1956000EB09E /* McipNewsTests.swift */; };
@@ -94,6 +98,7 @@
 		042030091CCD256500FF3361 /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
 		0420300B1CCD257300FF3361 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		0420300D1CCD258E00FF3361 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = "../../../../../Applications/Adobe Flash CC/AIR3.8/lib/aot/stub/libz.dylib"; sourceTree = "<group>"; };
+		0424A0A21D2567DE00A443B8 /* AddNoticeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddNoticeViewController.swift; sourceTree = "<group>"; };
 		0428A6EB1CF16B0E004EB337 /* NewsDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsDetailViewController.swift; sourceTree = "<group>"; };
 		0428A6F21CF1DFD9004EB337 /* Navigation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Navigation.swift; sourceTree = "<group>"; };
 		04315A3C1CE763A70031F325 /* StudentHomeController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StudentHomeController.swift; sourceTree = "<group>"; };
@@ -110,6 +115,9 @@
 		0454F1391CF5A99B0089FE4B /* McipNews.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = McipNews.xcdatamodel; sourceTree = "<group>"; };
 		0454F13B1CF5AE6A0089FE4B /* Course.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Course.swift; sourceTree = "<group>"; };
 		046BE3C21D24228C003C602C /* BoxViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BoxViewController.swift; sourceTree = "<group>"; };
+		048281891D25897D0033DC4E /* SelectReceiverViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectReceiverViewController.swift; sourceTree = "<group>"; };
+		0482818B1D258D790033DC4E /* SelectNewReceiverViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectNewReceiverViewController.swift; sourceTree = "<group>"; };
+		0482818D1D2595EA0033DC4E /* SelectSendTimeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectSendTimeViewController.swift; sourceTree = "<group>"; };
 		048D327B1CF2098000D5656B /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		04B05B391CCD1956000EB09E /* McipNews.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = McipNews.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		04B05B3C1CCD1956000EB09E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -448,6 +456,10 @@
 				04DCEDCF1D236D220063749C /* NoticeViewController.swift */,
 				046BE3C21D24228C003C602C /* BoxViewController.swift */,
 				04BF88C41D243EED00062A8C /* NoticeDetailViewController.swift */,
+				0424A0A21D2567DE00A443B8 /* AddNoticeViewController.swift */,
+				048281891D25897D0033DC4E /* SelectReceiverViewController.swift */,
+				0482818B1D258D790033DC4E /* SelectNewReceiverViewController.swift */,
+				0482818D1D2595EA0033DC4E /* SelectSendTimeViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -761,17 +773,21 @@
 			files = (
 				043C8CF91CCE923E00E53F7C /* Users.swift in Sources */,
 				0428A6F31CF1DFD9004EB337 /* Navigation.swift in Sources */,
+				0424A0A31D2567DE00A443B8 /* AddNoticeViewController.swift in Sources */,
 				04ED8B6D1CF0340D00293D0F /* MJRefreshAutoGifFooter.m in Sources */,
 				0454F1321CF5A3600089FE4B /* CellModel.swift in Sources */,
 				048D327C1CF2098000D5656B /* HomeViewController.swift in Sources */,
 				04315A411CE79C590031F325 /* Channel.swift in Sources */,
+				0482818E1D2595EA0033DC4E /* SelectSendTimeViewController.swift in Sources */,
 				04CCD8B51D12E8850080F399 /* CallViewController.swift in Sources */,
 				04ED8B701CF0340D00293D0F /* MJRefreshBackGifFooter.m in Sources */,
 				04315A3D1CE763A70031F325 /* StudentHomeController.swift in Sources */,
 				04CCD8B91D192D4E0080F399 /* StudentHomeChildViewController.swift in Sources */,
 				04B05B751CCD1A49000EB09E /* Constants.swift in Sources */,
+				0482818C1D258D790033DC4E /* SelectNewReceiverViewController.swift in Sources */,
 				04B05B761CCD1A49000EB09E /* LoginController.swift in Sources */,
 				04ED8B6A1CF0340D00293D0F /* MJRefreshComponent.m in Sources */,
+				0482818A1D25897D0033DC4E /* SelectReceiverViewController.swift in Sources */,
 				04ED8B741CF0340D00293D0F /* MJRefreshNormalHeader.m in Sources */,
 				043B985E1CECBB7400532EC8 /* DataTool.swift in Sources */,
 				04ED8B691CF0340D00293D0F /* MJRefreshBackFooter.m in Sources */,

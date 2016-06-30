@@ -52,15 +52,18 @@ class NoticeViewController: UIViewController {
         self.hidesBottomBarWhenPushed=false
     }
 
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
+        self.hidesBottomBarWhenPushed=true
+        self.navigationController?.pushViewController(segue.destinationViewController, animated: true)
+        self.hidesBottomBarWhenPushed=false
     }
-    */
+ 
 
 }
 
