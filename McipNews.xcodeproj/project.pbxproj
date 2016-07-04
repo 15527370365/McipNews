@@ -46,6 +46,15 @@
 		04BF88C51D243EED00062A8C /* NoticeDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04BF88C41D243EED00062A8C /* NoticeDetailViewController.swift */; };
 		04CCD8B51D12E8850080F399 /* CallViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04CCD8B41D12E8850080F399 /* CallViewController.swift */; };
 		04CCD8B91D192D4E0080F399 /* StudentHomeChildViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04CCD8B81D192D4E0080F399 /* StudentHomeChildViewController.swift */; };
+		04D6FF331D2AC4380093F99A /* LBXPermissions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D6FF2C1D2AC4380093F99A /* LBXPermissions.swift */; };
+		04D6FF341D2AC4380093F99A /* LBXScanLineAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D6FF2D1D2AC4380093F99A /* LBXScanLineAnimation.swift */; };
+		04D6FF351D2AC4380093F99A /* LBXScanNetAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D6FF2E1D2AC4380093F99A /* LBXScanNetAnimation.swift */; };
+		04D6FF361D2AC4380093F99A /* LBXScanView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D6FF2F1D2AC4380093F99A /* LBXScanView.swift */; };
+		04D6FF371D2AC4380093F99A /* LBXScanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D6FF301D2AC4380093F99A /* LBXScanViewController.swift */; };
+		04D6FF381D2AC4380093F99A /* LBXScanViewStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D6FF311D2AC4380093F99A /* LBXScanViewStyle.swift */; };
+		04D6FF391D2AC4380093F99A /* LBXScanWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D6FF321D2AC4380093F99A /* LBXScanWrapper.swift */; };
+		04D6FF3B1D2AC59C0093F99A /* CodeScan.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 04D6FF3A1D2AC59C0093F99A /* CodeScan.bundle */; };
+		04D6FF401D2AC8890093F99A /* ScanCodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D6FF3F1D2AC8890093F99A /* ScanCodeViewController.swift */; };
 		04DCEDD01D236D220063749C /* NoticeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04DCEDCF1D236D220063749C /* NoticeViewController.swift */; };
 		04ED8B681CF0340D00293D0F /* MJRefreshAutoFooter.m in Sources */ = {isa = PBXBuildFile; fileRef = 04ED8B3C1CF0340D00293D0F /* MJRefreshAutoFooter.m */; };
 		04ED8B691CF0340D00293D0F /* MJRefreshBackFooter.m in Sources */ = {isa = PBXBuildFile; fileRef = 04ED8B3E1CF0340D00293D0F /* MJRefreshBackFooter.m */; };
@@ -138,6 +147,15 @@
 		04BF88C41D243EED00062A8C /* NoticeDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoticeDetailViewController.swift; sourceTree = "<group>"; };
 		04CCD8B41D12E8850080F399 /* CallViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CallViewController.swift; sourceTree = "<group>"; };
 		04CCD8B81D192D4E0080F399 /* StudentHomeChildViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StudentHomeChildViewController.swift; sourceTree = "<group>"; };
+		04D6FF2C1D2AC4380093F99A /* LBXPermissions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LBXPermissions.swift; sourceTree = "<group>"; };
+		04D6FF2D1D2AC4380093F99A /* LBXScanLineAnimation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LBXScanLineAnimation.swift; sourceTree = "<group>"; };
+		04D6FF2E1D2AC4380093F99A /* LBXScanNetAnimation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LBXScanNetAnimation.swift; sourceTree = "<group>"; };
+		04D6FF2F1D2AC4380093F99A /* LBXScanView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LBXScanView.swift; sourceTree = "<group>"; };
+		04D6FF301D2AC4380093F99A /* LBXScanViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LBXScanViewController.swift; sourceTree = "<group>"; };
+		04D6FF311D2AC4380093F99A /* LBXScanViewStyle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LBXScanViewStyle.swift; sourceTree = "<group>"; };
+		04D6FF321D2AC4380093F99A /* LBXScanWrapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LBXScanWrapper.swift; sourceTree = "<group>"; };
+		04D6FF3A1D2AC59C0093F99A /* CodeScan.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = CodeScan.bundle; sourceTree = "<group>"; };
+		04D6FF3F1D2AC8890093F99A /* ScanCodeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScanCodeViewController.swift; sourceTree = "<group>"; };
 		04DCEDCF1D236D220063749C /* NoticeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoticeViewController.swift; sourceTree = "<group>"; };
 		04ED8B3B1CF0340D00293D0F /* MJRefreshAutoFooter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJRefreshAutoFooter.h; sourceTree = "<group>"; };
 		04ED8B3C1CF0340D00293D0F /* MJRefreshAutoFooter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJRefreshAutoFooter.m; sourceTree = "<group>"; };
@@ -251,6 +269,7 @@
 		043B98581CECBAA500532EC8 /* Lib */ = {
 			isa = PBXGroup;
 			children = (
+				04D6FF2B1D2AC3DE0093F99A /* SwiftScan */,
 				04ED8B671CF0340D00293D0F /* MJRefresh */,
 				043B98591CECBACB00532EC8 /* MBProgressHUD */,
 			);
@@ -410,6 +429,9 @@
 		04B05B3B1CCD1956000EB09E /* McipNews */ = {
 			isa = PBXGroup;
 			children = (
+				04D6FF3D1D2AC7F50093F99A /* ScanCode */,
+				04D6FF3C1D2AC7B30093F99A /* Resources */,
+				04D6FF3A1D2AC59C0093F99A /* CodeScan.bundle */,
 				04DCEDD11D236D2A0063749C /* Notice */,
 				048D32791CF2095A00D5656B /* Home */,
 				043B98651CECC23800532EC8 /* StudentHome */,
@@ -440,6 +462,43 @@
 				04B05B611CCD1956000EB09E /* Info.plist */,
 			);
 			path = McipNewsUITests;
+			sourceTree = "<group>";
+		};
+		04D6FF2B1D2AC3DE0093F99A /* SwiftScan */ = {
+			isa = PBXGroup;
+			children = (
+				04D6FF2C1D2AC4380093F99A /* LBXPermissions.swift */,
+				04D6FF2D1D2AC4380093F99A /* LBXScanLineAnimation.swift */,
+				04D6FF2E1D2AC4380093F99A /* LBXScanNetAnimation.swift */,
+				04D6FF2F1D2AC4380093F99A /* LBXScanView.swift */,
+				04D6FF301D2AC4380093F99A /* LBXScanViewController.swift */,
+				04D6FF311D2AC4380093F99A /* LBXScanViewStyle.swift */,
+				04D6FF321D2AC4380093F99A /* LBXScanWrapper.swift */,
+			);
+			path = SwiftScan;
+			sourceTree = "<group>";
+		};
+		04D6FF3C1D2AC7B30093F99A /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		04D6FF3D1D2AC7F50093F99A /* ScanCode */ = {
+			isa = PBXGroup;
+			children = (
+				04D6FF3E1D2AC85E0093F99A /* Controller */,
+			);
+			path = ScanCode;
+			sourceTree = "<group>";
+		};
+		04D6FF3E1D2AC85E0093F99A /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				04D6FF3F1D2AC8890093F99A /* ScanCodeViewController.swift */,
+			);
+			path = Controller;
 			sourceTree = "<group>";
 		};
 		04DCEDD11D236D2A0063749C /* Notice */ = {
@@ -695,6 +754,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				04D6FF3B1D2AC59C0093F99A /* CodeScan.bundle in Resources */,
 				04315A3F1CE798930031F325 /* StudentHome.plist in Resources */,
 				04ED8B761CF0340D00293D0F /* MJRefresh.bundle in Resources */,
 				04ED8B7C1CF07ED100293D0F /* Assets.xcassets in Resources */,
@@ -781,6 +841,7 @@
 				0482818E1D2595EA0033DC4E /* SelectSendTimeViewController.swift in Sources */,
 				04CCD8B51D12E8850080F399 /* CallViewController.swift in Sources */,
 				04ED8B701CF0340D00293D0F /* MJRefreshBackGifFooter.m in Sources */,
+				04D6FF341D2AC4380093F99A /* LBXScanLineAnimation.swift in Sources */,
 				04315A3D1CE763A70031F325 /* StudentHomeController.swift in Sources */,
 				04CCD8B91D192D4E0080F399 /* StudentHomeChildViewController.swift in Sources */,
 				04B05B751CCD1A49000EB09E /* Constants.swift in Sources */,
@@ -788,9 +849,11 @@
 				04B05B761CCD1A49000EB09E /* LoginController.swift in Sources */,
 				04ED8B6A1CF0340D00293D0F /* MJRefreshComponent.m in Sources */,
 				0482818A1D25897D0033DC4E /* SelectReceiverViewController.swift in Sources */,
+				04D6FF331D2AC4380093F99A /* LBXPermissions.swift in Sources */,
 				04ED8B741CF0340D00293D0F /* MJRefreshNormalHeader.m in Sources */,
 				043B985E1CECBB7400532EC8 /* DataTool.swift in Sources */,
 				04ED8B691CF0340D00293D0F /* MJRefreshBackFooter.m in Sources */,
+				04D6FF351D2AC4380093F99A /* LBXScanNetAnimation.swift in Sources */,
 				043B98601CECBB7400532EC8 /* NetworkResult.swift in Sources */,
 				04ED8B711CF0340D00293D0F /* MJRefreshBackNormalFooter.m in Sources */,
 				04ED8B7A1CF0340D00293D0F /* UIView+MJExtension.m in Sources */,
@@ -807,8 +870,10 @@
 				0406285F1D217FB500665F49 /* Item.swift in Sources */,
 				04B05B3D1CCD1956000EB09E /* AppDelegate.swift in Sources */,
 				0428A6EC1CF16B0E004EB337 /* NewsDetailViewController.swift in Sources */,
+				04D6FF401D2AC8890093F99A /* ScanCodeViewController.swift in Sources */,
 				0454F13C1CF5AE6A0089FE4B /* Course.swift in Sources */,
 				04ED8B791CF0340D00293D0F /* UIScrollView+MJRefresh.m in Sources */,
+				04D6FF381D2AC4380093F99A /* LBXScanViewStyle.swift in Sources */,
 				043B98611CECBB7400532EC8 /* Result.swift in Sources */,
 				04BF88C51D243EED00062A8C /* NoticeDetailViewController.swift in Sources */,
 				04DCEDD01D236D220063749C /* NoticeViewController.swift in Sources */,
@@ -816,10 +881,13 @@
 				043C2A561CDDEE0C005A94C6 /* News.swift in Sources */,
 				04ED8B751CF0340D00293D0F /* MJRefreshStateHeader.m in Sources */,
 				04F2BE141CF3593B002E6628 /* ButtonTool.swift in Sources */,
+				04D6FF371D2AC4380093F99A /* LBXScanViewController.swift in Sources */,
 				04ED8B731CF0340D00293D0F /* MJRefreshGifHeader.m in Sources */,
 				04ED8B781CF0340D00293D0F /* UIScrollView+MJExtension.m in Sources */,
 				04B05B781CCD1A49000EB09E /* MBProgressHUD.m in Sources */,
+				04D6FF361D2AC4380093F99A /* LBXScanView.swift in Sources */,
 				04F2BE121CF35610002E6628 /* ItemsViewController.swift in Sources */,
+				04D6FF391D2AC4380093F99A /* LBXScanWrapper.swift in Sources */,
 				04ED8B681CF0340D00293D0F /* MJRefreshAutoFooter.m in Sources */,
 				04ED8B721CF0340D00293D0F /* MJRefreshBackStateFooter.m in Sources */,
 			);

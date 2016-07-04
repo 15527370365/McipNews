@@ -13,6 +13,7 @@ class AddNoticeViewController: UIViewController {
     @IBOutlet var sendBtn: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.view.backgroundColor = UIColor(red:0.98, green:0.98, blue:0.98, alpha:1)
         sendBtn.backgroundColor = UIColor(red:0.74, green:0.74, blue:0.74, alpha:1)
         // Do any additional setup after loading the view.
     }
@@ -22,6 +23,9 @@ class AddNoticeViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    @IBAction func backBtnEvent(sender: AnyObject) {
+        self.navigationController?.popViewControllerAnimated(true)
+    }
 
     /*
     // MARK: - Navigation

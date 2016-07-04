@@ -21,6 +21,10 @@ class SelectSendTimeViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    @IBAction func backBtnEvent(sender: AnyObject) {
+        self.navigationController?.popViewControllerAnimated(true)
+    }
+    
 
     /*
     // MARK: - Navigation

@@ -92,6 +92,14 @@ class HomeViewController:UIViewController {
         self.navigationController?.pushViewController(vc, animated: true)
         self.hidesBottomBarWhenPushed=false
     }
+    
+    @IBAction func codeBtnEvents(sender: UIBarButtonItem) {
+        let vc = ScanCodeViewController()
+        self.hidesBottomBarWhenPushed=true
+        self.navigationController?.pushViewController(vc, animated: true)
+        self.hidesBottomBarWhenPushed=false
+    }
+    
 
     /*
     // MARK: - Navigation

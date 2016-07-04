@@ -720,7 +720,11 @@
                     <navigationItem key="navigationItem" id="BUq-0c-D5o">
                         <rightBarButtonItems>
                             <barButtonItem image="home_quickenter" id="77X-JF-YCf"/>
-                            <barButtonItem image="home_code" id="Pdq-4Z-nf0"/>
+                            <barButtonItem image="home_code" id="Pdq-4Z-nf0">
+                                <connections>
+                                    <action selector="codeBtnEvents:" destination="AM7-sO-tWp" id="u4g-eH-sWn"/>
+                                </connections>
+                            </barButtonItem>
                         </rightBarButtonItems>
                     </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
@@ -1058,7 +1062,7 @@
         <!--通知-->
         <scene sceneID="0Ph-l7-LCF">
             <objects>
-                <viewController hidesBottomBarWhenPushed="YES" id="bHX-rO-GGG" customClass="NoticeViewController" customModule="McipNews" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="bHX-rO-GGG" customClass="NoticeViewController" customModule="McipNews" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Qhl-cI-52p"/>
                         <viewControllerLayoutGuide type="bottom" id="MbL-uf-Vpt"/>
@@ -1171,7 +1175,7 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <segue destination="Nl0-W3-g00" kind="show" id="wLD-7r-IiQ"/>
+                                    <segue destination="boN-ha-dg6" kind="show" id="0Yz-gr-gBm"/>
                                 </connections>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1MB-uF-XEo">
@@ -1409,7 +1413,11 @@
                     <navigationItem key="navigationItem" title="通知" id="MDI-87-oR4">
                         <rightBarButtonItems>
                             <barButtonItem image="home_quickenter" id="o1p-Nf-o3b"/>
-                            <barButtonItem image="home_code" id="weW-Qu-WC8"/>
+                            <barButtonItem image="home_code" id="weW-Qu-WC8">
+                                <connections>
+                                    <action selector="codeBtnEvent:" destination="bHX-rO-GGG" id="1it-Si-xdh"/>
+                                </connections>
+                            </barButtonItem>
                         </rightBarButtonItems>
                     </navigationItem>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
@@ -1420,7 +1428,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Gub-aq-jpr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1036.5" y="2960.5"/>
+            <point key="canvasLocation" x="1568.5" y="2960.5"/>
         </scene>
         <!--系统盒子-->
         <scene sceneID="EEh-7g-ImF">
@@ -1955,7 +1963,7 @@
         <!--新建通知-->
         <scene sceneID="LFE-Ph-ggU">
             <objects>
-                <viewController id="boN-ha-dg6" customClass="AddNoticeViewController" customModule="McipNews" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="addNotice" hidesBottomBarWhenPushed="YES" id="boN-ha-dg6" customClass="AddNoticeViewController" customModule="McipNews" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Yfe-Yd-euP"/>
                         <viewControllerLayoutGuide type="bottom" id="SER-WN-NGn"/>
@@ -1982,63 +1990,49 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aoB-rt-VmM">
-                                        <rect key="frame" x="341" y="6" width="26" height="26"/>
+                                        <rect key="frame" x="125" y="2" width="35" height="35"/>
                                         <state key="normal" title="Button" image="creatNotice_addReceiver"/>
                                         <connections>
-                                            <segue destination="zBb-Fn-rFP" kind="show" id="xqn-dj-e42"/>
+                                            <segue destination="Es1-rW-9dM" kind="show" id="7on-hP-qVl"/>
                                         </connections>
                                     </button>
-                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2TC-B2-8ZX">
-                                        <rect key="frame" x="125" y="5" width="180" height="30"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                    </view>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="atZ-e5-283">
                                 <rect key="frame" x="0.0" y="152" width="375" height="40"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6D6-v2-ZcR">
-                                        <rect key="frame" x="342" y="9" width="25" height="22"/>
-                                        <state key="normal" title="Button" image="creatNotice_arrow_right"/>
-                                        <connections>
-                                            <segue destination="NsM-EQ-W56" kind="show" id="DVy-S8-WHb"/>
-                                        </connections>
-                                    </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="发送时间：" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VYv-Ch-Sa3">
                                         <rect key="frame" x="20" y="9" width="85" height="21"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="立即发送" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pXB-Kv-AK2">
-                                        <rect key="frame" x="125" y="9" width="180" height="21"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" red="0.54117647059999996" green="0.54117647059999996" blue="0.54117647059999996" alpha="1" colorSpace="calibratedRGB"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ie3-sG-Lm3">
+                                        <rect key="frame" x="127" y="4" width="70" height="30"/>
+                                        <state key="normal" title="立即发送">
+                                            <color key="titleColor" red="0.56470588239999997" green="0.56470588239999997" blue="0.56470588239999997" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <connections>
+                                            <segue destination="amE-jo-JnZ" kind="show" id="CjY-n0-5ZB"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="LXQ-gV-uwx">
                                 <rect key="frame" x="0.0" y="193" width="375" height="40"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZKH-RC-xNF">
-                                        <rect key="frame" x="342" y="9" width="25" height="22"/>
-                                        <state key="normal" title="Button" image="creatNotice_attachment"/>
-                                    </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="附件：" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="R6s-GA-mus">
                                         <rect key="frame" x="20" y="9" width="85" height="21"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mWC-QI-vsL">
-                                        <rect key="frame" x="125" y="9" width="180" height="21"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" red="0.54117647059999996" green="0.54117647059999996" blue="0.54117647059999996" alpha="1" colorSpace="calibratedRGB"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZKH-RC-xNF">
+                                        <rect key="frame" x="125" y="2" width="46" height="34"/>
+                                        <state key="normal" title="Button" image="creatNotice_attachment"/>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
@@ -2084,7 +2078,11 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" title="新建通知" id="Xn3-N1-DPM">
-                        <barButtonItem key="leftBarButtonItem" title="取消" id="bc3-Tn-cX4"/>
+                        <barButtonItem key="leftBarButtonItem" title="取消" id="bc3-Tn-cX4">
+                            <connections>
+                                <action selector="backBtnEvent:" destination="boN-ha-dg6" id="Pif-iM-mJe"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="按时" id="9fn-V7-etj">
                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="OAX-h5-dMc">
                                 <rect key="frame" x="299" y="7" width="60" height="30"/>
@@ -2103,12 +2101,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZcP-D8-kKo" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3033.5" y="2960.5"/>
+            <point key="canvasLocation" x="2578.5" y="2960.5"/>
         </scene>
         <!--发送时间-->
         <scene sceneID="aX5-vd-32W">
             <objects>
-                <viewController id="amE-jo-JnZ" customClass="SelectSendTimeViewController" customModule="McipNews" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController hidesBottomBarWhenPushed="YES" id="amE-jo-JnZ" customClass="SelectSendTimeViewController" customModule="McipNews" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Lvq-a6-QNq"/>
                         <viewControllerLayoutGuide type="bottom" id="dEP-f7-R4z"/>
@@ -2181,6 +2179,9 @@
                                 <state key="normal" title="  返回" image="back">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="backBtnEvent:" destination="amE-jo-JnZ" eventType="touchUpInside" id="nbC-2w-SV5"/>
+                                </connections>
                             </button>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" id="VYW-q9-v1s">
@@ -2197,12 +2198,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GIJ-lp-rAT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4139.5" y="2960.5"/>
+            <point key="canvasLocation" x="3643.5" y="3522.5"/>
         </scene>
         <!--选择接收人-->
         <scene sceneID="f2f-Mt-b5n">
             <objects>
-                <viewController id="Es1-rW-9dM" customClass="SelectReceiverViewController" customModule="McipNews" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController hidesBottomBarWhenPushed="YES" id="Es1-rW-9dM" customClass="SelectReceiverViewController" customModule="McipNews" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Oai-tK-5Rd"/>
                         <viewControllerLayoutGuide type="bottom" id="ukb-aF-6Nx"/>
@@ -2224,7 +2225,7 @@
                                         <rect key="frame" x="329" y="18" width="26" height="26"/>
                                         <state key="normal" title="Button" image="creatNotice_arrow_right"/>
                                         <connections>
-                                            <segue destination="nYk-UH-b0j" kind="show" id="uPs-4j-d1X"/>
+                                            <segue destination="gPw-Tx-XVM" kind="show" id="uB0-jc-RdY"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -2243,7 +2244,7 @@
                                 <color key="backgroundColor" red="0.89803921568627454" green="0.89803921568627454" blue="0.89803921568627454" alpha="1" colorSpace="calibratedRGB"/>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="62" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="uQ9-rN-yJn">
-                                <rect key="frame" x="0.0" y="138" width="375" height="480"/>
+                                <rect key="frame" x="0.0" y="138" width="375" height="529"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="receiverCell" rowHeight="62" id="Gmm-sl-IpZ">
@@ -2274,7 +2275,11 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" title="选择接收人" id="O0G-Fi-Vd8">
-                        <barButtonItem key="leftBarButtonItem" title="取消" id="az4-KE-bNP"/>
+                        <barButtonItem key="leftBarButtonItem" title="取消" id="az4-KE-bNP">
+                            <connections>
+                                <action selector="backBtnEvent:" destination="Es1-rW-9dM" id="xA6-q2-Oqi"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" id="EU2-Wu-QDm">
                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Tnt-fZ-dR6">
                                 <rect key="frame" x="299" y="7" width="60" height="30"/>
@@ -2292,12 +2297,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fcu-eF-C1C" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4139.5" y="2182.5"/>
+            <point key="canvasLocation" x="3643.5" y="2726.5"/>
         </scene>
         <!--选择新的接收人-->
         <scene sceneID="Mia-ED-qiK">
             <objects>
-                <viewController id="gPw-Tx-XVM" customClass="SelectNewReceiverViewController" customModule="McipNews" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController hidesBottomBarWhenPushed="YES" id="gPw-Tx-XVM" customClass="SelectNewReceiverViewController" customModule="McipNews" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="i7f-GY-bbe"/>
                         <viewControllerLayoutGuide type="bottom" id="QGT-9o-U8i"/>
@@ -2307,7 +2312,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="61" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="r7s-nZ-dwI">
-                                <rect key="frame" x="0.0" y="64" width="375" height="554"/>
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="newReceiverCell" rowHeight="61" id="2xa-uS-g8D">
@@ -2338,7 +2343,11 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" title="选择新的接收人" id="VEm-y2-fnd">
-                        <barButtonItem key="leftBarButtonItem" title="取消" id="yv6-bD-W9J"/>
+                        <barButtonItem key="leftBarButtonItem" title="取消" id="yv6-bD-W9J">
+                            <connections>
+                                <action selector="backBtnEvent:" destination="gPw-Tx-XVM" id="Dad-oC-80a"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" id="CUa-Cu-wbb">
                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="UQy-1M-l6l">
                                 <rect key="frame" x="299" y="7" width="60" height="30"/>
@@ -2356,7 +2365,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pqU-wl-XLA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5173.5" y="2182.5"/>
+            <point key="canvasLocation" x="4321.5" y="2726.5"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="VzD-v4-Isk">
@@ -2731,82 +2740,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="g4b-XL-m3R" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1568.5" y="3770.5"/>
-        </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="Ltr-Yx-NEb">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Nl0-W3-g00" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="8S9-SW-f1O">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="boN-ha-dg6" kind="relationship" relationship="rootViewController" id="c3h-8i-85S"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Z7M-iH-nyP" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2085.5" y="2960.5"/>
-        </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="18L-8p-rHX">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="zBb-Fn-rFP" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="HVU-4F-VOO">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="Es1-rW-9dM" kind="relationship" relationship="rootViewController" id="W8B-S9-yM5"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="2oi-Fq-lWR" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="3636.5" y="2182.5"/>
-        </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="d12-T1-jog">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="nYk-UH-b0j" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="R62-I8-tL2">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="gPw-Tx-XVM" kind="relationship" relationship="rootViewController" id="l2S-lp-utV"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="JCw-1M-2dH" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="4650.5" y="2182.5"/>
-        </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="D61-Pk-xL9">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="NsM-EQ-W56" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="vKh-Id-ma3">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="amE-jo-JnZ" kind="relationship" relationship="rootViewController" id="pjL-1K-4ZG"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="POe-cJ-sab" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="3636.5" y="2960.5"/>
         </scene>
     </scenes>
     <resources>

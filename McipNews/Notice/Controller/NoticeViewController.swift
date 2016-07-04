@@ -51,7 +51,48 @@ class NoticeViewController: UIViewController {
         self.navigationController?.pushViewController(vc, animated: true)
         self.hidesBottomBarWhenPushed=false
     }
-
+    
+    
+    
+    @IBAction func codeBtnEvent(sender: UIBarButtonItem) {
+        //设置扫码区域参数
+        var style = LBXScanViewStyle()
+        
+        style.centerUpOffset = 60;
+        style.xScanRetangleOffset = 30;
+        
+        if UIScreen.mainScreen().bounds.size.height <= 480
+        {
+            //3.5inch 显示的扫码缩小
+            style.centerUpOffset = 40;
+            style.xScanRetangleOffset = 20;
+        }
+        
+        style.red_notRecoginitonArea = 0.4
+        style.green_notRecoginitonArea = 0.4
+        style.blue_notRecoginitonArea = 0.4
+        style.alpa_notRecoginitonArea = 0.4
+        
+        
+        style.photoframeAngleStyle = LBXScanViewPhotoframeAngleStyle.Inner;
+        style.photoframeLineW = 2.0;
+        style.photoframeAngleW = 16;
+        style.photoframeAngleH = 16;
+        
+        style.isNeedShowRetangle = false;
+        
+        style.anmiationStyle = LBXScanViewAnimationStyle.NetGrid;
+        style.animationImage = UIImage(named: "CodeScan.bundle/qrcode_scan_full_net")
+        
+        
+        
+        let vc = LBXScanViewController();
+        
+        vc.scanStyle = style
+        self.hidesBottomBarWhenPushed=true
+        self.navigationController?.pushViewController(vc, animated: true)
+        self.hidesBottomBarWhenPushed=false
+    }
     
     // MARK: - Navigation
 
@@ -59,9 +100,9 @@ class NoticeViewController: UIViewController {
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
-        self.hidesBottomBarWhenPushed=true
-        self.navigationController?.pushViewController(segue.destinationViewController, animated: true)
-        self.hidesBottomBarWhenPushed=false
+//        self.hidesBottomBarWhenPushed=true
+//        self.navigationController?.pushViewController(segue.destinationViewController, animated: true)
+//        self.hidesBottomBarWhenPushed=false
     }
  
 
