@@ -15,7 +15,6 @@ import SwiftyJSON
 
 
 
-// TODO: 此结构体存在大量重复代码，需要进行重构
 struct DataTool {
     
     static let imageUrlKey = "imageUrlKey"
@@ -158,6 +157,174 @@ struct DataTool {
             }
         }
     }
+    
+    static func loadNotices(begin:NSNumber,completionHandler:(flag:Bool,data:[Notices],systemcount:NSNumber,strangercount:NSNumber)->Void){
+        let headers = ["consumer_key": ALAMOFIRE_KEY,"userid":userid,"token":token]
+        let path = "rpc/get_notices"
+        let parameters = ["path":path,"data":"{\"_userid\":\"\(userid)\"}"]
+        let json = fetchJsonFromNet(post, parameters, headers)
+        json.jsonToModel(nil) { result in
+            var notices:[Notices] = []
+            if result["code"].string=="200" {
+                let data=JSON(data: result["data"].stringValue.dataUsingEncoding(NSUTF8StringEncoding)!)
+                //var array:[Channel]
+                for i in 0..<data["mynotice"].count{
+                    notices.append(Notices(data: data["mynotice"][i]))
+                }
+                completionHandler(flag:true,data:notices,systemcount:data["systemcount"].intValue,strangercount:data["strangercount"].intValue)
+            }else{
+                completionHandler(flag:false,data:notices,systemcount:0,strangercount:0)
+            }
+        }
+    }
+    
+    static func loadBoxNotices(begin:NSNumber,type:NSNumber,completionHandler:(flag:Bool,data:[Notices])->Void){
+        var path = ""
+        if type == 0 {
+            path = "rpc/get_system_notices"
+        }else{
+            path = "rpc/get_strangers_notices"
+        }
+        let headers = ["consumer_key": ALAMOFIRE_KEY,"userid":userid,"token":token]
+        let parameters = ["path":path,"data":"{\"_userid\":\"\(userid)\",\"_beginindex\":\(begin),\"_num\":20}"]
+        //print(parameters)
+        let json = fetchJsonFromNet(post, parameters, headers)
+        json.jsonToModel(nil) { result in
+            //print(result)
+            var notices:[Notices] = []
+            if result["code"].string=="200" {
+                let data=JSON(data: result["data"].stringValue.dataUsingEncoding(NSUTF8StringEncoding)!)
+                //var array:[Channel]
+                for i in 0..<data.count{
+                    notices.append(Notices(data: data[i]))
+                }
+                completionHandler(flag:true,data:notices)
+            }else{
+                completionHandler(flag:false,data:notices)
+            }
+        }
+    }
+    static func loadReceiver(completionHandler:(flag:Bool,data:[ReceiverCell])->Void){
+        let headers = ["consumer_key": ALAMOFIRE_KEY,"userid":userid,"token":token]
+        let parameters = ["path":"rpc/get_my_groups","data":"{\"_userid\":\""+userid+"\"}"]
+        //print(parameters)
+        let json = fetchJsonFromNet(post, parameters, headers)
+        json.jsonToModel(nil) { result in
+            //print(result)
+            var receivers:[ReceiverCell] = []
+            if result["code"].string=="200" {
+                let data=JSON(data: result["data"].stringValue.dataUsingEncoding(NSUTF8StringEncoding)!)
+                //var array:[Channel]
+                for i in 0..<data.count{
+                    receivers.append(ReceiverCell(json: data[i]))
+                }
+                completionHandler(flag:true,data:receivers)
+            }else{
+                completionHandler(flag:false,data:receivers)
+            }
+        }
+    }
+    
+    
+    
+    static func loadNoticesReply(noticeid:NSNumber,completionHandler:(flag:Bool,data:[ReplyCell])->Void){
+        let headers = ["consumer_key": ALAMOFIRE_KEY,"userid":userid,"token":token]
+        let parameters = ["path":"rpc/get_reply_details","data":"{\"_noticeid\":\(noticeid)}"]
+        //print(parameters)
+        let json = fetchJsonFromNet(post, parameters, headers)
+        json.jsonToModel(nil) { result in
+            //print(result)
+            var replys:[ReplyCell] = []
+            if result["code"].string=="200" {
+                let data=JSON(data: result["data"].stringValue.dataUsingEncoding(NSUTF8StringEncoding)!)
+                //var array:[Channel]
+                for i in 0..<data.count{
+                    replys.append(ReplyCell(json: data[i]))
+                }
+                completionHandler(flag:true,data:replys)
+            }else{
+                completionHandler(flag:false,data:replys)
+            }
+        }
+    }
+    static func replyNotice(noticeid:NSNumber,nruserid:String,nreplycontent:String,completionHandler:(flag:Bool)->Void){
+        let headers = ["consumer_key": ALAMOFIRE_KEY,"userid":userid,"token":token]
+        let parameters = ["path":"rpc/fun_insert_noticereply","data":"{\"_nrnoticeid\":\(noticeid),\"_nruserid\":\""+nruserid+"\",\"_nrruserids\":null,\"_nreplycontent\":\""+nreplycontent+"\"}"]
+//        {"_nrnoticeid":425, "_nruserid":"1309030411", "_nrruserids":null, "_nreplycontent":"哈哈哈嘻嘻嘻"}
+        print(parameters)
+        let json = fetchJsonFromNet(post, parameters, headers)
+        json.jsonToModel(nil) { result in
+            if result["code"].string=="200" {
+                completionHandler(flag:true)
+            }else{
+                completionHandler(flag:false)
+            }
+        }
+    }
+    
+    static func sendNotice(select:Array<ReceiverCell>,content:String,completionHandler:(flag:Bool)->Void){
+        let headers = ["consumer_key": ALAMOFIRE_KEY,"userid":userid,"token":token]
+        var nuserid = ""
+        for i in 0..<select.count{
+            for j in 0..<select[i].members.count{
+                if !(i == 0 && j == 0) {
+                    nuserid+=";"
+                }
+                nuserid+=select[i].members[j].userid
+            }
+        }
+        let type = 1
+        let remindtype = 0
+        let parameters = ["nuserid":nuserid,"ndeadline":"","ncontent":content,"ntype":"\(type)","nremindtype":"\(remindtype)"]
+        print(parameters)
+        let json = fetchJsonFromNet(post, parameters, headers)
+        json.jsonToModel(nil) { result in
+            if result["code"].string=="200" {
+                completionHandler(flag:true)
+            }else{
+                completionHandler(flag:false)
+            }
+        }
+    }
+    
+    static func loadRollCall(info:String,completionHandler:(flag:Bool,content:String)->Void){
+        let headers = ["consumer_key": ALAMOFIRE_KEY,"userid":userid,"token":token]
+        let parameters = ["info":info]
+        //print(parameters)
+        let json = fetchJsonFromNet(server+"/rollcall/getScancode", parameters, headers)
+        json.jsonToModel(nil) { result in
+            var content = ""
+            var flag = false
+            switch result["code"].stringValue{
+                case "10000":
+                    content = "在radis中找不到该token"
+                case "10001":
+                    content = "token与userid不匹配"
+                case "10002":
+                    content = "cheader中没有token或者没有userid信息"
+                case "60000":
+                    content = "点名成功"
+                case "60001":
+                    content = "非点名二维码"
+                case "60002":
+                    content = "没有参加此次点名的权限"
+                case "60003":
+                    content = "已通过二维码验证，无需重复验证"
+                    flag = true
+                case "60004":
+                    content = "二维码验证成功"
+                    flag = true
+                case "60005":
+                    content = "更新用户信息时出错"
+                case "60006":
+                    content = "未完成人脸采集"
+                default:
+                    content = "二维码无效"
+            }
+            completionHandler(flag: flag,content: content)
+        }
+    }
+    
 }                                                 
 
 extension NSDate {

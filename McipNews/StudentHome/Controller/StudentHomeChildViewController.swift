@@ -11,8 +11,8 @@ import UIKit
 class StudentHomeChildViewController: UIViewController {
     
     var titles:[String:Channel]!
-    let titleSort = ["学生工作","思政教育","创业就业","讲座引导","规章制度"]
-    let titleIndex = ["学生工作":0,"思政教育":1,"创业就业":2,"讲座引导":3,"规章制度":4]
+    let titleSort = ["学生工作","思政教育","创业就业","讲座引导","党政建设"]
+    let titleIndex = ["学生工作":0,"思政教育":1,"创业就业":2,"讲座引导":3,"党政建设":4]
     var lastPage = 0
     var currentPage:Int = 0 {
         didSet {

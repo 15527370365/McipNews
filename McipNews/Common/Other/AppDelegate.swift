@@ -47,7 +47,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             for user:Users in results as! [Users] {
                 userid=user.userid!
                 token=user.token!
-                //print("test")
+                image = user.image!
             }
             if results?.count != 0 {
                 let storyboard = UIStoryboard(name: "Main", bundle: nil)

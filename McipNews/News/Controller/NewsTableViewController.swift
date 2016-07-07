@@ -21,7 +21,6 @@ class NewsTableViewController: UIViewController{
         super.viewDidLoad()
         self.tableView.delegate=self
         self.tableView.mj_header = MJRefreshNormalHeader(refreshingTarget: self,refreshingAction: #selector(NewsTableViewController.requestInfo))
-        self.tableView.mj_footer = MJRefreshAutoNormalFooter(refreshingTarget: self, refreshingAction: #selector(NewsTableViewController.requestMoreInfo))
         self.tableView.mj_header.beginRefreshing()
         tableView.tableFooterView=UIView.init(frame: CGRectZero)
         // Do any additional setup after loading the view.
@@ -44,6 +43,9 @@ class NewsTableViewController: UIViewController{
                 self.tableView.mj_header.endRefreshing()
                 if newsArray.state{
                     self.newsDatas = newsArray.0 + self.newsDatas
+                    if self.newsDatas.count > 10{
+                        self.tableView.mj_footer = MJRefreshAutoNormalFooter(refreshingTarget: self, refreshingAction: #selector(NewsTableViewController.requestMoreInfo))
+                    }
                     self.tableView.reloadData()
                 }
                 else{
@@ -56,6 +58,9 @@ class NewsTableViewController: UIViewController{
                 self.tableView.mj_header.endRefreshing()
                 if newsArray.state{
                     self.newsDatas = newsArray.0 + self.newsDatas
+                    if self.newsDatas.count > 10{
+                        self.tableView.mj_footer = MJRefreshAutoNormalFooter(refreshingTarget: self, refreshingAction: #selector(NewsTableViewController.requestMoreInfo))
+                    }
                     self.tableView.reloadData()
                 }
                 else{

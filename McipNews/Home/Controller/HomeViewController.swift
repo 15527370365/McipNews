@@ -20,7 +20,7 @@ class HomeViewController:UIViewController {
     @IBOutlet var weatherImage: UIImageView!
     @IBOutlet var weatherLabel: UILabel!
     
-    var week:String = "第\(CommonFunction.getWeek())周"
+    var week:String = "第19周"
     var cells:[CellModel]=[]
     
     override func viewDidLoad() {
@@ -38,7 +38,13 @@ class HomeViewController:UIViewController {
         userImage.layer.cornerRadius = userImage.bounds.size.width * 0.5
         userImage.layer.borderWidth = 2
         userImage.layer.borderColor = UIColor.whiteColor().CGColor
+        if image.lengthOfBytesUsingEncoding(NSUTF8StringEncoding) != 0 {
+            self.userImage.image = UIImage(data: NSData(base64EncodedString: image, options: NSDataBase64DecodingOptions.IgnoreUnknownCharacters)!)
+        }else{
+            self.userImage.image = UIImage(named: "default_user_image")
+        }
         let hud = MBProgressHUD.showHUDAddedTo(self.view, animated: true)
+        hud.bezelView.backgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0)
         hud.label.text = "Loading"
         DataTool.loadHomePage(){ (result) -> Void in
             MBProgressHUD.hideHUDForView(self.view, animated: true)

@@ -31,6 +31,11 @@
 		0454F13A1CF5A99B0089FE4B /* McipNews.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 0454F1381CF5A99B0089FE4B /* McipNews.xcdatamodeld */; };
 		0454F13C1CF5AE6A0089FE4B /* Course.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0454F13B1CF5AE6A0089FE4B /* Course.swift */; };
 		046BE3C31D24228C003C602C /* BoxViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046BE3C21D24228C003C602C /* BoxViewController.swift */; };
+		046DE1961D2C26FF00207935 /* Notices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046DE1951D2C26FF00207935 /* Notices.swift */; };
+		046DE19A1D2CD8D800207935 /* MyCampusViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046DE1991D2CD8D800207935 /* MyCampusViewController.swift */; };
+		046DE19D1D2CE82200207935 /* XHAdLoopView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046DE19C1D2CE82200207935 /* XHAdLoopView.swift */; };
+		046DE1A01D2CFA4100207935 /* ButtonCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046DE19F1D2CFA4100207935 /* ButtonCell.swift */; };
+		046DE1A21D2D004900207935 /* MyCampusDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046DE1A11D2D004900207935 /* MyCampusDetailViewController.swift */; };
 		0482818A1D25897D0033DC4E /* SelectReceiverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048281891D25897D0033DC4E /* SelectReceiverViewController.swift */; };
 		0482818C1D258D790033DC4E /* SelectNewReceiverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0482818B1D258D790033DC4E /* SelectNewReceiverViewController.swift */; };
 		0482818E1D2595EA0033DC4E /* SelectSendTimeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0482818D1D2595EA0033DC4E /* SelectSendTimeViewController.swift */; };
@@ -56,6 +61,10 @@
 		04D6FF3B1D2AC59C0093F99A /* CodeScan.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 04D6FF3A1D2AC59C0093F99A /* CodeScan.bundle */; };
 		04D6FF401D2AC8890093F99A /* ScanCodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D6FF3F1D2AC8890093F99A /* ScanCodeViewController.swift */; };
 		04DCEDD01D236D220063749C /* NoticeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04DCEDCF1D236D220063749C /* NoticeViewController.swift */; };
+		04EAB5801D2D8AB3007A3184 /* ReplyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04EAB57F1D2D8AB3007A3184 /* ReplyCell.swift */; };
+		04EAB5821D2D991A007A3184 /* NoticeConfirmDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04EAB5811D2D991A007A3184 /* NoticeConfirmDetailViewController.swift */; };
+		04EAB5841D2DB956007A3184 /* ReceiverCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04EAB5831D2DB956007A3184 /* ReceiverCell.swift */; };
+		04EAB5861D2DBCEB007A3184 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04EAB5851D2DBCEB007A3184 /* User.swift */; };
 		04ED8B681CF0340D00293D0F /* MJRefreshAutoFooter.m in Sources */ = {isa = PBXBuildFile; fileRef = 04ED8B3C1CF0340D00293D0F /* MJRefreshAutoFooter.m */; };
 		04ED8B691CF0340D00293D0F /* MJRefreshBackFooter.m in Sources */ = {isa = PBXBuildFile; fileRef = 04ED8B3E1CF0340D00293D0F /* MJRefreshBackFooter.m */; };
 		04ED8B6A1CF0340D00293D0F /* MJRefreshComponent.m in Sources */ = {isa = PBXBuildFile; fileRef = 04ED8B401CF0340D00293D0F /* MJRefreshComponent.m */; };
@@ -124,6 +133,11 @@
 		0454F1391CF5A99B0089FE4B /* McipNews.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = McipNews.xcdatamodel; sourceTree = "<group>"; };
 		0454F13B1CF5AE6A0089FE4B /* Course.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Course.swift; sourceTree = "<group>"; };
 		046BE3C21D24228C003C602C /* BoxViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BoxViewController.swift; sourceTree = "<group>"; };
+		046DE1951D2C26FF00207935 /* Notices.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Notices.swift; sourceTree = "<group>"; };
+		046DE1991D2CD8D800207935 /* MyCampusViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyCampusViewController.swift; sourceTree = "<group>"; };
+		046DE19C1D2CE82200207935 /* XHAdLoopView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XHAdLoopView.swift; sourceTree = "<group>"; };
+		046DE19F1D2CFA4100207935 /* ButtonCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ButtonCell.swift; sourceTree = "<group>"; };
+		046DE1A11D2D004900207935 /* MyCampusDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyCampusDetailViewController.swift; sourceTree = "<group>"; };
 		048281891D25897D0033DC4E /* SelectReceiverViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectReceiverViewController.swift; sourceTree = "<group>"; };
 		0482818B1D258D790033DC4E /* SelectNewReceiverViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectNewReceiverViewController.swift; sourceTree = "<group>"; };
 		0482818D1D2595EA0033DC4E /* SelectSendTimeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectSendTimeViewController.swift; sourceTree = "<group>"; };
@@ -157,6 +171,10 @@
 		04D6FF3A1D2AC59C0093F99A /* CodeScan.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = CodeScan.bundle; sourceTree = "<group>"; };
 		04D6FF3F1D2AC8890093F99A /* ScanCodeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScanCodeViewController.swift; sourceTree = "<group>"; };
 		04DCEDCF1D236D220063749C /* NoticeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoticeViewController.swift; sourceTree = "<group>"; };
+		04EAB57F1D2D8AB3007A3184 /* ReplyCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReplyCell.swift; sourceTree = "<group>"; };
+		04EAB5811D2D991A007A3184 /* NoticeConfirmDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoticeConfirmDetailViewController.swift; sourceTree = "<group>"; };
+		04EAB5831D2DB956007A3184 /* ReceiverCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReceiverCell.swift; sourceTree = "<group>"; };
+		04EAB5851D2DBCEB007A3184 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		04ED8B3B1CF0340D00293D0F /* MJRefreshAutoFooter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJRefreshAutoFooter.h; sourceTree = "<group>"; };
 		04ED8B3C1CF0340D00293D0F /* MJRefreshAutoFooter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJRefreshAutoFooter.m; sourceTree = "<group>"; };
 		04ED8B3D1CF0340D00293D0F /* MJRefreshBackFooter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJRefreshBackFooter.h; sourceTree = "<group>"; };
@@ -269,6 +287,7 @@
 		043B98581CECBAA500532EC8 /* Lib */ = {
 			isa = PBXGroup;
 			children = (
+				046DE19B1D2CE76300207935 /* AdScroll */,
 				04D6FF2B1D2AC3DE0093F99A /* SwiftScan */,
 				04ED8B671CF0340D00293D0F /* MJRefresh */,
 				043B98591CECBACB00532EC8 /* MBProgressHUD */,
@@ -385,6 +404,51 @@
 			path = Controller;
 			sourceTree = "<group>";
 		};
+		046DE1931D2C26C600207935 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				046DE1951D2C26FF00207935 /* Notices.swift */,
+				04EAB57F1D2D8AB3007A3184 /* ReplyCell.swift */,
+				04EAB5831D2DB956007A3184 /* ReceiverCell.swift */,
+				04EAB5851D2DBCEB007A3184 /* User.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		046DE1971D2CD85C00207935 /* MyCampus */ = {
+			isa = PBXGroup;
+			children = (
+				046DE19E1D2CF9E800207935 /* Model */,
+				046DE1981D2CD8B200207935 /* Controller */,
+			);
+			path = MyCampus;
+			sourceTree = "<group>";
+		};
+		046DE1981D2CD8B200207935 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				046DE1991D2CD8D800207935 /* MyCampusViewController.swift */,
+				046DE1A11D2D004900207935 /* MyCampusDetailViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		046DE19B1D2CE76300207935 /* AdScroll */ = {
+			isa = PBXGroup;
+			children = (
+				046DE19C1D2CE82200207935 /* XHAdLoopView.swift */,
+			);
+			path = AdScroll;
+			sourceTree = "<group>";
+		};
+		046DE19E1D2CF9E800207935 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				046DE19F1D2CFA4100207935 /* ButtonCell.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		048D32791CF2095A00D5656B /* Home */ = {
 			isa = PBXGroup;
 			children = (
@@ -429,6 +493,7 @@
 		04B05B3B1CCD1956000EB09E /* McipNews */ = {
 			isa = PBXGroup;
 			children = (
+				046DE1971D2CD85C00207935 /* MyCampus */,
 				04D6FF3D1D2AC7F50093F99A /* ScanCode */,
 				04D6FF3C1D2AC7B30093F99A /* Resources */,
 				04D6FF3A1D2AC59C0093F99A /* CodeScan.bundle */,
@@ -504,6 +569,7 @@
 		04DCEDD11D236D2A0063749C /* Notice */ = {
 			isa = PBXGroup;
 			children = (
+				046DE1931D2C26C600207935 /* Model */,
 				04DCEDD21D236D580063749C /* Controller */,
 			);
 			path = Notice;
@@ -519,6 +585,7 @@
 				048281891D25897D0033DC4E /* SelectReceiverViewController.swift */,
 				0482818B1D258D790033DC4E /* SelectNewReceiverViewController.swift */,
 				0482818D1D2595EA0033DC4E /* SelectSendTimeViewController.swift */,
+				04EAB5811D2D991A007A3184 /* NoticeConfirmDetailViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -839,6 +906,7 @@
 				048D327C1CF2098000D5656B /* HomeViewController.swift in Sources */,
 				04315A411CE79C590031F325 /* Channel.swift in Sources */,
 				0482818E1D2595EA0033DC4E /* SelectSendTimeViewController.swift in Sources */,
+				04EAB5821D2D991A007A3184 /* NoticeConfirmDetailViewController.swift in Sources */,
 				04CCD8B51D12E8850080F399 /* CallViewController.swift in Sources */,
 				04ED8B701CF0340D00293D0F /* MJRefreshBackGifFooter.m in Sources */,
 				04D6FF341D2AC4380093F99A /* LBXScanLineAnimation.swift in Sources */,
@@ -851,7 +919,10 @@
 				0482818A1D25897D0033DC4E /* SelectReceiverViewController.swift in Sources */,
 				04D6FF331D2AC4380093F99A /* LBXPermissions.swift in Sources */,
 				04ED8B741CF0340D00293D0F /* MJRefreshNormalHeader.m in Sources */,
+				046DE1A01D2CFA4100207935 /* ButtonCell.swift in Sources */,
 				043B985E1CECBB7400532EC8 /* DataTool.swift in Sources */,
+				046DE1961D2C26FF00207935 /* Notices.swift in Sources */,
+				04EAB5861D2DBCEB007A3184 /* User.swift in Sources */,
 				04ED8B691CF0340D00293D0F /* MJRefreshBackFooter.m in Sources */,
 				04D6FF351D2AC4380093F99A /* LBXScanNetAnimation.swift in Sources */,
 				043B98601CECBB7400532EC8 /* NetworkResult.swift in Sources */,
@@ -863,8 +934,10 @@
 				04ED8B6E1CF0340D00293D0F /* MJRefreshAutoNormalFooter.m in Sources */,
 				04140BC81CEA00F0006A028D /* NewsViewController.swift in Sources */,
 				04B05B741CCD1A49000EB09E /* CommonFunction.swift in Sources */,
+				046DE19D1D2CE82200207935 /* XHAdLoopView.swift in Sources */,
 				04ED8B771CF0340D00293D0F /* MJRefreshConst.m in Sources */,
 				043C8CF81CCE923E00E53F7C /* Users+CoreDataProperties.swift in Sources */,
+				04EAB5801D2D8AB3007A3184 /* ReplyCell.swift in Sources */,
 				043C2A541CDDDE5D005A94C6 /* NewsTableViewController.swift in Sources */,
 				046BE3C31D24228C003C602C /* BoxViewController.swift in Sources */,
 				0406285F1D217FB500665F49 /* Item.swift in Sources */,
@@ -874,13 +947,16 @@
 				0454F13C1CF5AE6A0089FE4B /* Course.swift in Sources */,
 				04ED8B791CF0340D00293D0F /* UIScrollView+MJRefresh.m in Sources */,
 				04D6FF381D2AC4380093F99A /* LBXScanViewStyle.swift in Sources */,
+				046DE19A1D2CD8D800207935 /* MyCampusViewController.swift in Sources */,
 				043B98611CECBB7400532EC8 /* Result.swift in Sources */,
 				04BF88C51D243EED00062A8C /* NoticeDetailViewController.swift in Sources */,
 				04DCEDD01D236D220063749C /* NoticeViewController.swift in Sources */,
 				04ED8B6F1CF0340D00293D0F /* MJRefreshAutoStateFooter.m in Sources */,
 				043C2A561CDDEE0C005A94C6 /* News.swift in Sources */,
 				04ED8B751CF0340D00293D0F /* MJRefreshStateHeader.m in Sources */,
+				04EAB5841D2DB956007A3184 /* ReceiverCell.swift in Sources */,
 				04F2BE141CF3593B002E6628 /* ButtonTool.swift in Sources */,
+				046DE1A21D2D004900207935 /* MyCampusDetailViewController.swift in Sources */,
 				04D6FF371D2AC4380093F99A /* LBXScanViewController.swift in Sources */,
 				04ED8B731CF0340D00293D0F /* MJRefreshGifHeader.m in Sources */,
 				04ED8B781CF0340D00293D0F /* UIScrollView+MJExtension.m in Sources */,

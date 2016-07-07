@@ -54,7 +54,7 @@ class NewsViewController: PageController {
         // Do any additional setup after loading the view.
         self.tabBarController?.tabBar.tintColor = UIColor(red: 34.0/255.0, green: 168.0/255.0, blue: 221.0/255.0, alpha: 1.0)
         self.menuHeight=35
-        menuView?.rightView = ButtonTool.setScrollRightAddButton(#selector(NewsViewController.buttonPressed), view: self, menuHeight: menuHeight)
+        menuView?.rightView = ButtonTool.setScrollRightAddButton(#selector(NewsViewController.buttonPressed), showView: self, menuHeight: menuHeight)
         self.navigationItem.leftBarButtonItem = UIBarButtonItem(customView: ButtonTool.setNavigationLeftImageButton(#selector(NewsViewController.btnUser),view:self ))
     }
 
@@ -84,15 +84,23 @@ class NewsViewController: PageController {
     }
     
     override func menuView(menuView: MenuView, widthForItemAtIndex index: Int) -> CGFloat {
-        let count = vcTitles[index].mname.characters.count
-        //print(count)
+        var count = vcTitles[index].mname.lengthOfBytesUsingEncoding(NSUTF8StringEncoding)
+        //print(vcTitles[index].mname.lengthOfBytesUsingEncoding(NSUTF8StringEncoding))
+        if count%3==0 {
+            count = count/3
+        }else{
+            count = count/3+1
+        }
         return CGFloat(20*count)
     }
     
     // MARK: - Button Events
     
     @IBAction func btnCode(sender: UIBarButtonItem) {
-        print("扫码")
+        let vc = ScanCodeViewController()
+        self.hidesBottomBarWhenPushed=true
+        self.navigationController?.pushViewController(vc, animated: true)
+        self.hidesBottomBarWhenPushed=false
     }
     
     @IBAction func btnQuick(sender: AnyObject) {

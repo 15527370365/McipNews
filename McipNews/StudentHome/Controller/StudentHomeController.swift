@@ -41,8 +41,8 @@ class StudentHomeController: PageController {
                 shArray["学生工作"] = tempChannel
             case "讲座引导":
                 shArray["讲座引导"] = tempChannel
-            case "规章制度":
-                shArray["规章制度"] = tempChannel
+            case "党政建设":
+                shArray["党政建设"] = tempChannel
             default:
                 vcTitles.append(tempChannel)
             }
@@ -72,7 +72,7 @@ class StudentHomeController: PageController {
         self.tabBarController?.tabBar.tintColor = UIColor(red: 34.0/255.0, green: 168.0/255.0, blue: 221.0/255.0, alpha: 1.0)
         //menuView?.rightView = setRightButton()
         self.menuHeight=35
-        menuView?.rightView = ButtonTool.setScrollRightAddButton(#selector(StudentHomeController.buttonPressed), view: self, menuHeight: menuHeight)
+        menuView?.rightView = ButtonTool.setScrollRightAddButton(#selector(StudentHomeController.buttonPressed), showView: self, menuHeight: menuHeight)
         self.navigationItem.leftBarButtonItem = UIBarButtonItem.init(customView: ButtonTool.setNavigationLeftImageButton(#selector(StudentHomeController.btnUser), view: self))
     }
 
@@ -120,9 +120,14 @@ class StudentHomeController: PageController {
     }
     
     override func menuView(menuView: MenuView, widthForItemAtIndex index: Int) -> CGFloat {
-        let count = vcTitles[index].mname.characters.count
-        //print(count)
-        return CGFloat.init(20*count)
+        var count = vcTitles[index].mname.lengthOfBytesUsingEncoding(NSUTF8StringEncoding)
+        //print(vcTitles[index].mname.lengthOfBytesUsingEncoding(NSUTF8StringEncoding))
+        if count%3==0 {
+            count = count/3
+        }else{
+            count = count/3+1
+        }
+        return CGFloat(20*count)
     }
     
     // MARK: - Button Events
@@ -138,6 +143,13 @@ class StudentHomeController: PageController {
         userid = ""
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         self.presentViewController(storyboard.instantiateViewControllerWithIdentifier("Login"), animated: true, completion: nil)
+    }
+    
+    @IBAction func codeBtnEvents(sender: UIBarButtonItem) {
+        let vc = ScanCodeViewController()
+        self.hidesBottomBarWhenPushed=true
+        self.navigationController?.pushViewController(vc, animated: true)
+        self.hidesBottomBarWhenPushed=false
     }
 
     /*

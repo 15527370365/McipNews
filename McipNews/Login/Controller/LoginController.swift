@@ -60,10 +60,8 @@ class LoginController: UIViewController {
             hud.label.text = "Loading"
             let result=CommonFunction.getMacAddress()
             let parameters = ["consumer_key": ALAMOFIRE_KEY,"userid":userField.text!,"upass":passField.text!,"ustateadd":result.mac,"uequipment":"4","uchannelid":BPush.getChannelId()]
-            //print(parameters)
             Alamofire.request(.POST, POST_LOGIN, parameters:parameters).responseJSON() {
                 response in
-                //print("result==\(response.result)")
                 if let jsonValue = response.result.value {
                     MBProgressHUD.hideHUDForView(self.view, animated: true)
                     let resultJSON=JSON(jsonValue)
@@ -76,7 +74,6 @@ class LoginController: UIViewController {
                         user.loginTime=CommonFunction.getNowTimeString()
                         user.exitTime=""
                         user.image=resultJSON["upic"].stringValue
-                        //print("test:\(resultJSON["upic"].stringValue=="")")
                         do{
                             try manageObjectContext.save()
                             userid = self.userField.text!
@@ -84,7 +81,6 @@ class LoginController: UIViewController {
                             image = resultJSON["upic"].stringValue
                             let news = DataTool.loadNewsChannels(1)
                             if news.1{
-                                //print(news.0["follow"].count==0)
                                 if news.0["follow"].count == 0{
                                     self.alert.message="未关注模块"
                                     self.alert.show()
@@ -92,6 +88,8 @@ class LoginController: UIViewController {
                                     let storyboard = UIStoryboard(name: "Main", bundle: nil)
                                     self.presentViewController(storyboard.instantiateViewControllerWithIdentifier("MainTabBar"), animated: true, completion: nil)
                                 }
+                            }else{
+                                print("load error")
                             }
                             
                         }catch{
@@ -102,8 +100,6 @@ class LoginController: UIViewController {
                         self.alert.message=resultJSON["msg"].string
                         self.alert.show()
                     }
-                    
-                    //print("weNeedReuslt ==  \(jsonValue)")
                 }else{
                     MBProgressHUD.hideHUDForView(self.view, animated: true)
                     self.alert.message="登录请求超时，请检查网络"

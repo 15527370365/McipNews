@@ -18,12 +18,17 @@ class NewsDetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        self.webView.delegate = self
         let url = NSURL(string:NEWS_DETAIL+"\(newsid)")
         let request : NSMutableURLRequest = NSMutableURLRequest(URL: url!, cachePolicy: NSURLRequestCachePolicy.UseProtocolCachePolicy, timeoutInterval: 10)
         
         request.HTTPMethod = "GET"//设置请求方式为POST，默认为GET
         request.addValue(userid, forHTTPHeaderField: "userid")
         request.addValue(token, forHTTPHeaderField: "token")
+        let hud = MBProgressHUD.showHUDAddedTo(self.view, animated: true)
+        hud.label.text = "Loading"
+        hud.bezelView.backgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0)
+//        hud.backgroundView.backgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0)
         webView.loadRequest(request)
         let swipeLeftGesture = UISwipeGestureRecognizer(target: self, action: #selector(backClicks))
         self.view.addGestureRecognizer(swipeLeftGesture)
@@ -54,4 +59,10 @@ class NewsDetailViewController: UIViewController {
     }
     */
 
+}
+
+extension NewsDetailViewController:UIWebViewDelegate{
+    func webViewDidFinishLoad(webView: UIWebView){
+        MBProgressHUD.hideHUDForView(self.view, animated: true)
+    }
 }

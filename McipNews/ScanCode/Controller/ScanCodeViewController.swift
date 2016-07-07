@@ -24,13 +24,20 @@ class ScanCodeViewController: LBXScanViewController {
     
     override func handleCodeResult(arrayResult: [LBXScanResult]) {
         
-        for result:LBXScanResult in arrayResult
-        {
-            print("%@",result.strScanned)
-        }
-        
+//        for result:LBXScanResult in arrayResult
+//        {
+//            print("%@",result.strScanned)
+//        }
         let result:LBXScanResult = arrayResult[0]
         print(result.strScanned)
+        DataTool.loadRollCall(result.strScanned!){ (returnResult) -> Void in
+            print(returnResult)
+            let alertController = UIAlertController(title: "提示", message: returnResult.content, preferredStyle: UIAlertControllerStyle.Alert)
+            let okAction = UIAlertAction(title: "好的", style: UIAlertActionStyle.Default, handler: nil)
+            alertController.addAction(okAction)
+            self.presentViewController(alertController, animated: true, completion: nil)
+//            self.navigationController?.popViewControllerAnimated(true)
+        }
     }
     
     func setStyle() -> LBXScanViewStyle {
