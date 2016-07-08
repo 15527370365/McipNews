@@ -40,7 +40,8 @@ class NoticeConfirmDetailViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    @IBAction func backBtnEvent(sender: UIBarButtonItem) {
+    @IBAction func backBtnEvent(sender: UIButton) {
+        print(123)
         self.navigationController?.popViewControllerAnimated(true)
     }
     @IBAction func showChild(sender: UIControl) {

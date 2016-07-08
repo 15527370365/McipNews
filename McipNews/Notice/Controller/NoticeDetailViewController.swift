@@ -111,6 +111,13 @@ class NoticeDetailViewController: UIViewController {
         }
     }
 
+    @IBAction func showConfirmBtnEvent(sender: UIButton) {
+        let sb = UIStoryboard(name: "Main", bundle: nil)
+        let vc = sb.instantiateViewControllerWithIdentifier("confirmView") as! NoticeConfirmDetailViewController
+        self.hidesBottomBarWhenPushed=true
+        self.navigationController?.pushViewController(vc, animated: true)
+        self.hidesBottomBarWhenPushed=false
+    }
     @IBAction func beginEditReply(sender: AnyObject) {
         flag = true
         let frame = self.tableView.frame

@@ -79,6 +79,7 @@ class LoginController: UIViewController {
                             userid = self.userField.text!
                             token = resultJSON["token"].string!
                             image = resultJSON["upic"].stringValue
+                            print(token)
                             let news = DataTool.loadNewsChannels(1)
                             if news.1{
                                 if news.0["follow"].count == 0{

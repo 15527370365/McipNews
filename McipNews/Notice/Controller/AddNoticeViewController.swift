@@ -44,7 +44,10 @@ class AddNoticeViewController: UIViewController {
                     let okAction = UIAlertAction(title: "好的", style: UIAlertActionStyle.Default, handler: nil)
                     alertController.addAction(okAction)
                     self.presentViewController(alertController, animated: true, completion: nil)
-                    self.navigationController?.popViewControllerAnimated(true)
+                    self.contentTextView.resignFirstResponder()
+//                    let storyboard = UIStoryboard(name: "Main", bundle: nil)
+//                    self.navigationController?.popToViewController(storyboard.instantiateViewControllerWithIdentifier("noticeView"), animated: true)
+                    print(self.navigationController?.viewControllers)
                 }else{
                     let alertController = UIAlertController(title: "提示", message: "请稍后再试！", preferredStyle: UIAlertControllerStyle.Alert)
                     let okAction = UIAlertAction(title: "好的", style: UIAlertActionStyle.Default, handler: nil)

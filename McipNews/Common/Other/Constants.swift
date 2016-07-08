@@ -26,7 +26,7 @@ let NEWS_DETAIL = SERVER + "/detail/getNewsDetail/"
 
 let ALAMOFIRE_KEY="zpckpFMNxCpyjqGVCCcO6oG517wp955vA6ufw0P6"
 
-let PUSH_KEY="SNcKHi41zKAjaYIb2KrjEIq1"
+let PUSH_KEY="Cq5W1obONeLnUYawfGfL4ycg"
 
 let defautImage = "defaultImage"
 

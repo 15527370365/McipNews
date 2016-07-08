@@ -1067,7 +1067,7 @@
         <!--通知-->
         <scene sceneID="0Ph-l7-LCF">
             <objects>
-                <viewController id="bHX-rO-GGG" customClass="NoticeViewController" customModule="McipNews" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="noticeView" id="bHX-rO-GGG" customClass="NoticeViewController" customModule="McipNews" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Qhl-cI-52p"/>
                         <viewControllerLayoutGuide type="bottom" id="MbL-uf-Vpt"/>
@@ -1794,8 +1794,8 @@
                                             <color key="titleColor" red="0.52549019610000003" green="0.52549019610000003" blue="0.52549019610000003" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
                                         <connections>
+                                            <action selector="showConfirmBtnEvent:" destination="nbL-ag-1oE" eventType="touchUpInside" id="EZi-mw-zrf"/>
                                             <action selector="showPersonBtnEvent:" destination="nbL-ag-1oE" eventType="touchUpInside" id="zGc-tV-B6d"/>
-                                            <segue destination="DY5-cG-Rft" kind="show" id="znp-Su-zR8"/>
                                         </connections>
                                     </button>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nmO-OF-S3d" customClass="UIControl">
@@ -2357,7 +2357,7 @@
         <!--确认详情-->
         <scene sceneID="0Bz-1B-0eX">
             <objects>
-                <viewController hidesBottomBarWhenPushed="YES" id="dyA-1R-CAU" customClass="NoticeConfirmDetailViewController" customModule="McipNews" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="confirmView" hidesBottomBarWhenPushed="YES" id="dyA-1R-CAU" customClass="NoticeConfirmDetailViewController" customModule="McipNews" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Mof-rq-6gs"/>
                         <viewControllerLayoutGuide type="bottom" id="Fxs-IJ-8aH"/>
@@ -2421,10 +2421,10 @@
                                 <state key="normal" title="  返回" image="back">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="backBtnEvent:" destination="dyA-1R-CAU" eventType="touchUpInside" id="iN7-BN-8Vj"/>
+                                </connections>
                             </button>
-                            <connections>
-                                <action selector="backBtnEvent:" destination="dyA-1R-CAU" id="25I-Pl-XDj"/>
-                            </connections>
                         </barButtonItem>
                     </navigationItem>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
@@ -3031,6 +3031,7 @@
         <!--Navigation Controller-->
         <scene sceneID="FYz-zW-uYI">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="eEX-wo-GmJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="DY5-cG-Rft" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Xkc-HP-e3g">
@@ -3042,7 +3043,6 @@
                         <segue destination="dyA-1R-CAU" kind="relationship" relationship="rootViewController" id="reQ-3U-NIE"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="eEX-wo-GmJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3110.5" y="4502.5"/>
         </scene>
@@ -3063,7 +3063,7 @@
         <!--View Controller-->
         <scene sceneID="ob0-DT-a9R">
             <objects>
-                <viewController storyboardIdentifier="confirmView" id="GBi-q7-xOd" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="confirmViews" id="GBi-q7-xOd" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="PM8-6z-gwm"/>
                         <viewControllerLayoutGuide type="bottom" id="qmP-jL-X1Z"/>

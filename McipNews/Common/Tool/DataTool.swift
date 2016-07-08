@@ -275,11 +275,11 @@ struct DataTool {
         }
         let type = 1
         let remindtype = 0
-        let parameters = ["nuserid":nuserid,"ndeadline":"","ncontent":content,"ntype":"\(type)","nremindtype":"\(remindtype)"]
+        let parameters = ["nuserid":nuserid,"ndeadline":"2016-07-20 23:59:00","ncontent":content,"ntype":"\(type)","nremindtype":"\(remindtype)"]
         print(parameters)
-        let json = fetchJsonFromNet(post, parameters, headers)
+        let json = fetchJsonFromNet(server+"/notice/sendNotice", parameters, headers)
         json.jsonToModel(nil) { result in
-            if result["code"].string=="200" {
+            if result["code"].string=="40000" {
                 completionHandler(flag:true)
             }else{
                 completionHandler(flag:false)
