@@ -130,6 +130,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let notif    = userInfo as NSDictionary
         let apsDic   = notif.objectForKey ( "aps" ) as! NSDictionary
         let alertDic = apsDic.objectForKey ( "alert" ) as! String
+        print(notif)
         // 应用在前台 或者后台开启状态下，不跳转页面，让用户选择。
         if (application.applicationState == UIApplicationState.Active || application.applicationState == UIApplicationState.Background) {
             let alertView = UIAlertView (title: "收到一条消息", message: alertDic, delegate: nil , cancelButtonTitle: " 取消 ",otherButtonTitles:"确定")
@@ -139,7 +140,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         {
             
             let sb = UIStoryboard(name: "Main", bundle: nil)
-            let vc = sb.instantiateViewControllerWithIdentifier("finish")
+            let vc = sb.instantiateViewControllerWithIdentifier("MainTabBar") as! CustomViewController
+            vc.select = 3
             // 根视图是普通的viewctr 用present跳转
             let tabBarCtr = self.window?.rootViewController
             tabBarCtr?.presentViewController(vc, animated: true, completion: nil)
@@ -150,6 +152,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let notif    = userInfo as NSDictionary
         let apsDic   = notif.objectForKey ( "aps" ) as! NSDictionary
         let alertDic = apsDic.objectForKey ( "alert" ) as! String
+        print("ss\(notif)")
         // 应用在前台 或者后台开启状态下，不跳转页面，让用户选择。
         if (application.applicationState == UIApplicationState.Active || application.applicationState == UIApplicationState.Background) {
             let alertView = UIAlertView (title: "收到一条消息", message: alertDic, delegate: nil , cancelButtonTitle: " 取消 ",otherButtonTitles:"确定")
@@ -158,7 +161,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         else//杀死状态下，直接跳转到跳转页面。
         {
             let sb = UIStoryboard(name: "Main", bundle: nil)
-            let vc = sb.instantiateViewControllerWithIdentifier("finish")
+            let vc = sb.instantiateViewControllerWithIdentifier("MainTabBar") as! CustomViewController
+            vc.select = 3
             // 根视图是普通的viewctr 用present跳转
             let tabBarCtr = self.window?.rootViewController
             tabBarCtr?.presentViewController(vc, animated: true, completion: nil)

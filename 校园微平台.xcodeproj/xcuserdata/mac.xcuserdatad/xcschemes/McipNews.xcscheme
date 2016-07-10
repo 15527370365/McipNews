@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "04B05B381CCD1956000EB09E"
-               BuildableName = "McipNews.app"
-               BlueprintName = "McipNews"
-               ReferencedContainer = "container:McipNews.xcodeproj">
+               BuildableName = "&#x6821;&#x56ed;&#x5fae;&#x5e73;&#x53f0;.app"
+               BlueprintName = "&#x6821;&#x56ed;&#x5fae;&#x5e73;&#x53f0;"
+               ReferencedContainer = "container:&#x6821;&#x56ed;&#x5fae;&#x5e73;&#x53f0;.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -33,9 +33,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "04B05B4F1CCD1956000EB09E"
-               BuildableName = "McipNewsTests.xctest"
-               BlueprintName = "McipNewsTests"
-               ReferencedContainer = "container:McipNews.xcodeproj">
+               BuildableName = "&#x6821;&#x56ed;&#x5fae;&#x5e73;&#x53f0;.xctest"
+               BlueprintName = "&#x6821;&#x56ed;&#x5fae;&#x5e73;&#x53f0;Tests"
+               ReferencedContainer = "container:&#x6821;&#x56ed;&#x5fae;&#x5e73;&#x53f0;.xcodeproj">
             </BuildableReference>
          </TestableReference>
          <TestableReference
@@ -43,9 +43,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "04B05B5A1CCD1956000EB09E"
-               BuildableName = "McipNewsUITests.xctest"
-               BlueprintName = "McipNewsUITests"
-               ReferencedContainer = "container:McipNews.xcodeproj">
+               BuildableName = "&#x6821;&#x56ed;&#x5fae;&#x5e73;&#x53f0;.xctest"
+               BlueprintName = "&#x6821;&#x56ed;&#x5fae;&#x5e73;&#x53f0;UITests"
+               ReferencedContainer = "container:&#x6821;&#x56ed;&#x5fae;&#x5e73;&#x53f0;.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -53,9 +53,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "04B05B381CCD1956000EB09E"
-            BuildableName = "McipNews.app"
-            BlueprintName = "McipNews"
-            ReferencedContainer = "container:McipNews.xcodeproj">
+            BuildableName = "&#x6821;&#x56ed;&#x5fae;&#x5e73;&#x53f0;.app"
+            BlueprintName = "&#x6821;&#x56ed;&#x5fae;&#x5e73;&#x53f0;"
+            ReferencedContainer = "container:&#x6821;&#x56ed;&#x5fae;&#x5e73;&#x53f0;.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -76,9 +76,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "04B05B381CCD1956000EB09E"
-            BuildableName = "McipNews.app"
-            BlueprintName = "McipNews"
-            ReferencedContainer = "container:McipNews.xcodeproj">
+            BuildableName = "&#x6821;&#x56ed;&#x5fae;&#x5e73;&#x53f0;.app"
+            BlueprintName = "&#x6821;&#x56ed;&#x5fae;&#x5e73;&#x53f0;"
+            ReferencedContainer = "container:&#x6821;&#x56ed;&#x5fae;&#x5e73;&#x53f0;.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <CommandLineArguments>
@@ -105,9 +105,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "04B05B381CCD1956000EB09E"
-            BuildableName = "McipNews.app"
-            BlueprintName = "McipNews"
-            ReferencedContainer = "container:McipNews.xcodeproj">
+            BuildableName = "&#x6821;&#x56ed;&#x5fae;&#x5e73;&#x53f0;.app"
+            BlueprintName = "&#x6821;&#x56ed;&#x5fae;&#x5e73;&#x53f0;"
+            ReferencedContainer = "container:&#x6821;&#x56ed;&#x5fae;&#x5e73;&#x53f0;.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

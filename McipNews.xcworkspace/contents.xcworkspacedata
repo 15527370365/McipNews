@@ -2,7 +2,7 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "group:McipNews.xcodeproj">
+      location = "group:/Users/mac/Documents/IOS/McipNews/&#x6821;&#x56ed;&#x5fae;&#x5e73;&#x53f0;.xcodeproj">
    </FileRef>
    <FileRef
       location = "group:Pods/Pods.xcodeproj">

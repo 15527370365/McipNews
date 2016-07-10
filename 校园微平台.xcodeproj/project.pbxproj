@@ -30,6 +30,7 @@
 		0454F1321CF5A3600089FE4B /* CellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0454F1311CF5A3600089FE4B /* CellModel.swift */; };
 		0454F13A1CF5A99B0089FE4B /* McipNews.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 0454F1381CF5A99B0089FE4B /* McipNews.xcdatamodeld */; };
 		0454F13C1CF5AE6A0089FE4B /* Course.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0454F13B1CF5AE6A0089FE4B /* Course.swift */; };
+		045A60C41D2FF38B005AEFEC /* CustomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045A60C31D2FF38B005AEFEC /* CustomViewController.swift */; };
 		046BE3C31D24228C003C602C /* BoxViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046BE3C21D24228C003C602C /* BoxViewController.swift */; };
 		046DE1961D2C26FF00207935 /* Notices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046DE1951D2C26FF00207935 /* Notices.swift */; };
 		046DE19A1D2CD8D800207935 /* MyCampusViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046DE1991D2CD8D800207935 /* MyCampusViewController.swift */; };
@@ -132,6 +133,7 @@
 		0454F1311CF5A3600089FE4B /* CellModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CellModel.swift; sourceTree = "<group>"; };
 		0454F1391CF5A99B0089FE4B /* McipNews.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = McipNews.xcdatamodel; sourceTree = "<group>"; };
 		0454F13B1CF5AE6A0089FE4B /* Course.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Course.swift; sourceTree = "<group>"; };
+		045A60C31D2FF38B005AEFEC /* CustomViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomViewController.swift; sourceTree = "<group>"; };
 		046BE3C21D24228C003C602C /* BoxViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BoxViewController.swift; sourceTree = "<group>"; };
 		046DE1951D2C26FF00207935 /* Notices.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Notices.swift; sourceTree = "<group>"; };
 		046DE1991D2CD8D800207935 /* MyCampusViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyCampusViewController.swift; sourceTree = "<group>"; };
@@ -142,13 +144,13 @@
 		0482818B1D258D790033DC4E /* SelectNewReceiverViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectNewReceiverViewController.swift; sourceTree = "<group>"; };
 		0482818D1D2595EA0033DC4E /* SelectSendTimeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectSendTimeViewController.swift; sourceTree = "<group>"; };
 		048D327B1CF2098000D5656B /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
-		04B05B391CCD1956000EB09E /* McipNews.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = McipNews.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		04B05B391CCD1956000EB09E /* 校园微平台.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "校园微平台.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		04B05B3C1CCD1956000EB09E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		04B05B4B1CCD1956000EB09E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		04B05B501CCD1956000EB09E /* McipNewsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = McipNewsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		04B05B501CCD1956000EB09E /* 校园微平台.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "校园微平台.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		04B05B541CCD1956000EB09E /* McipNewsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = McipNewsTests.swift; sourceTree = "<group>"; };
 		04B05B561CCD1956000EB09E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		04B05B5B1CCD1956000EB09E /* McipNewsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = McipNewsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		04B05B5B1CCD1956000EB09E /* 校园微平台.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "校园微平台.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		04B05B5F1CCD1956000EB09E /* McipNewsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = McipNewsUITests.swift; sourceTree = "<group>"; };
 		04B05B611CCD1956000EB09E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		04B05B6D1CCD19D8000EB09E /* McipNews-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "McipNews-Bridging-Header.h"; sourceTree = "<group>"; };
@@ -404,6 +406,14 @@
 			path = Controller;
 			sourceTree = "<group>";
 		};
+		045A60C21D2FF346005AEFEC /* TabBar */ = {
+			isa = PBXGroup;
+			children = (
+				045A60C31D2FF38B005AEFEC /* CustomViewController.swift */,
+			);
+			path = TabBar;
+			sourceTree = "<group>";
+		};
 		046DE1931D2C26C600207935 /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -483,9 +493,9 @@
 		04B05B3A1CCD1956000EB09E /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				04B05B391CCD1956000EB09E /* McipNews.app */,
-				04B05B501CCD1956000EB09E /* McipNewsTests.xctest */,
-				04B05B5B1CCD1956000EB09E /* McipNewsUITests.xctest */,
+				04B05B391CCD1956000EB09E /* 校园微平台.app */,
+				04B05B501CCD1956000EB09E /* 校园微平台.xctest */,
+				04B05B5B1CCD1956000EB09E /* 校园微平台.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -493,6 +503,7 @@
 		04B05B3B1CCD1956000EB09E /* McipNews */ = {
 			isa = PBXGroup;
 			children = (
+				045A60C21D2FF346005AEFEC /* TabBar */,
 				046DE1971D2CD85C00207935 /* MyCampus */,
 				04D6FF3D1D2AC7F50093F99A /* ScanCode */,
 				04D6FF3C1D2AC7B30093F99A /* Resources */,
@@ -708,9 +719,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		04B05B381CCD1956000EB09E /* McipNews */ = {
+		04B05B381CCD1956000EB09E /* 校园微平台 */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 04B05B641CCD1956000EB09E /* Build configuration list for PBXNativeTarget "McipNews" */;
+			buildConfigurationList = 04B05B641CCD1956000EB09E /* Build configuration list for PBXNativeTarget "校园微平台" */;
 			buildPhases = (
 				1B6A88A76681DDBF150B6737 /* Check Pods Manifest.lock */,
 				04B05B351CCD1956000EB09E /* Sources */,
@@ -723,14 +734,14 @@
 			);
 			dependencies = (
 			);
-			name = McipNews;
+			name = "校园微平台";
 			productName = McipNews;
-			productReference = 04B05B391CCD1956000EB09E /* McipNews.app */;
+			productReference = 04B05B391CCD1956000EB09E /* 校园微平台.app */;
 			productType = "com.apple.product-type.application";
 		};
-		04B05B4F1CCD1956000EB09E /* McipNewsTests */ = {
+		04B05B4F1CCD1956000EB09E /* 校园微平台Tests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 04B05B671CCD1956000EB09E /* Build configuration list for PBXNativeTarget "McipNewsTests" */;
+			buildConfigurationList = 04B05B671CCD1956000EB09E /* Build configuration list for PBXNativeTarget "校园微平台Tests" */;
 			buildPhases = (
 				04B05B4C1CCD1956000EB09E /* Sources */,
 				04B05B4D1CCD1956000EB09E /* Frameworks */,
@@ -741,14 +752,14 @@
 			dependencies = (
 				04B05B521CCD1956000EB09E /* PBXTargetDependency */,
 			);
-			name = McipNewsTests;
+			name = "校园微平台Tests";
 			productName = McipNewsTests;
-			productReference = 04B05B501CCD1956000EB09E /* McipNewsTests.xctest */;
+			productReference = 04B05B501CCD1956000EB09E /* 校园微平台.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		04B05B5A1CCD1956000EB09E /* McipNewsUITests */ = {
+		04B05B5A1CCD1956000EB09E /* 校园微平台UITests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 04B05B6A1CCD1956000EB09E /* Build configuration list for PBXNativeTarget "McipNewsUITests" */;
+			buildConfigurationList = 04B05B6A1CCD1956000EB09E /* Build configuration list for PBXNativeTarget "校园微平台UITests" */;
 			buildPhases = (
 				04B05B571CCD1956000EB09E /* Sources */,
 				04B05B581CCD1956000EB09E /* Frameworks */,
@@ -759,9 +770,9 @@
 			dependencies = (
 				04B05B5D1CCD1956000EB09E /* PBXTargetDependency */,
 			);
-			name = McipNewsUITests;
+			name = "校园微平台UITests";
 			productName = McipNewsUITests;
-			productReference = 04B05B5B1CCD1956000EB09E /* McipNewsUITests.xctest */;
+			productReference = 04B05B5B1CCD1956000EB09E /* 校园微平台.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
@@ -796,7 +807,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 04B05B341CCD1956000EB09E /* Build configuration list for PBXProject "McipNews" */;
+			buildConfigurationList = 04B05B341CCD1956000EB09E /* Build configuration list for PBXProject "校园微平台" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -809,9 +820,9 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				04B05B381CCD1956000EB09E /* McipNews */,
-				04B05B4F1CCD1956000EB09E /* McipNewsTests */,
-				04B05B5A1CCD1956000EB09E /* McipNewsUITests */,
+				04B05B381CCD1956000EB09E /* 校园微平台 */,
+				04B05B4F1CCD1956000EB09E /* 校园微平台Tests */,
+				04B05B5A1CCD1956000EB09E /* 校园微平台UITests */,
 			);
 		};
 /* End PBXProject section */
@@ -946,6 +957,7 @@
 				04D6FF401D2AC8890093F99A /* ScanCodeViewController.swift in Sources */,
 				0454F13C1CF5AE6A0089FE4B /* Course.swift in Sources */,
 				04ED8B791CF0340D00293D0F /* UIScrollView+MJRefresh.m in Sources */,
+				045A60C41D2FF38B005AEFEC /* CustomViewController.swift in Sources */,
 				04D6FF381D2AC4380093F99A /* LBXScanViewStyle.swift in Sources */,
 				046DE19A1D2CD8D800207935 /* MyCampusViewController.swift in Sources */,
 				043B98611CECBB7400532EC8 /* Result.swift in Sources */,
@@ -990,12 +1002,12 @@
 /* Begin PBXTargetDependency section */
 		04B05B521CCD1956000EB09E /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 04B05B381CCD1956000EB09E /* McipNews */;
+			target = 04B05B381CCD1956000EB09E /* 校园微平台 */;
 			targetProxy = 04B05B511CCD1956000EB09E /* PBXContainerItemProxy */;
 		};
 		04B05B5D1CCD1956000EB09E /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 04B05B381CCD1956000EB09E /* McipNews */;
+			target = 04B05B381CCD1956000EB09E /* 校园微平台 */;
 			targetProxy = 04B05B5C1CCD1956000EB09E /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -1100,7 +1112,7 @@
 					"$(PROJECT_DIR)",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = cn.net.syzc.McipNews;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "校园微平台";
 				SWIFT_OBJC_BRIDGING_HEADER = "McipNews/Common/Other/McipNews-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				TARGETED_DEVICE_FAMILY = 1;
@@ -1123,7 +1135,7 @@
 					"$(PROJECT_DIR)",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = cn.net.syzc.McipNews;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "校园微平台";
 				SWIFT_OBJC_BRIDGING_HEADER = "McipNews/Common/Other/McipNews-Bridging-Header.h";
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -1136,8 +1148,8 @@
 				INFOPLIST_FILE = McipNewsTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = cn.net.syzc.McipNewsTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/McipNews.app/McipNews";
+				PRODUCT_NAME = "校园微平台";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/校园微平台.app/校园微平台";
 			};
 			name = Debug;
 		};
@@ -1148,8 +1160,8 @@
 				INFOPLIST_FILE = McipNewsTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = cn.net.syzc.McipNewsTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/McipNews.app/McipNews";
+				PRODUCT_NAME = "校园微平台";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/校园微平台.app/校园微平台";
 			};
 			name = Release;
 		};
@@ -1159,7 +1171,7 @@
 				INFOPLIST_FILE = McipNewsUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = cn.net.syzc.McipNewsUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "校园微平台";
 				TEST_TARGET_NAME = McipNews;
 			};
 			name = Debug;
@@ -1170,7 +1182,7 @@
 				INFOPLIST_FILE = McipNewsUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = cn.net.syzc.McipNewsUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "校园微平台";
 				TEST_TARGET_NAME = McipNews;
 			};
 			name = Release;
@@ -1178,7 +1190,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		04B05B341CCD1956000EB09E /* Build configuration list for PBXProject "McipNews" */ = {
+		04B05B341CCD1956000EB09E /* Build configuration list for PBXProject "校园微平台" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				04B05B621CCD1956000EB09E /* Debug */,
@@ -1187,7 +1199,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		04B05B641CCD1956000EB09E /* Build configuration list for PBXNativeTarget "McipNews" */ = {
+		04B05B641CCD1956000EB09E /* Build configuration list for PBXNativeTarget "校园微平台" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				04B05B651CCD1956000EB09E /* Debug */,
@@ -1196,7 +1208,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		04B05B671CCD1956000EB09E /* Build configuration list for PBXNativeTarget "McipNewsTests" */ = {
+		04B05B671CCD1956000EB09E /* Build configuration list for PBXNativeTarget "校园微平台Tests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				04B05B681CCD1956000EB09E /* Debug */,
@@ -1205,7 +1217,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		04B05B6A1CCD1956000EB09E /* Build configuration list for PBXNativeTarget "McipNewsUITests" */ = {
+		04B05B6A1CCD1956000EB09E /* Build configuration list for PBXNativeTarget "校园微平台UITests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				04B05B6B1CCD1956000EB09E /* Debug */,

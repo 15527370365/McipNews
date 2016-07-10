@@ -12,7 +12,7 @@
         <!--Login Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController storyboardIdentifier="Login" id="BYZ-38-t0r" customClass="LoginController" customModule="McipNews" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Login" id="BYZ-38-t0r" customClass="LoginController" customModule="校园微平台" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Zng-J8-Cb7"/>
                         <viewControllerLayoutGuide type="bottom" id="eDQ-2i-iDO"/>
@@ -173,7 +173,7 @@
         <!--学子家园-->
         <scene sceneID="TEK-BZ-tFy">
             <objects>
-                <viewController id="bt6-4S-9LW" customClass="StudentHomeController" customModule="McipNews" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="bt6-4S-9LW" customClass="StudentHomeController" customModule="校园微平台" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="LUw-m0-ar7"/>
                         <viewControllerLayoutGuide type="bottom" id="Gar-bM-Dss"/>
@@ -201,7 +201,7 @@
         <!--Student Home Child View Controller-->
         <scene sceneID="yaY-EY-h7q">
             <objects>
-                <viewController storyboardIdentifier="StudentHomeChild" id="IPn-V7-X9P" customClass="StudentHomeChildViewController" customModule="McipNews" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="StudentHomeChild" id="IPn-V7-X9P" customClass="StudentHomeChildViewController" customModule="校园微平台" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="t44-qq-olQ"/>
                         <viewControllerLayoutGuide type="bottom" id="Ymc-5n-VRo"/>
@@ -356,7 +356,7 @@
         <!--新闻-->
         <scene sceneID="tZn-CB-cqk">
             <objects>
-                <viewController id="ts3-gQ-WyC" customClass="NewsViewController" customModule="McipNews" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="ts3-gQ-WyC" customClass="NewsViewController" customModule="校园微平台" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="g97-Za-b0U"/>
                         <viewControllerLayoutGuide type="bottom" id="BH5-8M-pEg"/>
@@ -385,10 +385,10 @@
             </objects>
             <point key="canvasLocation" x="1036.5" y="550.5"/>
         </scene>
-        <!--Tab Bar Controller-->
+        <!--Custom View Controller-->
         <scene sceneID="Mjv-Wt-luR">
             <objects>
-                <tabBarController storyboardIdentifier="MainTabBar" id="h6p-GG-hcE" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="MainTabBar" id="h6p-GG-hcE" customClass="CustomViewController" customModule="校园微平台" customModuleProvider="target" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="aNy-P1-84D"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" id="N59-Da-Fr6">
@@ -449,7 +449,7 @@
         <!--Home View Controller-->
         <scene sceneID="pF5-kY-C7x">
             <objects>
-                <viewController id="AM7-sO-tWp" customClass="HomeViewController" customModule="McipNews" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="AM7-sO-tWp" customClass="HomeViewController" customModule="校园微平台" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Zhf-jS-OyM"/>
                         <viewControllerLayoutGuide type="bottom" id="PhU-bU-AjT"/>
@@ -752,7 +752,7 @@
         <!--待办事项-->
         <scene sceneID="wmL-fZ-gg8">
             <objects>
-                <viewController storyboardIdentifier="WaitingItems" id="raF-xr-JtA" customClass="ItemsViewController" customModule="McipNews" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="WaitingItems" id="raF-xr-JtA" customClass="ItemsViewController" customModule="校园微平台" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="KEr-6f-v7i"/>
                         <viewControllerLayoutGuide type="bottom" id="L9h-5Y-kAb"/>
@@ -891,7 +891,7 @@
         <!--News Table View Controller-->
         <scene sceneID="gfn-Xv-Key">
             <objects>
-                <viewController storyboardIdentifier="TableViewController" id="thr-fg-c6T" customClass="NewsTableViewController" customModule="McipNews" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="TableViewController" id="thr-fg-c6T" customClass="NewsTableViewController" customModule="校园微平台" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="DQq-lo-zav"/>
                         <viewControllerLayoutGuide type="bottom" id="qh7-jV-s9m"/>
@@ -991,7 +991,7 @@
         <!--新闻详情-->
         <scene sceneID="DLC-RE-8gQ">
             <objects>
-                <viewController storyboardIdentifier="NewsDetail" hidesBottomBarWhenPushed="YES" id="4dD-3h-B15" customClass="NewsDetailViewController" customModule="McipNews" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="NewsDetail" hidesBottomBarWhenPushed="YES" id="4dD-3h-B15" customClass="NewsDetailViewController" customModule="校园微平台" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="dZ7-vg-vxF"/>
                         <viewControllerLayoutGuide type="bottom" id="I7k-RN-I2P"/>
@@ -1067,7 +1067,7 @@
         <!--通知-->
         <scene sceneID="0Ph-l7-LCF">
             <objects>
-                <viewController storyboardIdentifier="noticeView" id="bHX-rO-GGG" customClass="NoticeViewController" customModule="McipNews" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="noticeView" id="bHX-rO-GGG" customClass="NoticeViewController" customModule="校园微平台" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Qhl-cI-52p"/>
                         <viewControllerLayoutGuide type="bottom" id="MbL-uf-Vpt"/>
@@ -1452,7 +1452,7 @@
         <!--系统盒子-->
         <scene sceneID="EEh-7g-ImF">
             <objects>
-                <viewController storyboardIdentifier="boxView" id="5ch-U6-XxB" customClass="BoxViewController" customModule="McipNews" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="boxView" id="5ch-U6-XxB" customClass="BoxViewController" customModule="校园微平台" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="JyM-5n-wVQ"/>
                         <viewControllerLayoutGuide type="bottom" id="S7v-N7-FkB"/>
@@ -1621,7 +1621,7 @@
         <!--我的校园-->
         <scene sceneID="z9D-ej-QVH">
             <objects>
-                <viewController id="wAx-Es-Lwa" customClass="MyCampusViewController" customModule="McipNews" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="wAx-Es-Lwa" customClass="MyCampusViewController" customModule="校园微平台" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="kZL-b0-nDy"/>
                         <viewControllerLayoutGuide type="bottom" id="bhC-DL-Nmv"/>
@@ -1744,7 +1744,7 @@
         <!--回复详情-->
         <scene sceneID="Wk3-IL-Rdo">
             <objects>
-                <viewController storyboardIdentifier="noticeDetail" id="nbL-ag-1oE" customClass="NoticeDetailViewController" customModule="McipNews" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="noticeDetail" id="nbL-ag-1oE" customClass="NoticeDetailViewController" customModule="校园微平台" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="r7B-4F-vzt"/>
                         <viewControllerLayoutGuide type="bottom" id="6QZ-C5-48z"/>
@@ -2113,7 +2113,7 @@
         <!--新建通知-->
         <scene sceneID="LFE-Ph-ggU">
             <objects>
-                <viewController storyboardIdentifier="addNotice" hidesBottomBarWhenPushed="YES" id="boN-ha-dg6" customClass="AddNoticeViewController" customModule="McipNews" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="addNotice" hidesBottomBarWhenPushed="YES" id="boN-ha-dg6" customClass="AddNoticeViewController" customModule="校园微平台" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Yfe-Yd-euP"/>
                         <viewControllerLayoutGuide type="bottom" id="SER-WN-NGn"/>
@@ -2260,7 +2260,7 @@
         <!--发送时间-->
         <scene sceneID="aX5-vd-32W">
             <objects>
-                <viewController hidesBottomBarWhenPushed="YES" id="amE-jo-JnZ" customClass="SelectSendTimeViewController" customModule="McipNews" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController hidesBottomBarWhenPushed="YES" id="amE-jo-JnZ" customClass="SelectSendTimeViewController" customModule="校园微平台" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Lvq-a6-QNq"/>
                         <viewControllerLayoutGuide type="bottom" id="dEP-f7-R4z"/>
@@ -2357,7 +2357,7 @@
         <!--确认详情-->
         <scene sceneID="0Bz-1B-0eX">
             <objects>
-                <viewController storyboardIdentifier="confirmView" hidesBottomBarWhenPushed="YES" id="dyA-1R-CAU" customClass="NoticeConfirmDetailViewController" customModule="McipNews" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="confirmView" hidesBottomBarWhenPushed="YES" id="dyA-1R-CAU" customClass="NoticeConfirmDetailViewController" customModule="校园微平台" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Mof-rq-6gs"/>
                         <viewControllerLayoutGuide type="bottom" id="Fxs-IJ-8aH"/>
@@ -2436,7 +2436,7 @@
         <!--选择接收人-->
         <scene sceneID="f2f-Mt-b5n">
             <objects>
-                <viewController hidesBottomBarWhenPushed="YES" id="Es1-rW-9dM" customClass="SelectReceiverViewController" customModule="McipNews" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController hidesBottomBarWhenPushed="YES" id="Es1-rW-9dM" customClass="SelectReceiverViewController" customModule="校园微平台" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Oai-tK-5Rd"/>
                         <viewControllerLayoutGuide type="bottom" id="ukb-aF-6Nx"/>
@@ -2508,7 +2508,7 @@
         <!--选择新的接收人-->
         <scene sceneID="Mia-ED-qiK">
             <objects>
-                <viewController hidesBottomBarWhenPushed="YES" id="gPw-Tx-XVM" customClass="SelectNewReceiverViewController" customModule="McipNews" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController hidesBottomBarWhenPushed="YES" id="gPw-Tx-XVM" customClass="SelectNewReceiverViewController" customModule="校园微平台" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="i7f-GY-bbe"/>
                         <viewControllerLayoutGuide type="bottom" id="QGT-9o-U8i"/>
@@ -2595,7 +2595,7 @@
         <!--点名情况-->
         <scene sceneID="j1f-2o-xzk">
             <objects>
-                <viewController storyboardIdentifier="CallConditions" id="T7g-Mw-vNQ" customClass="CallViewController" customModule="McipNews" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="CallConditions" id="T7g-Mw-vNQ" customClass="CallViewController" customModule="校园微平台" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="pJC-oL-6mW"/>
                         <viewControllerLayoutGuide type="bottom" id="mL1-Jb-42z"/>
@@ -2950,7 +2950,7 @@
         <!--我的校园详情-->
         <scene sceneID="Cyw-40-NnS">
             <objects>
-                <viewController storyboardIdentifier="myCampusDetail" id="2C2-mm-KR6" customClass="MyCampusDetailViewController" customModule="McipNews" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="myCampusDetail" id="2C2-mm-KR6" customClass="MyCampusDetailViewController" customModule="校园微平台" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="614-6K-qIG"/>
                         <viewControllerLayoutGuide type="bottom" id="QJA-3r-Cc4"/>
@@ -3031,7 +3031,6 @@
         <!--Navigation Controller-->
         <scene sceneID="FYz-zW-uYI">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="eEX-wo-GmJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="DY5-cG-Rft" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Xkc-HP-e3g">
@@ -3043,6 +3042,7 @@
                         <segue destination="dyA-1R-CAU" kind="relationship" relationship="rootViewController" id="reQ-3U-NIE"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="eEX-wo-GmJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3110.5" y="4502.5"/>
         </scene>
@@ -3050,6 +3050,10 @@
         <scene sceneID="rv0-gj-G7T">
             <objects>
                 <viewController id="LaT-7G-PIt" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="psz-lh-ygO"/>
+                        <viewControllerLayoutGuide type="bottom" id="5Yt-fj-1Fc"/>
+                    </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="DDQ-m9-jnL">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
