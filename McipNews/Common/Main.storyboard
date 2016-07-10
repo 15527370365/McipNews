@@ -1616,7 +1616,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YBs-ve-YON" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1144.5" y="3846.5"/>
+            <point key="canvasLocation" x="1328.5" y="3846.5"/>
         </scene>
         <!--我的校园-->
         <scene sceneID="z9D-ej-QVH">
@@ -1735,6 +1735,7 @@
                     <connections>
                         <outlet property="defaultCollection" destination="oPd-vv-fpO" id="Z1f-Mc-Yvh"/>
                         <outlet property="saveCollection" destination="rPq-jM-Dgb" id="Jiy-Sh-F4j"/>
+                        <segue destination="2C2-mm-KR6" kind="show" identifier="showDetail" id="YmX-Mr-TcJ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="I1C-Vg-uMc" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1744,7 +1745,7 @@
         <!--回复详情-->
         <scene sceneID="Wk3-IL-Rdo">
             <objects>
-                <viewController storyboardIdentifier="noticeDetail" id="nbL-ag-1oE" customClass="NoticeDetailViewController" customModule="校园微平台" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="noticeDetail" hidesBottomBarWhenPushed="YES" id="nbL-ag-1oE" customClass="NoticeDetailViewController" customModule="校园微平台" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="r7B-4F-vzt"/>
                         <viewControllerLayoutGuide type="bottom" id="6QZ-C5-48z"/>
@@ -1794,8 +1795,7 @@
                                             <color key="titleColor" red="0.52549019610000003" green="0.52549019610000003" blue="0.52549019610000003" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
                                         <connections>
-                                            <action selector="showConfirmBtnEvent:" destination="nbL-ag-1oE" eventType="touchUpInside" id="EZi-mw-zrf"/>
-                                            <action selector="showPersonBtnEvent:" destination="nbL-ag-1oE" eventType="touchUpInside" id="zGc-tV-B6d"/>
+                                            <segue destination="dyA-1R-CAU" kind="show" id="vpr-Gs-I4k"/>
                                         </connections>
                                     </button>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nmO-OF-S3d" customClass="UIControl">
@@ -2143,7 +2143,7 @@
                                         <rect key="frame" x="319" y="2" width="36" height="36"/>
                                         <state key="normal" image="creatNotice_addReceiver"/>
                                         <connections>
-                                            <segue destination="Es1-rW-9dM" kind="show" id="4cN-ax-Fgr"/>
+                                            <segue destination="VH8-xb-WmF" kind="presentation" identifier="showReceiver" modalPresentationStyle="fullScreen" modalTransitionStyle="flipHorizontal" id="4cN-ax-Fgr"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -2158,11 +2158,14 @@
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ie3-sG-Lm3">
-                                        <rect key="frame" x="125" y="4" width="70" height="30"/>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ie3-sG-Lm3">
+                                        <rect key="frame" x="125" y="4" width="180" height="30"/>
                                         <state key="normal" title="立即发送">
                                             <color key="titleColor" red="0.56470588239999997" green="0.56470588239999997" blue="0.56470588239999997" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
+                                        <connections>
+                                            <segue destination="2gE-RT-MKZ" kind="presentation" identifier="showSendTime" modalPresentationStyle="fullScreen" modalTransitionStyle="coverVertical" id="K3q-95-wo8"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -2194,9 +2197,8 @@
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="点击输入内容..." textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="qtC-s6-YAE">
                                 <rect key="frame" x="0.0" y="242" width="375" height="376"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                <dataDetectorType key="dataDetectorTypes" calendarEvent="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences" enablesReturnKeyAutomatically="YES"/>
                             </textView>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tXl-dg-Lc0">
                                 <rect key="frame" x="0.0" y="112" width="375" height="40"/>
@@ -2236,9 +2238,15 @@
                                 <rect key="frame" x="299" y="7" width="60" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
+                                <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <state key="normal" title="发送">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="sendBtnEvent:" destination="boN-ha-dg6" eventType="touchUpInside" id="76r-fm-AqZ"/>
                                 </connections>
@@ -2251,6 +2259,7 @@
                         <outlet property="contentTextView" destination="qtC-s6-YAE" id="T48-iL-Eah"/>
                         <outlet property="receiverView" destination="9vW-Xj-Asd" id="nmx-h6-gkB"/>
                         <outlet property="sendBtn" destination="OAX-h5-dMc" id="ZZM-lW-jsG"/>
+                        <outlet property="timeButton" destination="ie3-sG-Lm3" id="VG1-wz-Mgc"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZcP-D8-kKo" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -2269,7 +2278,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="se5-bg-acX">
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="se5-bg-acX" customClass="UIControl">
                                 <rect key="frame" x="0.0" y="72" width="375" height="40"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="立即发送" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tRa-70-CN5">
@@ -2278,13 +2287,16 @@
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <imageView hidden="YES" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" fixedFrame="YES" image="selected" translatesAutoresizingMaskIntoConstraints="NO" id="pOf-MI-DVf">
+                                    <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" tag="100" contentMode="center" fixedFrame="YES" image="selected" translatesAutoresizingMaskIntoConstraints="NO" id="pOf-MI-DVf">
                                         <rect key="frame" x="325" y="10" width="30" height="20"/>
                                     </imageView>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <action selector="defaultSendBtnEvent:" destination="amE-jo-JnZ" eventType="touchUpInside" id="z1k-g8-tAa"/>
+                                </connections>
                             </view>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vOP-Pl-QyU">
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vOP-Pl-QyU" customClass="UIControl">
                                 <rect key="frame" x="0.0" y="127" width="375" height="81"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="自定义时间发送" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yoo-WW-quc">
@@ -2293,28 +2305,30 @@
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" fixedFrame="YES" image="selected" translatesAutoresizingMaskIntoConstraints="NO" id="eil-NI-IMO">
+                                    <imageView hidden="YES" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" tag="100" contentMode="center" fixedFrame="YES" image="selected" translatesAutoresizingMaskIntoConstraints="NO" id="eil-NI-IMO">
                                         <rect key="frame" x="325" y="10" width="30" height="20"/>
                                     </imageView>
-                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="U07-Jn-yT4">
-                                        <rect key="frame" x="0.0" y="40" width="375" height="1"/>
-                                        <color key="backgroundColor" red="0.8980392157" green="0.8980392157" blue="0.8980392157" alpha="1" colorSpace="calibratedRGB"/>
-                                    </view>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="指定时间" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Gb-dg-3yu">
                                         <rect key="frame" x="20" y="50" width="80" height="21"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <datePicker contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="5" translatesAutoresizingMaskIntoConstraints="NO" id="GVL-df-wa2">
-                                        <rect key="frame" x="135" y="45" width="220" height="32"/>
-                                        <date key="date" timeIntervalSinceReferenceDate="475955658.25611901">
-                                            <!--2016-01-31 17:54:18 +0000-->
-                                        </date>
-                                        <locale key="locale" localeIdentifier="zh_CN"/>
-                                    </datePicker>
+                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="sYO-nJ-rb5">
+                                        <rect key="frame" x="0.0" y="40" width="375" height="1"/>
+                                        <color key="backgroundColor" red="0.8980392157" green="0.8980392157" blue="0.8980392157" alpha="1" colorSpace="calibratedRGB"/>
+                                    </view>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="2016-07-10 17:00:00" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5dc-fE-BqZ">
+                                        <rect key="frame" x="185" y="49" width="170" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <action selector="customSendBtnEvent:" destination="amE-jo-JnZ" eventType="touchUpInside" id="fge-ro-hDs"/>
+                                </connections>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="通知将会在您指定的时间发送到相应的接收人" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lgp-NX-zTt">
                                 <rect key="frame" x="20" y="216" width="248" height="21"/>
@@ -2322,8 +2336,42 @@
                                 <color key="textColor" red="0.56470588235294117" green="0.56470588235294117" blue="0.56470588235294117" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XhO-Kz-eoW">
+                                <rect key="frame" x="152" y="560" width="70" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <state key="normal" title="确定"/>
+                                <connections>
+                                    <action selector="sureBtnEvent:" destination="amE-jo-JnZ" eventType="touchUpInside" id="b7k-ty-UZh"/>
+                                </connections>
+                            </button>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="U07-Jn-yT4">
+                                <rect key="frame" x="0.0" y="112" width="375" height="1"/>
+                                <color key="backgroundColor" red="0.8980392157" green="0.8980392157" blue="0.8980392157" alpha="1" colorSpace="calibratedRGB"/>
+                            </view>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Yga-k2-MHf">
+                                <rect key="frame" x="0.0" y="71" width="375" height="1"/>
+                                <color key="backgroundColor" red="0.8980392157" green="0.8980392157" blue="0.8980392157" alpha="1" colorSpace="calibratedRGB"/>
+                            </view>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="C8v-WV-5Yx">
+                                <rect key="frame" x="0.0" y="126" width="375" height="1"/>
+                                <color key="backgroundColor" red="0.8980392157" green="0.8980392157" blue="0.8980392157" alpha="1" colorSpace="calibratedRGB"/>
+                            </view>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="krc-PX-SVe">
+                                <rect key="frame" x="0.0" y="208" width="375" height="1"/>
+                                <color key="backgroundColor" red="0.8980392157" green="0.8980392157" blue="0.8980392157" alpha="1" colorSpace="calibratedRGB"/>
+                            </view>
+                            <datePicker hidden="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="5" translatesAutoresizingMaskIntoConstraints="NO" id="H5I-F2-Zkz">
+                                <rect key="frame" x="0.0" y="319" width="375" height="216"/>
+                                <date key="date" timeIntervalSinceReferenceDate="489825232.35456598">
+                                    <!--2016-07-10 06:33:52 +0000-->
+                                </date>
+                                <date key="minimumDate" timeIntervalSinceReferenceDate="-978267600">
+                                    <!--1970-01-01 11:00:00 +0000-->
+                                </date>
+                                <locale key="locale" localeIdentifier="zh_CN"/>
+                            </datePicker>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.98039215686274506" green="0.98039215686274506" blue="0.98039215686274506" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                     <navigationItem key="navigationItem" title="发送时间" id="xGT-Or-TwS">
                         <barButtonItem key="leftBarButtonItem" id="yl2-n8-j7J">
@@ -2343,16 +2391,26 @@
                                 <rect key="frame" x="299" y="7" width="60" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="确定">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleColor" red="0.1333333333" green="0.6588235294" blue="0.86666666670000003" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="sendBtnEvent:" destination="amE-jo-JnZ" eventType="touchUpInside" id="wHn-Lj-Yot"/>
+                                </connections>
                             </button>
                         </barButtonItem>
                     </navigationItem>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="customSendImage" destination="eil-NI-IMO" id="6hb-s0-lUH"/>
+                        <outlet property="datepicker" destination="H5I-F2-Zkz" id="1nJ-c1-7Ng"/>
+                        <outlet property="defaultSendImage" destination="pOf-MI-DVf" id="cv1-nQ-AXM"/>
+                        <outlet property="sureButton" destination="XhO-Kz-eoW" id="ScI-t8-JYQ"/>
+                        <outlet property="timeLabel" destination="5dc-fE-BqZ" id="3Pc-lo-Qgs"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GIJ-lp-rAT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3643.5" y="3522.5"/>
+            <point key="canvasLocation" x="4354.5" y="3512.5"/>
         </scene>
         <!--确认详情-->
         <scene sceneID="0Bz-1B-0eX">
@@ -2401,7 +2459,7 @@
                                 </subviews>
                                 <color key="backgroundColor" red="0.95686274510000002" green="0.95686274510000002" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <connections>
-                                    <action selector="showChild:" destination="dyA-1R-CAU" eventType="valueChanged" id="SZm-ny-kYt"/>
+                                    <action selector="showChild:" destination="dyA-1R-CAU" eventType="touchUpInside" id="0XH-3g-bBn"/>
                                 </connections>
                             </view>
                             <containerView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qoB-PK-Nmb">
@@ -2431,7 +2489,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="P3k-7n-PNd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3697.5" y="4502.5"/>
+            <point key="canvasLocation" x="3643.5" y="4470.5"/>
         </scene>
         <!--选择接收人-->
         <scene sceneID="f2f-Mt-b5n">
@@ -2499,11 +2557,12 @@
                     <connections>
                         <outlet property="sureButton" destination="Tnt-fZ-dR6" id="Uen-cc-PyI"/>
                         <outlet property="tableView" destination="uQ9-rN-yJn" id="SPq-IN-3Ki"/>
+                        <segue destination="gPw-Tx-XVM" kind="presentation" identifier="showGroupMembers" id="jqh-wE-ePb"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fcu-eF-C1C" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3643.5" y="2726.5"/>
+            <point key="canvasLocation" x="4354.5" y="2726.5"/>
         </scene>
         <!--选择新的接收人-->
         <scene sceneID="Mia-ED-qiK">
@@ -2571,7 +2630,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pqU-wl-XLA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4321.5" y="2726.5"/>
+            <point key="canvasLocation" x="4912.5" y="2726.5"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="VzD-v4-Isk">
@@ -2945,12 +3004,12 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="g4b-XL-m3R" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1776.5" y="3846.5"/>
+            <point key="canvasLocation" x="1852.5" y="3846.5"/>
         </scene>
         <!--我的校园详情-->
         <scene sceneID="Cyw-40-NnS">
             <objects>
-                <viewController storyboardIdentifier="myCampusDetail" id="2C2-mm-KR6" customClass="MyCampusDetailViewController" customModule="校园微平台" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="myCampusDetail" hidesBottomBarWhenPushed="YES" id="2C2-mm-KR6" customClass="MyCampusDetailViewController" customModule="校园微平台" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="614-6K-qIG"/>
                         <viewControllerLayoutGuide type="bottom" id="QJA-3r-Cc4"/>
@@ -2987,7 +3046,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="L3R-vy-2EI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1636.5" y="4651.5"/>
+            <point key="canvasLocation" x="843.5" y="4651.5"/>
         </scene>
         <!--我的校园-->
         <scene sceneID="kdU-SE-tY2">
@@ -3009,43 +3068,6 @@
             </objects>
             <point key="canvasLocation" x="-575.5" y="4651.5"/>
         </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="Ifl-ov-qrH">
-            <objects>
-                <navigationController storyboardIdentifier="test23" automaticallyAdjustsScrollViewInsets="NO" id="8v7-hv-f0N" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="CL1-6O-g09">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="2C2-mm-KR6" kind="relationship" relationship="rootViewController" id="wcN-8a-0uZ"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="XdC-Sz-OHD" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="947.5" y="4651.5"/>
-        </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="FYz-zW-uYI">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="DY5-cG-Rft" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Xkc-HP-e3g">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="dyA-1R-CAU" kind="relationship" relationship="rootViewController" id="reQ-3U-NIE"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="eEX-wo-GmJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="3110.5" y="4502.5"/>
-        </scene>
         <!--View Controller-->
         <scene sceneID="rv0-gj-G7T">
             <objects>
@@ -3062,47 +3084,43 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eRL-8x-osd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4216.5" y="4503"/>
+            <point key="canvasLocation" x="4246.5" y="4471"/>
         </scene>
-        <!--View Controller-->
-        <scene sceneID="ob0-DT-a9R">
+        <!--Navigation Controller-->
+        <scene sceneID="MxV-Vm-kuj">
             <objects>
-                <viewController storyboardIdentifier="confirmViews" id="GBi-q7-xOd" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="PM8-6z-gwm"/>
-                        <viewControllerLayoutGuide type="bottom" id="qmP-jL-X1Z"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="FZE-y7-qRy">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="98" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="I22-gi-tKo">
-                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="personCell" rowHeight="98" id="EY5-jT-o0A">
-                                        <rect key="frame" x="0.0" y="28" width="375" height="98"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="EY5-jT-o0A" id="0XD-mr-4Pb">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="97.5"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cm3-Ct-dra">
-                                                    <rect key="frame" x="29" y="8" width="40" height="40"/>
-                                                </imageView>
-                                            </subviews>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                </prototypes>
-                            </tableView>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="llk-eJ-McV" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="2gE-RT-MKZ" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="uNR-Bu-0wo">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="amE-jo-JnZ" kind="relationship" relationship="rootViewController" id="XtH-Zf-Nyz"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cs6-7B-w3a" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4000.5" y="5307.5"/>
+            <point key="canvasLocation" x="3643.5" y="3518.5"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="MZd-bK-YzF">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="VH8-xb-WmF" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="dVd-yx-jyg">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Es1-rW-9dM" kind="relationship" relationship="rootViewController" id="Mi4-V6-hBG"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ea3-bS-pWf" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3643.5" y="2726.5"/>
         </scene>
     </scenes>
     <resources>

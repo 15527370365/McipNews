@@ -41,7 +41,6 @@ class NoticeConfirmDetailViewController: UIViewController {
     }
     
     @IBAction func backBtnEvent(sender: UIButton) {
-        print(123)
         self.navigationController?.popViewControllerAnimated(true)
     }
     @IBAction func showChild(sender: UIControl) {

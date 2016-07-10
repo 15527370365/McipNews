@@ -262,7 +262,7 @@ struct DataTool {
         }
     }
     
-    static func sendNotice(select:Array<ReceiverCell>,content:String,completionHandler:(flag:Bool)->Void){
+    static func sendNotice(select:Array<ReceiverCell>,content:String,nremindtype:NSNumber,nsendtime:String,type:NSNumber,completionHandler:(flag:Bool)->Void){
         let headers = ["consumer_key": ALAMOFIRE_KEY,"userid":userid,"token":token]
         var nuserid = ""
         for i in 0..<select.count{
@@ -273,10 +273,13 @@ struct DataTool {
                 nuserid+=select[i].members[j].userid
             }
         }
-        let type = 1
-        let remindtype = 0
-        let parameters = ["nuserid":nuserid,"ndeadline":"2016-07-20 23:59:00","ncontent":content,"ntype":"\(type)","nremindtype":"\(remindtype)"]
-        print(parameters)
+        let parameters:[String:String]
+        if type == 0 {
+            parameters = ["nuserid":nuserid,"ndeadline":"2016-12-20 23:59:00","ncontent":content,"ntype":"1","nremindtype":"\(nremindtype)"]
+        }else{
+            parameters = ["nuserid":nuserid,"ndeadline":"2016-12-20 23:59:00","ncontent":content,"ntype":"1","nremindtype":"\(nremindtype)","nsendtime":nsendtime]
+        }
+        
         let json = fetchJsonFromNet(server+"/notice/sendNotice", parameters, headers)
         json.jsonToModel(nil) { result in
             if result["code"].string=="40000" {

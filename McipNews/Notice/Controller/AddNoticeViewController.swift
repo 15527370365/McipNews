@@ -10,25 +10,35 @@ import UIKit
 
 class AddNoticeViewController: UIViewController {
 
+    // MARK: - Parameters
     var selectReceivers = Array<ReceiverCell>()
+    var sendTime : (type:NSNumber,time:String)!
     @IBOutlet var receiverView: UIView!
     @IBOutlet var addBtn: UIButton!
     @IBOutlet var sendBtn: UIButton!
-    
     @IBOutlet var contentTextView: UITextView!
+    @IBOutlet var timeButton: UIButton!
+    
+    // MARK: - ViewController override function
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = UIColor(red:0.98, green:0.98, blue:0.98, alpha:1)
         sendBtn.backgroundColor = UIColor(red:0.74, green:0.74, blue:0.74, alpha:1)
-        // Do any additional setup after loading the view.
         self.contentTextView.delegate = self
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        //print(123)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector:#selector(AddNoticeViewController.setSendTime(_:)),name: "SetSendTimeNotification", object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector:#selector(AddNoticeViewController.setReceivers(_:)),name: "SetSendReceiversNotification", object: nil)
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
+    
+    // MARK: - Butten Event
     @IBAction func backBtnEvent(sender: AnyObject) {
         self.navigationController?.popViewControllerAnimated(true)
     }
@@ -37,7 +47,7 @@ class AddNoticeViewController: UIViewController {
             let hud = MBProgressHUD.showHUDAddedTo(self.view, animated: true)
             hud.bezelView.backgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0)
             hud.label.text = "Loading"
-            DataTool.sendNotice(self.selectReceivers,content: self.contentTextView.text){ (result) -> Void in
+            DataTool.sendNotice(self.selectReceivers,content: self.contentTextView.text,nremindtype: 0,nsendtime: self.sendTime.time,type: self.sendTime.type){ (result) -> Void in
                 MBProgressHUD.hideHUDForView(self.view, animated: true)
                 if result{
                     let alertController = UIAlertController(title: "提示", message: "发送成功", preferredStyle: UIAlertControllerStyle.Alert)
@@ -64,21 +74,33 @@ class AddNoticeViewController: UIViewController {
     }
     
     
-    func addReceiverEvent() {
-//        let imageView1 = UIImageView(frame:CGRect(x: 0, y: 0, width: 36,height: self.addBtn.frame.height))
-//        imageView1.image = UIImage(named: "creatNotice_head1")
-//        let imageView2 = UIImageView(frame:CGRect(x: 5+36, y: 0, width: 36,height: self.addBtn.frame.height))
-//        imageView2.image = UIImage(named: "creatNotice_head2")
+    // MARK: - Notificaion function
+    func setSendTime(notification: NSNotification){
+        print(notification.userInfo)
+        let userInfo = notification.userInfo as! [String: AnyObject]
+        self.sendTime = (userInfo["type"] as! NSNumber, userInfo["time"] as! String)
+        self.timeButton.titleLabel?.text = self.sendTime.time
+        NSNotificationCenter.defaultCenter().removeObserver(self)
+    }
+    
+    
+    func setReceivers(notification: NSNotification) {
+        let userInfo = notification.userInfo as! [String: AnyObject]
+        self.selectReceivers = userInfo["select"] as! Array<ReceiverCell>
+        if let oldView = self.receiverView.viewWithTag(400) {
+            oldView.removeFromSuperview()
+        }
         let containerView = UIScrollView(frame:CGRect(x: 125, y: self.addBtn.frame.origin.y, width: 118,height: self.addBtn.frame.height))
         containerView.contentSize = CGSizeMake(200, 36)
-        for i in 0..<selectReceivers.count {
+        containerView.tag = 400
+        for i in 0..<self.selectReceivers.count {
             var sum = 0
             if i != 0 {
                 sum = 41*i
             }
             let imageView = UIImageView(frame:CGRect(x: CGFloat(sum), y: 0, width: 36,height: self.addBtn.frame.height))
-            if selectReceivers[i].gpic.lengthOfBytesUsingEncoding(NSUTF8StringEncoding) != 0 {
-                imageView.image = UIImage(data: NSData(base64EncodedString: selectReceivers[i].gpic, options: NSDataBase64DecodingOptions.IgnoreUnknownCharacters)!)
+            if self.selectReceivers[i].gpic.lengthOfBytesUsingEncoding(NSUTF8StringEncoding) != 0 {
+                imageView.image = UIImage(data: NSData(base64EncodedString: self.selectReceivers[i].gpic, options: NSDataBase64DecodingOptions.IgnoreUnknownCharacters)!)
             }else{
                 imageView.image = UIImage(named: "creatNotice_head3-1")
             }
@@ -86,6 +108,7 @@ class AddNoticeViewController: UIViewController {
         }
         self.receiverView.addSubview(containerView)
         self.sendBtn.setTitleColor(UIColor(red:0.32, green:0.75, blue:0.95, alpha:1), forState: .Normal)
+        NSNotificationCenter.defaultCenter().removeObserver(self)
     }
 
     /*
@@ -95,13 +118,20 @@ class AddNoticeViewController: UIViewController {
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
-    }
-    */
+        segue.destinationViewController
+    }*/
+ 
 
 }
 
 extension AddNoticeViewController:UITextViewDelegate{
     func textViewDidBeginEditing(textView: UITextView){
-        self.contentTextView.text = ""
+        if self.contentTextView.text == "点击输入内容..." {
+            self.contentTextView.text = ""
+        }
+        let defaultFrame = self.contentTextView.frame
+        self.contentTextView.frame = CGRectMake(defaultFrame.origin.x, defaultFrame.origin.y, defaultFrame.width, defaultFrame.height-300)
+        print(self.contentTextView.frame.height)
+        self.contentTextView.reloadInputViews()
     }
 }

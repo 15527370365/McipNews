@@ -24,6 +24,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>Timepiece.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>WMPageController-Swift.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -32,17 +37,17 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
+		<key>0A70E85A783D6247EE652F1A30792231</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>175892047F5D57D69AC9D102FB92A2F2</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>29B2176C4C5AE7B7F3CF4F385EEDD0DE</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>4B1906DF07440F611F00E9936B2450FC</key>
+		<key>2384912D7BE12EEE7116E3E24454F32F</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -52,7 +57,12 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>C57B4BD010A34B8260CC9E19DF887F3A</key>
+		<key>ACEFD973C3DF1F19284C8956D6413DBC</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>B28B50A452C040B5075DC4026C687E3C</key>
 		<dict>
 			<key>primary</key>
 			<true/>

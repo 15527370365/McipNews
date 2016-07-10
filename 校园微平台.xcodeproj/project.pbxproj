@@ -31,6 +31,7 @@
 		0454F13A1CF5A99B0089FE4B /* McipNews.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 0454F1381CF5A99B0089FE4B /* McipNews.xcdatamodeld */; };
 		0454F13C1CF5AE6A0089FE4B /* Course.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0454F13B1CF5AE6A0089FE4B /* Course.swift */; };
 		045A60C41D2FF38B005AEFEC /* CustomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045A60C31D2FF38B005AEFEC /* CustomViewController.swift */; };
+		045A60C81D31FB8A005AEFEC /* Collection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045A60C71D31FB8A005AEFEC /* Collection.swift */; };
 		046BE3C31D24228C003C602C /* BoxViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046BE3C21D24228C003C602C /* BoxViewController.swift */; };
 		046DE1961D2C26FF00207935 /* Notices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046DE1951D2C26FF00207935 /* Notices.swift */; };
 		046DE19A1D2CD8D800207935 /* MyCampusViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046DE1991D2CD8D800207935 /* MyCampusViewController.swift */; };
@@ -134,6 +135,7 @@
 		0454F1391CF5A99B0089FE4B /* McipNews.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = McipNews.xcdatamodel; sourceTree = "<group>"; };
 		0454F13B1CF5AE6A0089FE4B /* Course.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Course.swift; sourceTree = "<group>"; };
 		045A60C31D2FF38B005AEFEC /* CustomViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomViewController.swift; sourceTree = "<group>"; };
+		045A60C71D31FB8A005AEFEC /* Collection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Collection.swift; sourceTree = "<group>"; };
 		046BE3C21D24228C003C602C /* BoxViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BoxViewController.swift; sourceTree = "<group>"; };
 		046DE1951D2C26FF00207935 /* Notices.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Notices.swift; sourceTree = "<group>"; };
 		046DE1991D2CD8D800207935 /* MyCampusViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyCampusViewController.swift; sourceTree = "<group>"; };
@@ -455,6 +457,7 @@
 			isa = PBXGroup;
 			children = (
 				046DE19F1D2CFA4100207935 /* ButtonCell.swift */,
+				045A60C71D31FB8A005AEFEC /* Collection.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -970,6 +973,7 @@
 				04F2BE141CF3593B002E6628 /* ButtonTool.swift in Sources */,
 				046DE1A21D2D004900207935 /* MyCampusDetailViewController.swift in Sources */,
 				04D6FF371D2AC4380093F99A /* LBXScanViewController.swift in Sources */,
+				045A60C81D31FB8A005AEFEC /* Collection.swift in Sources */,
 				04ED8B731CF0340D00293D0F /* MJRefreshGifHeader.m in Sources */,
 				04ED8B781CF0340D00293D0F /* UIScrollView+MJExtension.m in Sources */,
 				04B05B781CCD1A49000EB09E /* MBProgressHUD.m in Sources */,

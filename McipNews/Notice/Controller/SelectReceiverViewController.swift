@@ -43,21 +43,26 @@ class SelectReceiverViewController: UIViewController {
     }
     
     @IBAction func backBtnEvent(sender: AnyObject) {
-        self.navigationController?.popViewControllerAnimated(true)
+        self.dismissViewControllerAnimated(true){ () -> Void in
+        }
     }
     
     @IBAction func sureButtonEvent(sender: UIButton) {
         if self.select.count != 0 {
-            print(self.select)
             var temp = Array<ReceiverCell>()
             for value in self.select.values{
                 temp.append(value)
             }
-            let vc = self.navigationController?.viewControllers[1] as! AddNoticeViewController
-            vc.selectReceivers = temp
-            vc.addReceiverEvent()
-            self.navigationController?.popToViewController(vc, animated: true)
+            self.dismissViewControllerAnimated(true){ () -> Void in
+                NSNotificationCenter.defaultCenter().postNotificationName("SetSendReceiversNotification", object: self, userInfo: ["select":temp])
+            }
+//            
+//            let vc = self.navigationController?.viewControllers[1] as! AddNoticeViewController
+//            vc.selectReceivers = temp
+//            vc.addReceiverEvent()
+//            self.navigationController?.popToViewController(vc, animated: true)
         }
+        
     }
 
     /*

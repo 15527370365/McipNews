@@ -70,15 +70,27 @@ class MyCampusViewController: UIViewController {
         self.hidesBottomBarWhenPushed=false
     }
 
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
+        if segue.identifier == "showDetail" {
+            var buttonCell = ButtonCell()
+            let collection = sender as! Collection
+            if collection.collectionView.tag == 200 {
+                buttonCell = saveData[collection.indexPath.row]
+            }else{
+                buttonCell = defaultData[collection.indexPath.row]
+            }
+            let vc = segue.destinationViewController as! MyCampusDetailViewController
+            vc.url = buttonCell.url
+            vc.navigationItem.title = buttonCell.title
+        }
     }
-    */
+ 
 
 }
 
@@ -121,20 +133,21 @@ extension MyCampusViewController : UICollectionViewDelegate,UICollectionViewData
     
     // MARK: - UICollection delegate
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath){
-        print(indexPath.row)
-        var buttonCell = ButtonCell()
-        if collectionView.tag == 200 {
-            buttonCell = saveData[indexPath.row]
-        }else{
-            buttonCell = defaultData[indexPath.row]
-        }
-        let sb = UIStoryboard(name: "Main", bundle: nil)
-        let vc = sb.instantiateViewControllerWithIdentifier("myCampusDetail") as! MyCampusDetailViewController
-        vc.url = buttonCell.url
-        vc.navigationItem.title = buttonCell.title
-        self.hidesBottomBarWhenPushed=true
-        self.navigationController?.pushViewController(vc, animated: true)
-        self.hidesBottomBarWhenPushed=false
+//        print(indexPath.row)
+//        var buttonCell = ButtonCell()
+//        if collectionView.tag == 200 {
+//            buttonCell = saveData[indexPath.row]
+//        }else{
+//            buttonCell = defaultData[indexPath.row]
+//        }
+//        let sb = UIStoryboard(name: "Main", bundle: nil)
+//        let vc = sb.instantiateViewControllerWithIdentifier("myCampusDetail") as! MyCampusDetailViewController
+//        vc.url = buttonCell.url
+//        vc.navigationItem.title = buttonCell.title
+//        self.hidesBottomBarWhenPushed=true
+//        self.navigationController?.pushViewController(vc, animated: true)
+//        self.hidesBottomBarWhenPushed=false
+        self.performSegueWithIdentifier("showDetail", sender: Collection(collectionView: collectionView,indexPath: indexPath))
     }
     
 }
