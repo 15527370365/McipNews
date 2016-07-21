@@ -12,7 +12,7 @@ class AddNoticeViewController: UIViewController {
 
     // MARK: - Parameters
     var selectReceivers = Array<ReceiverCell>()
-    var sendTime : (type:NSNumber,time:String)!
+    var sendTime = (type:0,time:"")
     @IBOutlet var receiverView: UIView!
     @IBOutlet var addBtn: UIButton!
     @IBOutlet var sendBtn: UIButton!
@@ -51,13 +51,15 @@ class AddNoticeViewController: UIViewController {
                 MBProgressHUD.hideHUDForView(self.view, animated: true)
                 if result{
                     let alertController = UIAlertController(title: "提示", message: "发送成功", preferredStyle: UIAlertControllerStyle.Alert)
-                    let okAction = UIAlertAction(title: "好的", style: UIAlertActionStyle.Default, handler: nil)
+                    let okAction = UIAlertAction(title: "好的", style: UIAlertActionStyle.Default){
+                        (action) -> Void in
+                        self.navigationController?.popViewControllerAnimated(true)
+                    }
                     alertController.addAction(okAction)
                     self.presentViewController(alertController, animated: true, completion: nil)
-                    self.contentTextView.resignFirstResponder()
 //                    let storyboard = UIStoryboard(name: "Main", bundle: nil)
 //                    self.navigationController?.popToViewController(storyboard.instantiateViewControllerWithIdentifier("noticeView"), animated: true)
-                    print(self.navigationController?.viewControllers)
+                    
                 }else{
                     let alertController = UIAlertController(title: "提示", message: "请稍后再试！", preferredStyle: UIAlertControllerStyle.Alert)
                     let okAction = UIAlertAction(title: "好的", style: UIAlertActionStyle.Default, handler: nil)
@@ -78,8 +80,10 @@ class AddNoticeViewController: UIViewController {
     func setSendTime(notification: NSNotification){
         print(notification.userInfo)
         let userInfo = notification.userInfo as! [String: AnyObject]
-        self.sendTime = (userInfo["type"] as! NSNumber, userInfo["time"] as! String)
-        self.timeButton.titleLabel?.text = self.sendTime.time
+        self.sendTime = (userInfo["type"] as! Int, userInfo["time"] as! String)
+        if self.sendTime.type == 1 {
+            self.timeButton.titleLabel?.text = self.sendTime.time
+        }
         NSNotificationCenter.defaultCenter().removeObserver(self)
     }
     

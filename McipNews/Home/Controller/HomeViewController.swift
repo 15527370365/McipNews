@@ -132,7 +132,8 @@ extension HomeViewController:UITableViewDataSource,UITableViewDelegate{
             let num = cell.viewWithTag(104) as! UILabel
             let image = cell.viewWithTag(101) as! UIImageView
             let course = cellModel.data as! Course
-            name.text = "\(course.crname)（\(course.crcredit)学分，\(course.crhours)学时）"
+            //name.text = "\(course.crname)（\(course.crcredit)学分，\(course.crhours)学时）"
+            name.text = course.crname
             place.text = "\(course.place) · \(course.uname)"
             if course.tasknum == 0 {
                 num.hidden=true
@@ -177,6 +178,7 @@ extension HomeViewController:UITableViewDataSource,UITableViewDelegate{
         let cellModel = cells[indexPath.row] as CellModel
         if cellModel.type==1 {
             let vc = sb.instantiateViewControllerWithIdentifier("CallConditions") as! CallViewController
+            vc.rccid = (cellModel.data as! Course).rccid
             self.hidesBottomBarWhenPushed = true
             self.navigationController?.pushViewController(vc, animated: true)
             self.hidesBottomBarWhenPushed = false

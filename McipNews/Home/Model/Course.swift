@@ -10,6 +10,7 @@ import UIKit
 import SwiftyJSON
 
 class Course: NSObject {
+    var rccid:NSNumber //课程编号
     var crcredit:NSNumber //学分
     var crhours:NSNumber //学时
     var uname:String //任课老师
@@ -19,6 +20,7 @@ class Course: NSObject {
     var picName:String //Cell图片名称
     
     init(json:JSON,time:NSNumber) {
+        self.rccid = json["classinfo"]["rccid"].intValue
         self.crcredit=json["classinfo"]["crcredit"].intValue
         self.crhours=json["classinfo"]["crhours"].intValue
         self.uname=json["classinfo"]["uname"].stringValue

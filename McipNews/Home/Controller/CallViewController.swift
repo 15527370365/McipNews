@@ -10,17 +10,23 @@ import UIKit
 
 class CallViewController: UIViewController {
     
-    let defaultColors = [UIColor(red:0.53, green:0.84, blue:0.25, alpha:1),UIColor(red:0.14, green:0.65, blue:0.78, alpha:1),UIColor(red:0.76, green:0.23, blue:0.25, alpha:1)]
-    @IBOutlet var arriveNumberLabel: UILabel!
-    @IBOutlet var totalNumberLabel: UILabel!
-    @IBOutlet var absentNumberLabel: UILabel!
+    var rccid:NSNumber = 0
     
-    
+    @IBOutlet var webView: UIWebView!
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.webView.delegate = self
+        let url = NSURL(string:"http://139.129.21.70/mcip/education/getClassroomRollCall/\(userid)-\(rccid)")
+        let request : NSMutableURLRequest = NSMutableURLRequest(URL: url!, cachePolicy: NSURLRequestCachePolicy.UseProtocolCachePolicy, timeoutInterval: 10)
+        request.HTTPMethod = "GET"//设置请求方式为POST，默认为GET
+        request.addValue(userid, forHTTPHeaderField: "userid")
+        request.addValue(token, forHTTPHeaderField: "token")
+        let hud = MBProgressHUD.showHUDAddedTo(self.view, animated: true)
+        hud.bezelView.backgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0)
+        hud.label.text = "Loading"
+        webView.loadRequest(request)
         let swipeLeftGesture = UISwipeGestureRecognizer(target: self, action: #selector(backBtn))
         self.view.addGestureRecognizer(swipeLeftGesture)
-        // Do any additional setup after loading the view.
     }
 
     override func didReceiveMemoryWarning() {
@@ -42,4 +48,10 @@ class CallViewController: UIViewController {
     }
     */
 
+}
+
+extension CallViewController:UIWebViewDelegate{
+    func webViewDidFinishLoad(webView: UIWebView){
+        MBProgressHUD.hideHUDForView(self.view, animated: true)
+    }
 }

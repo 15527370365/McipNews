@@ -59,7 +59,8 @@ class LoginController: UIViewController {
             let hud = MBProgressHUD.showHUDAddedTo(self.view, animated: true)
             hud.label.text = "Loading"
             let result=CommonFunction.getMacAddress()
-            let parameters = ["consumer_key": ALAMOFIRE_KEY,"userid":userField.text!,"upass":passField.text!,"ustateadd":result.mac,"uequipment":"4","uchannelid":BPush.getChannelId()]
+            //let parameters = ["consumer_key": ALAMOFIRE_KEY,"userid":userField.text!,"upass":passField.text!,"ustateadd":result.mac,"uequipment":"4","uchannelid":BPush.getChannelId()]
+            let parameters = ["consumer_key": ALAMOFIRE_KEY,"userid":userField.text!,"upass":passField.text!,"ustateadd":result.mac,"uequipment":"4","uchannelid":"123"]
             Alamofire.request(.POST, POST_LOGIN, parameters:parameters).responseJSON() {
                 response in
                 if let jsonValue = response.result.value {

@@ -19,7 +19,7 @@ class ItemsViewController: UIViewController {
         self.tableView.delegate = self
         self.tableView.dataSource = self
         self.tableView.backgroundColor = UIColor(red:0.95, green:0.95, blue:0.96, alpha:1)
-        self.tableView.tableFooterView=UIView.init(frame: CGRectZero)
+        self.tableView.tableFooterView=UIView(frame: CGRectZero)
         let swipeLeftGesture = UISwipeGestureRecognizer(target: self, action: #selector(backBtnClick))
         self.view.addGestureRecognizer(swipeLeftGesture)
         // Do any additional setup after loading the view.
@@ -48,7 +48,7 @@ class ItemsViewController: UIViewController {
 extension ItemsViewController:UITableViewDelegate,UITableViewDataSource{
     // MARK: - UITableViewDataSourrce
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int{
-        return 6
+        return 10
     }
     
     
@@ -56,12 +56,12 @@ extension ItemsViewController:UITableViewDelegate,UITableViewDataSource{
         let cell=self.tableView.dequeueReusableCellWithIdentifier("itemCell")! as UITableViewCell
         let view = cell.viewWithTag(100)! as UIView
         let aLabel = cell.viewWithTag(101) as! UILabel
-        let bLabel = cell.viewWithTag(102) as! UILabel
+        //let bLabel = cell.viewWithTag(102) as! UILabel
         let timeLabel = cell.viewWithTag(103) as! UILabel
         let color = defaultColors[indexPath.row%4]
         view.backgroundColor = color
         aLabel.textColor = color
-        bLabel.textColor = color
+        //bLabel.textColor = color
         timeLabel.textColor = color
         return cell
     }
@@ -72,5 +72,6 @@ extension ItemsViewController:UITableViewDelegate,UITableViewDataSource{
     
     // MARK: -UITableViewDelegate
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath){
+        self.tableView.deselectRowAtIndexPath(indexPath, animated: false)
     }
 }

@@ -51,6 +51,7 @@
 		04B05B771CCD1A49000EB09E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04B05B711CCD1A49000EB09E /* Main.storyboard */; };
 		04B05B781CCD1A49000EB09E /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 04B05B731CCD1A49000EB09E /* MBProgressHUD.m */; };
 		04BF88C51D243EED00062A8C /* NoticeDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04BF88C41D243EED00062A8C /* NoticeDetailViewController.swift */; };
+		04C366831D3B975F00D9F27D /* CommonExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C366821D3B975F00D9F27D /* CommonExtension.swift */; };
 		04CCD8B51D12E8850080F399 /* CallViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04CCD8B41D12E8850080F399 /* CallViewController.swift */; };
 		04CCD8B91D192D4E0080F399 /* StudentHomeChildViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04CCD8B81D192D4E0080F399 /* StudentHomeChildViewController.swift */; };
 		04D6FF331D2AC4380093F99A /* LBXPermissions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D6FF2C1D2AC4380093F99A /* LBXPermissions.swift */; };
@@ -163,6 +164,7 @@
 		04B05B721CCD1A49000EB09E /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBProgressHUD.h; sourceTree = "<group>"; };
 		04B05B731CCD1A49000EB09E /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
 		04BF88C41D243EED00062A8C /* NoticeDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoticeDetailViewController.swift; sourceTree = "<group>"; };
+		04C366821D3B975F00D9F27D /* CommonExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommonExtension.swift; sourceTree = "<group>"; };
 		04CCD8B41D12E8850080F399 /* CallViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CallViewController.swift; sourceTree = "<group>"; };
 		04CCD8B81D192D4E0080F399 /* StudentHomeChildViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StudentHomeChildViewController.swift; sourceTree = "<group>"; };
 		04D6FF2C1D2AC4380093F99A /* LBXPermissions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LBXPermissions.swift; sourceTree = "<group>"; };
@@ -284,6 +286,7 @@
 				04B05B6E1CCD1A49000EB09E /* CommonFunction.swift */,
 				0428A6F21CF1DFD9004EB337 /* Navigation.swift */,
 				04F2BE131CF3593B002E6628 /* ButtonTool.swift */,
+				04C366821D3B975F00D9F27D /* CommonExtension.swift */,
 			);
 			path = Tool;
 			sourceTree = "<group>";
@@ -978,6 +981,7 @@
 				04ED8B781CF0340D00293D0F /* UIScrollView+MJExtension.m in Sources */,
 				04B05B781CCD1A49000EB09E /* MBProgressHUD.m in Sources */,
 				04D6FF361D2AC4380093F99A /* LBXScanView.swift in Sources */,
+				04C366831D3B975F00D9F27D /* CommonExtension.swift in Sources */,
 				04F2BE121CF35610002E6628 /* ItemsViewController.swift in Sources */,
 				04D6FF391D2AC4380093F99A /* LBXScanWrapper.swift in Sources */,
 				04ED8B681CF0340D00293D0F /* MJRefreshAutoFooter.m in Sources */,
@@ -1057,6 +1061,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
+				PROVISIONING_PROFILE = "";
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
@@ -1095,6 +1100,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				MTL_ENABLE_DEBUG_INFO = NO;
+				PROVISIONING_PROFILE = "";
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};
@@ -1108,6 +1114,8 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "Brand Assets";
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = McipNews/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -1117,6 +1125,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = cn.net.syzc.McipNews;
 				PRODUCT_NAME = "校园微平台";
+				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "McipNews/Common/Other/McipNews-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				TARGETED_DEVICE_FAMILY = 1;
@@ -1131,6 +1140,8 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "Brand Assets";
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = McipNews/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -1140,6 +1151,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = cn.net.syzc.McipNews;
 				PRODUCT_NAME = "校园微平台";
+				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "McipNews/Common/Other/McipNews-Bridging-Header.h";
 				TARGETED_DEVICE_FAMILY = 1;
 			};

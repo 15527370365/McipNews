@@ -1,5 +1,6 @@
 PODS:
   - Alamofire (3.2.0)
+  - CryptoSwift (0.5.1)
   - Kingfisher (2.0.3)
   - SwiftyJSON (2.3.2)
   - Timepiece (0.4.2)
@@ -7,22 +8,30 @@ PODS:
 
 DEPENDENCIES:
   - Alamofire (~> 3.2.0)
+  - CryptoSwift (from `https://github.com/krzyzanowskim/CryptoSwift`, branch `master`)
   - Kingfisher (~> 2.0.3)
   - SwiftyJSON (~> 2.3.0)
   - Timepiece (~> 0.4.2)
   - WMPageController-Swift (from `https://github.com/wangmchn/WMPageController-Swift.git`)
 
 EXTERNAL SOURCES:
+  CryptoSwift:
+    :branch: master
+    :git: https://github.com/krzyzanowskim/CryptoSwift
   WMPageController-Swift:
     :git: https://github.com/wangmchn/WMPageController-Swift.git
 
 CHECKOUT OPTIONS:
+  CryptoSwift:
+    :commit: f464a4028a9ece61b560f2eec12db9b0b51021e0
+    :git: https://github.com/krzyzanowskim/CryptoSwift
   WMPageController-Swift:
     :commit: 27ff00a88f733943f172e78f69bb1c418a852780
     :git: https://github.com/wangmchn/WMPageController-Swift.git
 
 SPEC CHECKSUMS:
   Alamofire: 4da478599fccddff361205c8929333d7fe18dceb
+  CryptoSwift: df42dda18baf6c76347a94e227dbcc0a341304bd
   Kingfisher: 44c1f1912f19371a67d701e67c96d6bb45ca1c8d
   SwiftyJSON: 04ccea08915aa0109039157c7974cf0298da292a
   Timepiece: cf53bb908bf542acc0e3d5f69cabfed869df4ebd

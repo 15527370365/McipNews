@@ -14,6 +14,7 @@ class NoticeDetailViewController: UIViewController {
     var notices:Notices!
     var replyDatas = Array<ReplyCell>()
 
+    @IBOutlet var contentWidth: NSLayoutConstraint!
     @IBOutlet var replyTextField: UITextField!
     @IBOutlet var tableView: UITableView!
     
@@ -33,6 +34,17 @@ class NoticeDetailViewController: UIViewController {
         self.setNotices()
         self.getReplyDatas()
         print(self.notices.noticeid)
+        switch UIDevice.currentDevice().modelName {
+        case "iPhone 6s Plus","iPhone 6 Plus":
+            self.contentWidth.constant = 300
+        case "iPhone 6s","iPhone 6":
+            self.contentWidth.constant = 260
+        default:
+            self.contentWidth.constant = 220
+        }
+        
+        let deviceModel = UIDevice.currentDevice().modelName
+        print(deviceModel)
         // Do any additional setup after loading the view.
     }
 
@@ -160,6 +172,7 @@ extension NoticeDetailViewController:UITableViewDelegate,UITableViewDataSource{
         time.text = reply.nrtime
         let content = cell.viewWithTag(104) as! UILabel
         content.text = reply.nreplycontent
+        
         return cell
     }
     
