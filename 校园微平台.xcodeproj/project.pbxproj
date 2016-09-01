@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		0406285F1D217FB500665F49 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0406285E1D217FB500665F49 /* Item.swift */; };
 		04140BC81CEA00F0006A028D /* NewsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04140BC71CEA00F0006A028D /* NewsViewController.swift */; };
+		0419FF3E1D759FFC00BC0EE3 /* UserInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0419FF3D1D759FFC00BC0EE3 /* UserInfoViewController.swift */; };
 		042030061CCD24E600FF3361 /* libBPush.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 042030051CCD24E600FF3361 /* libBPush.a */; };
 		042030081CCD254000FF3361 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 042030071CCD254000FF3361 /* SystemConfiguration.framework */; };
 		0420300A1CCD256500FF3361 /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 042030091CCD256500FF3361 /* CoreTelephony.framework */; };
@@ -20,6 +21,7 @@
 		04315A3D1CE763A70031F325 /* StudentHomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04315A3C1CE763A70031F325 /* StudentHomeController.swift */; };
 		04315A3F1CE798930031F325 /* StudentHome.plist in Resources */ = {isa = PBXBuildFile; fileRef = 04315A3E1CE798930031F325 /* StudentHome.plist */; };
 		04315A411CE79C590031F325 /* Channel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04315A401CE79C590031F325 /* Channel.swift */; };
+		043512C61D75300E00BC594E /* EditInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043512C51D75300E00BC594E /* EditInfoViewController.swift */; };
 		043B985E1CECBB7400532EC8 /* DataTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043B985A1CECBB7400532EC8 /* DataTool.swift */; };
 		043B98601CECBB7400532EC8 /* NetworkResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043B985C1CECBB7400532EC8 /* NetworkResult.swift */; };
 		043B98611CECBB7400532EC8 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043B985D1CECBB7400532EC8 /* Result.swift */; };
@@ -51,9 +53,15 @@
 		04B05B771CCD1A49000EB09E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04B05B711CCD1A49000EB09E /* Main.storyboard */; };
 		04B05B781CCD1A49000EB09E /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 04B05B731CCD1A49000EB09E /* MBProgressHUD.m */; };
 		04BF88C51D243EED00062A8C /* NoticeDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04BF88C41D243EED00062A8C /* NoticeDetailViewController.swift */; };
+		04C1176D1D72961600A820C5 /* FollowModulesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C1176C1D72961600A820C5 /* FollowModulesViewController.swift */; };
+		04C1176F1D73D81B00A820C5 /* PartySetChildViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C1176E1D73D81B00A820C5 /* PartySetChildViewController.swift */; };
+		04C117731D7418F600A820C5 /* PersonInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C117721D7418F600A820C5 /* PersonInfoViewController.swift */; };
+		04C117761D742BF500A820C5 /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C117751D742BF500A820C5 /* Person.swift */; };
 		04C366831D3B975F00D9F27D /* CommonExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C366821D3B975F00D9F27D /* CommonExtension.swift */; };
 		04CCD8B51D12E8850080F399 /* CallViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04CCD8B41D12E8850080F399 /* CallViewController.swift */; };
 		04CCD8B91D192D4E0080F399 /* StudentHomeChildViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04CCD8B81D192D4E0080F399 /* StudentHomeChildViewController.swift */; };
+		04D128D21D7076C20057F08B /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D128D11D7076C20057F08B /* SettingViewController.swift */; };
+		04D128D41D708B5B0057F08B /* AboutUsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D128D31D708B5B0057F08B /* AboutUsViewController.swift */; };
 		04D6FF331D2AC4380093F99A /* LBXPermissions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D6FF2C1D2AC4380093F99A /* LBXPermissions.swift */; };
 		04D6FF341D2AC4380093F99A /* LBXScanLineAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D6FF2D1D2AC4380093F99A /* LBXScanLineAnimation.swift */; };
 		04D6FF351D2AC4380093F99A /* LBXScanNetAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D6FF2E1D2AC4380093F99A /* LBXScanNetAnimation.swift */; };
@@ -113,6 +121,7 @@
 /* Begin PBXFileReference section */
 		0406285E1D217FB500665F49 /* Item.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
 		04140BC71CEA00F0006A028D /* NewsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsViewController.swift; sourceTree = "<group>"; };
+		0419FF3D1D759FFC00BC0EE3 /* UserInfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserInfoViewController.swift; sourceTree = "<group>"; };
 		042030041CCD24E600FF3361 /* BPush.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BPush.h; sourceTree = "<group>"; };
 		042030051CCD24E600FF3361 /* libBPush.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libBPush.a; sourceTree = "<group>"; };
 		042030071CCD254000FF3361 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
@@ -125,6 +134,7 @@
 		04315A3C1CE763A70031F325 /* StudentHomeController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StudentHomeController.swift; sourceTree = "<group>"; };
 		04315A3E1CE798930031F325 /* StudentHome.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = StudentHome.plist; sourceTree = "<group>"; };
 		04315A401CE79C590031F325 /* Channel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Channel.swift; sourceTree = "<group>"; };
+		043512C51D75300E00BC594E /* EditInfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditInfoViewController.swift; sourceTree = "<group>"; };
 		043B985A1CECBB7400532EC8 /* DataTool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataTool.swift; sourceTree = "<group>"; };
 		043B985C1CECBB7400532EC8 /* NetworkResult.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkResult.swift; sourceTree = "<group>"; };
 		043B985D1CECBB7400532EC8 /* Result.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
@@ -164,9 +174,15 @@
 		04B05B721CCD1A49000EB09E /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBProgressHUD.h; sourceTree = "<group>"; };
 		04B05B731CCD1A49000EB09E /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
 		04BF88C41D243EED00062A8C /* NoticeDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoticeDetailViewController.swift; sourceTree = "<group>"; };
+		04C1176C1D72961600A820C5 /* FollowModulesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FollowModulesViewController.swift; sourceTree = "<group>"; };
+		04C1176E1D73D81B00A820C5 /* PartySetChildViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PartySetChildViewController.swift; sourceTree = "<group>"; };
+		04C117721D7418F600A820C5 /* PersonInfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersonInfoViewController.swift; sourceTree = "<group>"; };
+		04C117751D742BF500A820C5 /* Person.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
 		04C366821D3B975F00D9F27D /* CommonExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommonExtension.swift; sourceTree = "<group>"; };
 		04CCD8B41D12E8850080F399 /* CallViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CallViewController.swift; sourceTree = "<group>"; };
 		04CCD8B81D192D4E0080F399 /* StudentHomeChildViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StudentHomeChildViewController.swift; sourceTree = "<group>"; };
+		04D128D11D7076C20057F08B /* SettingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
+		04D128D31D708B5B0057F08B /* AboutUsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutUsViewController.swift; sourceTree = "<group>"; };
 		04D6FF2C1D2AC4380093F99A /* LBXPermissions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LBXPermissions.swift; sourceTree = "<group>"; };
 		04D6FF2D1D2AC4380093F99A /* LBXScanLineAnimation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LBXScanLineAnimation.swift; sourceTree = "<group>"; };
 		04D6FF2E1D2AC4380093F99A /* LBXScanNetAnimation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LBXScanNetAnimation.swift; sourceTree = "<group>"; };
@@ -334,6 +350,7 @@
 				043C2A531CDDDE5D005A94C6 /* NewsTableViewController.swift */,
 				04140BC71CEA00F0006A028D /* NewsViewController.swift */,
 				0428A6EB1CF16B0E004EB337 /* NewsDetailViewController.swift */,
+				04C1176C1D72961600A820C5 /* FollowModulesViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -371,6 +388,7 @@
 			children = (
 				04315A3C1CE763A70031F325 /* StudentHomeController.swift */,
 				04CCD8B81D192D4E0080F399 /* StudentHomeChildViewController.swift */,
+				04C1176E1D73D81B00A820C5 /* PartySetChildViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -509,12 +527,14 @@
 		04B05B3B1CCD1956000EB09E /* McipNews */ = {
 			isa = PBXGroup;
 			children = (
+				04DCEDD11D236D2A0063749C /* Notice */,
+				04C117701D74186300A820C5 /* PersonInfo */,
+				04D128D01D70768A0057F08B /* Setting */,
 				045A60C21D2FF346005AEFEC /* TabBar */,
 				046DE1971D2CD85C00207935 /* MyCampus */,
 				04D6FF3D1D2AC7F50093F99A /* ScanCode */,
 				04D6FF3C1D2AC7B30093F99A /* Resources */,
 				04D6FF3A1D2AC59C0093F99A /* CodeScan.bundle */,
-				04DCEDD11D236D2A0063749C /* Notice */,
 				048D32791CF2095A00D5656B /* Home */,
 				043B98651CECC23800532EC8 /* StudentHome */,
 				043B98631CECC1D100532EC8 /* News */,
@@ -544,6 +564,42 @@
 				04B05B611CCD1956000EB09E /* Info.plist */,
 			);
 			path = McipNewsUITests;
+			sourceTree = "<group>";
+		};
+		04C117701D74186300A820C5 /* PersonInfo */ = {
+			isa = PBXGroup;
+			children = (
+				04C117741D742BD600A820C5 /* Model */,
+				04C117711D7418AF00A820C5 /* Controller */,
+			);
+			path = PersonInfo;
+			sourceTree = "<group>";
+		};
+		04C117711D7418AF00A820C5 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				04C117721D7418F600A820C5 /* PersonInfoViewController.swift */,
+				043512C51D75300E00BC594E /* EditInfoViewController.swift */,
+				0419FF3D1D759FFC00BC0EE3 /* UserInfoViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		04C117741D742BD600A820C5 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				04C117751D742BF500A820C5 /* Person.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		04D128D01D70768A0057F08B /* Setting */ = {
+			isa = PBXGroup;
+			children = (
+				04D128D11D7076C20057F08B /* SettingViewController.swift */,
+				04D128D31D708B5B0057F08B /* AboutUsViewController.swift */,
+			);
+			path = Setting;
 			sourceTree = "<group>";
 		};
 		04D6FF2B1D2AC3DE0093F99A /* SwiftScan */ = {
@@ -919,10 +975,13 @@
 				0428A6F31CF1DFD9004EB337 /* Navigation.swift in Sources */,
 				0424A0A31D2567DE00A443B8 /* AddNoticeViewController.swift in Sources */,
 				04ED8B6D1CF0340D00293D0F /* MJRefreshAutoGifFooter.m in Sources */,
+				04C117761D742BF500A820C5 /* Person.swift in Sources */,
 				0454F1321CF5A3600089FE4B /* CellModel.swift in Sources */,
 				048D327C1CF2098000D5656B /* HomeViewController.swift in Sources */,
 				04315A411CE79C590031F325 /* Channel.swift in Sources */,
+				04C1176D1D72961600A820C5 /* FollowModulesViewController.swift in Sources */,
 				0482818E1D2595EA0033DC4E /* SelectSendTimeViewController.swift in Sources */,
+				043512C61D75300E00BC594E /* EditInfoViewController.swift in Sources */,
 				04EAB5821D2D991A007A3184 /* NoticeConfirmDetailViewController.swift in Sources */,
 				04CCD8B51D12E8850080F399 /* CallViewController.swift in Sources */,
 				04ED8B701CF0340D00293D0F /* MJRefreshBackGifFooter.m in Sources */,
@@ -932,6 +991,7 @@
 				04B05B751CCD1A49000EB09E /* Constants.swift in Sources */,
 				0482818C1D258D790033DC4E /* SelectNewReceiverViewController.swift in Sources */,
 				04B05B761CCD1A49000EB09E /* LoginController.swift in Sources */,
+				04D128D41D708B5B0057F08B /* AboutUsViewController.swift in Sources */,
 				04ED8B6A1CF0340D00293D0F /* MJRefreshComponent.m in Sources */,
 				0482818A1D25897D0033DC4E /* SelectReceiverViewController.swift in Sources */,
 				04D6FF331D2AC4380093F99A /* LBXPermissions.swift in Sources */,
@@ -947,6 +1007,7 @@
 				04ED8B7A1CF0340D00293D0F /* UIView+MJExtension.m in Sources */,
 				04ED8B6B1CF0340D00293D0F /* MJRefreshFooter.m in Sources */,
 				04ED8B6C1CF0340D00293D0F /* MJRefreshHeader.m in Sources */,
+				0419FF3E1D759FFC00BC0EE3 /* UserInfoViewController.swift in Sources */,
 				0454F13A1CF5A99B0089FE4B /* McipNews.xcdatamodeld in Sources */,
 				04ED8B6E1CF0340D00293D0F /* MJRefreshAutoNormalFooter.m in Sources */,
 				04140BC81CEA00F0006A028D /* NewsViewController.swift in Sources */,
@@ -956,6 +1017,7 @@
 				043C8CF81CCE923E00E53F7C /* Users+CoreDataProperties.swift in Sources */,
 				04EAB5801D2D8AB3007A3184 /* ReplyCell.swift in Sources */,
 				043C2A541CDDDE5D005A94C6 /* NewsTableViewController.swift in Sources */,
+				04C117731D7418F600A820C5 /* PersonInfoViewController.swift in Sources */,
 				046BE3C31D24228C003C602C /* BoxViewController.swift in Sources */,
 				0406285F1D217FB500665F49 /* Item.swift in Sources */,
 				04B05B3D1CCD1956000EB09E /* AppDelegate.swift in Sources */,
@@ -974,6 +1036,7 @@
 				04ED8B751CF0340D00293D0F /* MJRefreshStateHeader.m in Sources */,
 				04EAB5841D2DB956007A3184 /* ReceiverCell.swift in Sources */,
 				04F2BE141CF3593B002E6628 /* ButtonTool.swift in Sources */,
+				04D128D21D7076C20057F08B /* SettingViewController.swift in Sources */,
 				046DE1A21D2D004900207935 /* MyCampusDetailViewController.swift in Sources */,
 				04D6FF371D2AC4380093F99A /* LBXScanViewController.swift in Sources */,
 				045A60C81D31FB8A005AEFEC /* Collection.swift in Sources */,
@@ -981,6 +1044,7 @@
 				04ED8B781CF0340D00293D0F /* UIScrollView+MJExtension.m in Sources */,
 				04B05B781CCD1A49000EB09E /* MBProgressHUD.m in Sources */,
 				04D6FF361D2AC4380093F99A /* LBXScanView.swift in Sources */,
+				04C1176F1D73D81B00A820C5 /* PartySetChildViewController.swift in Sources */,
 				04C366831D3B975F00D9F27D /* CommonExtension.swift in Sources */,
 				04F2BE121CF35610002E6628 /* ItemsViewController.swift in Sources */,
 				04D6FF391D2AC4380093F99A /* LBXScanWrapper.swift in Sources */,
@@ -1113,8 +1177,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "Brand Assets";
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = McipNews/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
@@ -1125,7 +1189,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = cn.net.syzc.McipNews;
 				PRODUCT_NAME = "校园微平台";
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "f5e20636-76f3-401a-88b1-d79c26181934";
 				SWIFT_OBJC_BRIDGING_HEADER = "McipNews/Common/Other/McipNews-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				TARGETED_DEVICE_FAMILY = 1;
@@ -1139,8 +1203,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "Brand Assets";
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = McipNews/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
@@ -1151,7 +1215,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = cn.net.syzc.McipNews;
 				PRODUCT_NAME = "校园微平台";
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "f5e20636-76f3-401a-88b1-d79c26181934";
 				SWIFT_OBJC_BRIDGING_HEADER = "McipNews/Common/Other/McipNews-Bridging-Header.h";
 				TARGETED_DEVICE_FAMILY = 1;
 			};

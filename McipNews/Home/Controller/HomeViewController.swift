@@ -20,7 +20,7 @@ class HomeViewController:UIViewController {
     @IBOutlet var weatherImage: UIImageView!
     @IBOutlet var weatherLabel: UILabel!
     
-    var week:String = "第19周"
+    var week:String = "第1周"
     var cells:[CellModel]=[]
     
     override func viewDidLoad() {
@@ -84,11 +84,11 @@ class HomeViewController:UIViewController {
     
     // MARK: - Button Events
     func btnUser() {
-        CommonFunction.exit()
-        token = ""
-        userid = ""
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        self.presentViewController(storyboard.instantiateViewControllerWithIdentifier("Login"), animated: true, completion: nil)
+        let sb = UIStoryboard(name: "Main", bundle: nil)
+        let vc = sb.instantiateViewControllerWithIdentifier("personInfo") as! PersonInfoViewController
+        self.tabBarController?.tabBar.hidden = true
+        self.navigationController?.pushViewController(vc, animated: true)
+        self.hidesBottomBarWhenPushed = false
     }
     
     @IBAction func itemsClick(sender: UIControl) {
@@ -105,6 +105,14 @@ class HomeViewController:UIViewController {
         self.navigationController?.pushViewController(vc, animated: true)
         self.hidesBottomBarWhenPushed=false
     }
+    
+    @IBAction func settingBtnEvents(sender: UIBarButtonItem) {
+        let sb = UIStoryboard(name: "Main", bundle: nil)
+        let vc = sb.instantiateViewControllerWithIdentifier("setting") as! SettingViewController
+        self.navigationController?.pushViewController(vc, animated: true)
+        self.hidesBottomBarWhenPushed = false
+    }
+    
     
 
     /*

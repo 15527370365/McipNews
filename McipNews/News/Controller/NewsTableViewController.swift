@@ -18,6 +18,7 @@ class NewsTableViewController: UIViewController{
     var newsDatas:[News] = []
     
     override func viewDidLoad() {
+        //print(ch)
         super.viewDidLoad()
         self.tableView.delegate=self
         self.tableView.mj_header = MJRefreshNormalHeader(refreshingTarget: self,refreshingAction: #selector(NewsTableViewController.requestInfo))

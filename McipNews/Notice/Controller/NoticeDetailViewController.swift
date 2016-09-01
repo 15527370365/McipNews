@@ -14,6 +14,9 @@ class NoticeDetailViewController: UIViewController {
     var notices:Notices!
     var replyDatas = Array<ReplyCell>()
 
+    @IBOutlet var replyView: UIView!
+    @IBOutlet var makeSureButton: UIButton!
+    @IBOutlet var bottomHeight: NSLayoutConstraint!
     @IBOutlet var contentWidth: NSLayoutConstraint!
     @IBOutlet var replyTextField: UITextField!
     @IBOutlet var tableView: UITableView!
@@ -33,7 +36,6 @@ class NoticeDetailViewController: UIViewController {
         self.view.addGestureRecognizer(swipeLeftGesture)
         self.setNotices()
         self.getReplyDatas()
-        print(self.notices.noticeid)
         switch UIDevice.currentDevice().modelName {
         case "iPhone 6s Plus","iPhone 6 Plus":
             self.contentWidth.constant = 300
@@ -42,11 +44,25 @@ class NoticeDetailViewController: UIViewController {
         default:
             self.contentWidth.constant = 220
         }
+        if notices.nstate == 0 {
+            self.replyView.hidden = true
+            self.makeSureButton.hidden = false
+        }else{
+            self.replyView.hidden = false
+            self.makeSureButton.hidden = true
+        }
         
-        let deviceModel = UIDevice.currentDevice().modelName
-        print(deviceModel)
+//        let deviceModel = UIDevice.currentDevice().modelName
+//        print(deviceModel)
         // Do any additional setup after loading the view.
     }
+    
+    override func viewWillAppear(animated: Bool) {
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(NoticeDetailViewController.keyboardWillShow(_:)), name: UIKeyboardWillShowNotification, object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(NoticeDetailViewController.keyboardWillHide(_:)), name: UIKeyboardWillHideNotification, object: nil)
+    }
+    
+
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -67,6 +83,7 @@ class NoticeDetailViewController: UIViewController {
     
     // MARK: - Button Event
     @IBAction func backBtnEvent(sender: UIBarButtonItem) {
+        self.tabBarController?.tabBar.hidden = false
         self.navigationController?.popViewControllerAnimated(true)
     }
     @IBAction func addSchduleBtnEvent(sender: UIControl) {
@@ -139,15 +156,54 @@ class NoticeDetailViewController: UIViewController {
         let frame = self.tableView.frame
         self.tableView.frame = CGRectMake(frame.origin.x, frame.origin.y, frame.width, 368)
     }
-    /*
+    
+    @IBAction func makeSureBtnEvents(sender: UIButton) {
+//        self.replyView.hidden = false
+//        self.makeSureButton.hidden = true
+        DataTool.makeSureNotice(self.notices.noticeid){ result -> Void in
+            if result {
+                self.notices.unconfirmcount = self.notices.unconfirmcount.integerValue - 1
+                self.notices.nstate = 1
+                self.replyView.hidden = false
+                self.makeSureButton.hidden = true
+            }
+        }
+    }
+    func keyboardWillShow(notification:NSNotification){
+        if ((notification.userInfo?[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.CGRectValue()) != nil {
+        //let contentInsets = UIEdgeInsets(top: 0, left: 0, bottom: keyboardSize.height, right: 0)
+        //let keyboardheight  = keyboardSize.height as CGFloat
+        //let frame = self.nameInput.frame
+        // frame.origin.y = frame.origin.y - keyboardheight
+        //var offset = 156 as CGFloat
+            let width = self.view.frame.size.width;
+            let height = self.view.frame.size.height;
+            let rect = CGRectMake(0.0, -156,width,height);
+            self.view.frame = rect
+            self.bottomHeight.constant = 156
+        }
+    }
+    
+    func keyboardWillHide(notification:NSNotification){
+        //self.view.addSubview(logoArea)
+        let width = self.view.frame.size.width;
+        let height = self.view.frame.size.height;
+        let rect = CGRectMake(0.0, 0,width,height);
+        self.view.frame = rect
+        self.bottomHeight.constant = 0
+    }
+    
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
+        let vc = segue.destinationViewController as! NoticeConfirmDetailViewController
+        vc.noticeid = self.notices.noticeid
     }
-    */
+    
 
 }
 

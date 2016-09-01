@@ -58,7 +58,26 @@ class CommonFunction: NSObject {
     }
     
     class func exit(){
-        
+        let appDelegate:AppDelegate=UIApplication.sharedApplication().delegate as! AppDelegate
+        let managedObjectContext = appDelegate.managedObjectContext
+        let entity:NSEntityDescription? = NSEntityDescription.entityForName("Users", inManagedObjectContext: managedObjectContext)
+        let request:NSFetchRequest = NSFetchRequest()
+        request.fetchOffset = 0
+        request.fetchLimit = 10
+        request.entity = entity
+        let predicate = NSPredicate(format: "exitTime== %@","")
+        request.predicate = predicate
+        do{
+            let results:[AnyObject]? = try managedObjectContext.executeFetchRequest(request)
+            for user:Users in results as! [Users] {
+                user.exitTime = CommonFunction.getNowTimeString()
+            }
+            try managedObjectContext.save()
+        }catch{
+            print("Core Data Error!")
+        }
+        token = ""
+        userid = ""
     }
     
     class func exit(view:AnyObject){

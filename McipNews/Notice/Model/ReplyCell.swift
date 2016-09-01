@@ -18,7 +18,7 @@ class ReplyCell: NSObject {
     
     init(json:JSON) {
         let comps = CommonFunction.formatTime(json["nrtime"].stringValue)
-        self.nrtime = "\(comps.year)-\(comps.month)-\(comps.day) \(comps.hour):\(comps.minute)"
+        self.nrtime = "\(comps.month)-\(comps.day) \(comps.hour):\(comps.minute)"
         self.uname = json["uname"].stringValue
         self.userid = json["userid"].stringValue
         self.upic = json["upic"].stringValue

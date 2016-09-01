@@ -42,7 +42,7 @@ struct DataTool {
         }else{
             parameters = ["path":"rpc/get_module_news","data":"{\"_moduleid\":"+moduleid.stringValue+",\"_page\":0}"]
         }
-        
+        print(parameters)
         let json = fetchJsonFromNet(post, parameters, headers)
         json.jsonToModel(nil) { result in
             var news:[News] = []
@@ -290,6 +290,66 @@ struct DataTool {
         }
     }
     
+    static func loadModules(type:NSNumber,completionHandler:(followDatas:[Channel],unFollowDatas:[Channel]) -> Void){
+        let headers = ["consumer_key": ALAMOFIRE_KEY,"userid":userid,"token":token]
+        let parameters = ["path":"rpc/get_my_modules","data":"{\"_mtype\":\(type),\"_userid\":"+userid+"}"]
+        print(parameters)
+        let json = fetchJsonFromNet(post, parameters, headers)
+        json.jsonToModel(nil) { result in
+            var follow:[Channel] = []
+            var unFollow:[Channel] = []
+            if result["code"].string=="200" {
+                let data=JSON(data: result["data"].stringValue.dataUsingEncoding(NSUTF8StringEncoding)!)
+                let defaultFollow = ["学生工作","思政教育","创业就业","讲座引导","规章制度","党建动态","特别策划","信息采集","闪闪红星"]
+                for i in 0..<data["follow"].count{
+                    var flag = false
+                    for j in 0..<defaultFollow.count{
+                        if data["follow"][i]["mname"].stringValue == defaultFollow[j]{
+                            flag = true
+                        }
+                    }
+                    if !flag{
+                        follow.append(Channel(json:data["follow"][i]))
+                    }
+                }
+                for i in 0..<data["unfollow"].count{
+                    unFollow.append(Channel(json:data["unfollow"][i]))
+                }
+                completionHandler(followDatas: follow,unFollowDatas: unFollow)
+            }
+        }
+
+    }
+    
+    static func followModule(moduleid:NSNumber,completionHandler:(flag:Bool)->Void){
+        let headers = ["consumer_key": ALAMOFIRE_KEY,"userid":userid,"token":token]
+        let parameters = ["path":"modulefollowers","data":"{\"mmoduleid\":\(moduleid),\"muserid\":\""+userid+"\"}"]
+        //        {"_nrnoticeid":425, "_nruserid":"1309030411", "_nrruserids":null, "_nreplycontent":"哈哈哈嘻嘻嘻"}
+        print(parameters)
+        let json = fetchJsonFromNet(post, parameters, headers)
+        json.jsonToModel(nil) { result in
+            if result["code"].string=="201" {
+                completionHandler(flag:true)
+            }else{
+                completionHandler(flag:false)
+            }
+        }
+    }
+    
+    static func unFollowModule(moduleid:NSNumber,completionHandler:(flag:Bool)->Void){
+        let headers = ["consumer_key": ALAMOFIRE_KEY,"userid":userid,"token":token]
+        let parameters = ["path":"modulefollowers?muserid=eq."+userid+"&mmoduleid=eq.\(moduleid)","data":""]
+        print(parameters)
+        let json = fetchJsonFromNet(server+"/rest/delete", parameters, headers)
+        json.jsonToModel(nil) { result in
+            if result["code"].string=="204" {
+                completionHandler(flag:true)
+            }else{
+                completionHandler(flag:false)
+            }
+        }
+    }
+    
     static func loadRollCall(info:String,completionHandler:(flag:Bool,content:String)->Void){
         let headers = ["consumer_key": ALAMOFIRE_KEY,"userid":userid,"token":token]
         let parameters = ["info":info]
@@ -328,6 +388,69 @@ struct DataTool {
         }
     }
     
+    static func loadPersonInfo(completionHandler:(person:Person)->Void){
+        let headers = ["consumer_key": ALAMOFIRE_KEY,"userid":userid,"token":token]
+        let parameters = ["path":"users?select=userid,uname,upic,usex,ubirthday,uprovince,ucity,ucollege,uclass,udescription&userid=eq."+userid+""]
+        //print(parameters)
+        let json = fetchJsonFromNet(get, parameters, headers)
+        json.jsonToModel(nil) { result in
+            if result["code"].string=="200" {
+                let data=JSON(data: result["data"].stringValue.dataUsingEncoding(NSUTF8StringEncoding)!)
+                //print(data)
+                completionHandler(person:Person(data:data[0]))
+            }
+        }
+    }
+    
+    static func makeSureNotice(noticeid:NSNumber,completionHandler:(flag:Bool)->Void){
+        let headers = ["consumer_key": ALAMOFIRE_KEY,"userid":userid,"token":token]
+        let parameters = ["path":"noticereceivers?nnoticeid=eq.\(noticeid)&nuserid=eq."+userid+"","data":"{\"nstate\":1}"]
+        print(parameters)
+        let json = fetchJsonFromNet(server+"/rest/patch", parameters, headers)
+        json.jsonToModel(nil) { result in
+            print(result)
+            if result["code"].string=="204" {
+                //let data=JSON(data: result["data"].stringValue.dataUsingEncoding(NSUTF8StringEncoding)!)
+                completionHandler(flag:true)
+            }else{
+                completionHandler(flag:false)
+            }
+        }
+    }
+    
+    static func loadConfirmDetails(noticeid:NSNumber,completionHandler:(flag:Bool,users:[User])->Void){
+        let headers = ["consumer_key": ALAMOFIRE_KEY,"userid":userid,"token":token]
+        let parameters = ["path":"rpc/get_confirm_details","data":"{\"_noticeid\":\(noticeid)}"]
+        let json = fetchJsonFromNet(post, parameters, headers)
+        json.jsonToModel(nil) { result in
+            print(result)
+            var userDatas:[User] = []
+            if result["code"].string=="200" {
+                let data=JSON(data: result["data"].stringValue.dataUsingEncoding(NSUTF8StringEncoding)!)
+                for i in 0..<data.count{
+                    userDatas.append(User(data:data[i]))
+                }
+                completionHandler(flag:true,users: userDatas)
+            }else{
+                completionHandler(flag:false,users: userDatas)
+            }
+        }
+    }
+    
+    static func loadUserInfo(completionHandler:(flag:Bool,user:Person)->Void){
+        let headers = ["consumer_key": ALAMOFIRE_KEY,"userid":userid,"token":token]
+        let parameters = ["path":"users?select=userid,uname,upic,usex,uphone,umail,ucredit,uprovience,ucity,ubirthday&userid=eq."+userid+""]
+        let json = fetchJsonFromNet(post, parameters, headers)
+        json.jsonToModel(nil) { result in
+            //print(result)
+            if result["code"].string=="200" {
+                let data=JSON(data: result["data"].stringValue.dataUsingEncoding(NSUTF8StringEncoding)!)
+                completionHandler(flag:true,user: Person(json:data[0]))
+            }else{
+                completionHandler(flag:false,user: Person())
+            }
+        }
+    }
 }                                                 
 
 extension NSDate {

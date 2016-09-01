@@ -56,11 +56,11 @@ class MyCampusViewController: UIViewController {
     
     // MARK: - Button Events
     func btnUser() {
-        CommonFunction.exit()
-        token = ""
-        userid = ""
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        self.presentViewController(storyboard.instantiateViewControllerWithIdentifier("Login"), animated: true, completion: nil)
+        let sb = UIStoryboard(name: "Main", bundle: nil)
+        let vc = sb.instantiateViewControllerWithIdentifier("personInfo") as! PersonInfoViewController
+        self.tabBarController?.tabBar.hidden = true
+        self.navigationController?.pushViewController(vc, animated: true)
+        self.hidesBottomBarWhenPushed = false
     }
     
     @IBAction func codeBtnEvents(sender: UIBarButtonItem) {
@@ -68,6 +68,14 @@ class MyCampusViewController: UIViewController {
         self.hidesBottomBarWhenPushed=true
         self.navigationController?.pushViewController(vc, animated: true)
         self.hidesBottomBarWhenPushed=false
+    }
+    
+    
+    @IBAction func settingBtnEvents(sender: UIBarButtonItem) {
+        let sb = UIStoryboard(name: "Main", bundle: nil)
+        let vc = sb.instantiateViewControllerWithIdentifier("setting") as! SettingViewController
+        self.navigationController?.pushViewController(vc, animated: true)
+        self.hidesBottomBarWhenPushed = false
     }
 
     

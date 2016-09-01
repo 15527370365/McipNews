@@ -23,6 +23,7 @@ class LoginController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.navigationController?.setNavigationBarHidden(true, animated: true)
         loginButton.backgroundColor=UIColor.init(colorLiteralRed: 68/255.0, green: 187/255.0, blue: 234/255.0, alpha: 1)
         
 //        self.automaticallyAdjustsScrollViewInsets=false
@@ -59,8 +60,8 @@ class LoginController: UIViewController {
             let hud = MBProgressHUD.showHUDAddedTo(self.view, animated: true)
             hud.label.text = "Loading"
             let result=CommonFunction.getMacAddress()
-            //let parameters = ["consumer_key": ALAMOFIRE_KEY,"userid":userField.text!,"upass":passField.text!,"ustateadd":result.mac,"uequipment":"4","uchannelid":BPush.getChannelId()]
-            let parameters = ["consumer_key": ALAMOFIRE_KEY,"userid":userField.text!,"upass":passField.text!,"ustateadd":result.mac,"uequipment":"4","uchannelid":"123"]
+            let parameters = ["consumer_key": ALAMOFIRE_KEY,"userid":userField.text!,"upass":passField.text!,"ustateadd":result.mac,"uequipment":"4","uchannelid":BPush.getChannelId()]
+            //let parameters = ["consumer_key": ALAMOFIRE_KEY,"userid":userField.text!,"upass":passField.text!,"ustateadd":result.mac,"uequipment":"4","uchannelid":"123"]
             Alamofire.request(.POST, POST_LOGIN, parameters:parameters).responseJSON() {
                 response in
                 if let jsonValue = response.result.value {
@@ -84,14 +85,19 @@ class LoginController: UIViewController {
                             let news = DataTool.loadNewsChannels(1)
                             if news.1{
                                 if news.0["follow"].count == 0{
-                                    self.alert.message="未关注模块"
+                                    self.alert.message="请选择感兴趣的新闻模块"
                                     self.alert.show()
+                                    let sb = UIStoryboard(name: "Main", bundle: nil)
+                                    let vc = sb.instantiateViewControllerWithIdentifier("followModules") as! FollowModulesViewController
+                                    vc.type = 1
+                                    self.navigationController?.pushViewController(vc, animated: true)
                                 }else{
                                     let storyboard = UIStoryboard(name: "Main", bundle: nil)
                                     self.presentViewController(storyboard.instantiateViewControllerWithIdentifier("MainTabBar"), animated: true, completion: nil)
                                 }
                             }else{
-                                print("load error")
+                                self.alert.message="系统异常请稍后再试"
+                                self.alert.show()
                             }
                             
                         }catch{

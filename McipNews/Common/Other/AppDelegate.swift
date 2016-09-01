@@ -19,7 +19,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let Types = UIUserNotificationType([.Sound,.Alert, .Badge])
         let settings = UIUserNotificationSettings(forTypes: Types, categories: nil)
         application.registerUserNotificationSettings(settings)
-        BPush.registerChannel(launchOptions, apiKey: PUSH_KEY, pushMode: BPushMode.Development, withFirstAction: nil, withSecondAction: nil, withCategory: nil, isDebug: true)
+        BPush.registerChannel(launchOptions, apiKey: PUSH_KEY, pushMode: BPushMode.Production, withFirstAction: nil, withSecondAction: nil, withCategory: nil, isDebug: true)
         // App 是用户点击推送消息启动
         if (launchOptions?[UIApplicationLaunchOptionsRemoteNotificationKey] != nil) {
             let userInfo = launchOptions?[UIApplicationLaunchOptionsRemoteNotificationKey] as? NSDictionary
@@ -99,7 +99,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             // 需要在绑定成功后进行 settag listtag deletetag unbind 操作否则会失败
             if ((result) != nil){
                 BPush.setTag("Mytag", withCompleteHandler: { (result, error) -> Void in
-                    
                     if ((result) != nil){
                         NSLog("user_id:%@,channelID:%@",baiduUser,channelID)
                     }

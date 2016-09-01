@@ -12,6 +12,7 @@ import WMPageController_Swift
 class StudentHomeController: PageController {
     
     var shArray = Dictionary<String,Channel>()
+    var ptArray = Dictionary<String,Channel>()
     var vcTitles:[Channel] = []
     var moreTitles:[Channel] = []
     var childTitles:[Channel] = []
@@ -30,6 +31,7 @@ class StudentHomeController: PageController {
         let datas = result.0
         //print(datas)
         vcTitles.append(Channel(dict:["mname":"学子家园","moduleid":1,"mintroduce":"","mfixed":1]))
+        vcTitles.append(Channel(dict:["mname":"党建工作","moduleid":1,"mintroduce":"","mfixed":1]))
         for i in 0..<datas["follow"].count{
             let tempChannel = Channel(json: datas["follow"][i])
             switch tempChannel.mname {
@@ -41,8 +43,16 @@ class StudentHomeController: PageController {
                 shArray["学生工作"] = tempChannel
             case "讲座引导":
                 shArray["讲座引导"] = tempChannel
-            case "党政建设":
-                shArray["党政建设"] = tempChannel
+            case "规章制度":
+                shArray["规章制度"] = tempChannel
+            case "党建动态":
+                ptArray["党建动态"] = tempChannel
+            case "特别策划":
+                ptArray["特别策划"] = tempChannel
+            case "信息采集":
+                ptArray["信息采集"] = tempChannel
+            case "闪闪红星":
+                ptArray["闪闪红星"] = tempChannel
             default:
                 vcTitles.append(tempChannel)
             }
@@ -73,7 +83,7 @@ class StudentHomeController: PageController {
         //menuView?.rightView = setRightButton()
         self.menuHeight=35
         menuView?.rightView = ButtonTool.setScrollRightAddButton(#selector(StudentHomeController.buttonPressed), showView: self, menuHeight: menuHeight)
-        self.navigationItem.leftBarButtonItem = UIBarButtonItem.init(customView: ButtonTool.setNavigationLeftImageButton(#selector(StudentHomeController.btnUser), view: self))
+        self.navigationItem.leftBarButtonItem = UIBarButtonItem(customView: ButtonTool.setNavigationLeftImageButton(#selector(StudentHomeController.btnUser), view: self))
     }
 
     override func didReceiveMemoryWarning() {
@@ -108,6 +118,10 @@ class StudentHomeController: PageController {
             let vc = sb.instantiateViewControllerWithIdentifier("StudentHomeChild") as! StudentHomeChildViewController
             vc.titles = shArray
             return vc
+        }else if vcTitles[index].mname == "党建工作" {
+            let vc = sb.instantiateViewControllerWithIdentifier("PartySetChild") as! PartySetChildViewController
+            vc.titles = ptArray
+            return vc
         }else{
             let vc = sb.instantiateViewControllerWithIdentifier("TableViewController") as! NewsTableViewController
             vc.ch = vcTitles[index]
@@ -133,16 +147,19 @@ class StudentHomeController: PageController {
     // MARK: - Button Events
     
     func buttonPressed() {
-        print("+")
-        
+        let sb = UIStoryboard(name: "Main", bundle: nil)
+        let vc = sb.instantiateViewControllerWithIdentifier("followModules") as! FollowModulesViewController
+        vc.type = 0
+        self.navigationController?.pushViewController(vc, animated: true)
+        self.hidesBottomBarWhenPushed = false
     }
     
     func btnUser() {
-        CommonFunction.exit()
-        token = ""
-        userid = ""
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        self.presentViewController(storyboard.instantiateViewControllerWithIdentifier("Login"), animated: true, completion: nil)
+        let sb = UIStoryboard(name: "Main", bundle: nil)
+        let vc = sb.instantiateViewControllerWithIdentifier("personInfo") as! PersonInfoViewController
+        self.tabBarController?.tabBar.hidden = true
+        self.navigationController?.pushViewController(vc, animated: true)
+        self.hidesBottomBarWhenPushed = false
     }
     
     @IBAction func codeBtnEvents(sender: UIBarButtonItem) {
@@ -150,6 +167,12 @@ class StudentHomeController: PageController {
         self.hidesBottomBarWhenPushed=true
         self.navigationController?.pushViewController(vc, animated: true)
         self.hidesBottomBarWhenPushed=false
+    }
+    @IBAction func settingBtnEvents(sender: UIBarButtonItem) {
+        let sb = UIStoryboard(name: "Main", bundle: nil)
+        let vc = sb.instantiateViewControllerWithIdentifier("setting") as! SettingViewController
+        self.navigationController?.pushViewController(vc, animated: true)
+        self.hidesBottomBarWhenPushed = false
     }
 
     /*

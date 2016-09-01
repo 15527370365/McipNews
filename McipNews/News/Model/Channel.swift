@@ -10,10 +10,10 @@ import UIKit
 import SwiftyJSON
 
 class Channel: NSObject {
-    var moduleid:NSNumber
-    var mintroduce:String
-    var mname:String
-    var mfixed:NSNumber
+    var moduleid:NSNumber!
+    var mintroduce:String!
+    var mname:String!
+    var mfixed:NSNumber!
     init(dict:NSDictionary){
         self.moduleid=dict["moduleid"] as! NSNumber
         self.mname=dict["mname"] as! String
@@ -25,5 +25,9 @@ class Channel: NSObject {
         self.mname=json["mname"].stringValue
         self.mintroduce=json["mintroduce"].stringValue
         self.mfixed=json["mfixed"].intValue
+    }
+    
+    override init() {
+        
     }
 }
